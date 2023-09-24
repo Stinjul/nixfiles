@@ -45,9 +45,7 @@
       nixosConfigurations = {
         nixtop = nixpkgs.lib.nixosSystem {
           specialArgs = { inherit inputs outputs; };
-          modules = [
-            ./nixos/configuration.nix
-          ];
+          modules = [ ./hosts/nixtop ];
         };
       };
 
@@ -58,6 +56,13 @@
           extraSpecialArgs = { inherit inputs outputs; };
           modules = [
             ./home-manager/stinjul/zentoo.nix
+          ];
+        };
+        "stinjul@nixtop" = home-manager.lib.homeManagerConfiguration {
+          pkgs = nixpkgs.legacyPackages.x86_64-linux; # Home-manager requires 'pkgs' instance
+          extraSpecialArgs = { inherit inputs outputs; };
+          modules = [
+            ./home-manager/stinjul/nixtop.nix
           ];
         };
       };

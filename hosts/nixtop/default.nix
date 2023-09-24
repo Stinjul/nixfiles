@@ -3,6 +3,7 @@
     ./hardware-configuration.nix
 
     ../common/global
+    ../common/users/stinjul
     ../common/features/pipewire.nix
   ];
 
@@ -12,6 +13,8 @@
     interfaces.enp4s0.useDHCP = true;
     interfaces.wlp5s0.useDHCP = true;
   };
+
+  console.keyMap = "azerty";
 
   system.stateVersion = "23.11";
 }
