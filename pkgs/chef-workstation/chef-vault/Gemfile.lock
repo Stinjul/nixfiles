@@ -1,0 +1,13 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    chef-vault (4.1.11)
+
+PLATFORMS
+  x86_64-linux
+
+DEPENDENCIES
+  chef-vault!
+
+BUNDLED WITH
+   2.3.26
