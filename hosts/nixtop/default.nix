@@ -1,5 +1,9 @@
 { pkgs, inputs, ... }: {
   imports = [
+    inputs.hardware.nixosModules.common-cpu-intel
+    inputs.hardware.nixosModules.common-gpu-nvidia
+    inputs.hardware.nixosModules.common-pc-ssd
+
     ./hardware-configuration.nix
 
     ../common/global
@@ -15,6 +19,29 @@
   };
 
   console.keyMap = "azerty";
+
+  programs = {
+    dconf.enable = true;
+  };
+
+  xdg.portal = {
+    enable = true;
+    wlr.enable = true;
+  };
+
+  hardware = {
+    nvidia = {
+      prime = {
+        nvidiaBusId = "PCI:1:0:0";
+        intelBusId = "PCI:0:2:0";
+      };
+    };
+    opengl = {
+      enable = true;
+      driSupport = true;
+      driSupport32Bit = true;
+    };
+  };
 
   system.stateVersion = "23.11";
 }

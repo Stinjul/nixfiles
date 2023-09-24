@@ -2,6 +2,8 @@
   imports = [
     ../common
     ../common/wayland
+
+    ./init.nix
   ];
 
 

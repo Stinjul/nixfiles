@@ -1,4 +1,7 @@
 { inputs, outputs, lib, config, pkgs, ... }: {
+  imports = [
+    ../features/cli
+  ];
   nixpkgs = {
     overlays = builtins.attrValues outputs.overlays;
     config = {
@@ -12,7 +15,7 @@
     home-manager.enable = true;
     git.enable = true;
   };
-  
+
   home = {
     username = "stinjul";
     homeDirectory = "/home/stinjul";
