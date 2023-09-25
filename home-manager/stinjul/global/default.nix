@@ -1,7 +1,7 @@
 { inputs, outputs, lib, config, pkgs, ... }: {
   imports = [
     ../features/cli
-  ];
+  ] ++ (builtins.attrValues outputs.homeManagerModules);
   nixpkgs = {
     overlays = builtins.attrValues outputs.overlays;
     config = {
@@ -19,7 +19,7 @@
   home = {
     username = "stinjul";
     homeDirectory = "/home/stinjul";
-    stateVersion = "22.11";
+    stateVersion = "23.05";
   };
 
 }

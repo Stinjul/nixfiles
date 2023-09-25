@@ -20,6 +20,10 @@
 
   console.keyMap = "azerty";
 
+  boot = {
+    kernelPackages = pkgs.linuxKernel.packages.linux_testing;
+  };
+
   programs = {
     dconf.enable = true;
   };
