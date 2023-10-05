@@ -41,7 +41,8 @@
     pkgs.trackma-full
     pkgs.eww-wayland
     pkgs.gdbgui
-
+    pkgs.yubikey-manager-qt
+    pkgs.yubikey-personalization-gui
   ];
 
   programs.fish = {
