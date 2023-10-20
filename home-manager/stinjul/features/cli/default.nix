@@ -7,5 +7,6 @@
         yubikey-manager
         age
         sops
+        ksops
     ];
 }
