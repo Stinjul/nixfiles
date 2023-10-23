@@ -7,6 +7,7 @@
         yubikey-manager
         age
         sops
+        argocd
         kustomize
         ksops
     ];
