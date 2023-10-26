@@ -2,6 +2,8 @@
   imports = [
     inputs.nixos-wsl.nixosModules.wsl
 
+    ./hardware-configuration.nix
+
     ../common/global
     ../common/users/stinjul
     ../common/features/pipewire.nix
