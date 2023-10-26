@@ -10,6 +10,13 @@
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
+    # WSL
+
+    nixos-wsl = {
+      url = "github:nix-community/nixos-wsl";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     hardware.url = "github:nixos/nixos-hardware";
     nixgl.url = "github:guibou/nixGL";
     hyprland = {
@@ -43,6 +50,10 @@
 
       # 'nixos-rebuild --flake .#hostname'
       nixosConfigurations = {
+        wsl = nixpkgs.lib.nixosSystem {
+          specialArgs = { inherit inputs outputs; };
+          modules = [ ./hosts/wsl ];
+        };
         nixtop = nixpkgs.lib.nixosSystem {
           specialArgs = { inherit inputs outputs; };
           modules = [ ./hosts/nixtop ];
@@ -56,6 +67,13 @@
           extraSpecialArgs = { inherit inputs outputs; };
           modules = [
             ./home-manager/stinjul/zentoo.nix
+          ];
+        };
+        "stinjul@wsl" = home-manager.lib.homeManagerConfiguration {
+          pkgs = nixpkgs.legacyPackages.x86_64-linux; # Home-manager requires 'pkgs' instance
+          extraSpecialArgs = { inherit inputs outputs; };
+          modules = [
+            ./home-manager/stinjul/wsl.nix
           ];
         };
         "stinjul@nixtop" = home-manager.lib.homeManagerConfiguration {
