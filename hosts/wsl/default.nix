@@ -12,7 +12,7 @@
   wsl = {
     enable = true;
     automountPath = "/mnt";
-    defaultUser = "nixos";
+    defaultUser = "stinjul";
     startMenuLaunchers = true;
   };
 
