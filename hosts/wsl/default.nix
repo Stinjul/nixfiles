@@ -11,7 +11,10 @@
 
   wsl = {
     enable = true;
-    automountPath = "/mnt";
+    #automountPath = "/mnt";
+    wslConf = {
+        automount.root = "/mnt";
+    };
     defaultUser = "stinjul";
     startMenuLaunchers = true;
   };
