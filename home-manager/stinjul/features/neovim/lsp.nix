@@ -57,7 +57,7 @@
       type = "lua";
     }
     {
-      plugin = yuck-nvim;
+      plugin = yuck-vim;
       type = "lua";
     }
     {
