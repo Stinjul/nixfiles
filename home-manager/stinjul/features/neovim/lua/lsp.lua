@@ -223,7 +223,3 @@ for server, options in pairs(servers) do
     end
 	lspconfig[server].setup(server_setup)
 end
-
-return {
-	on_attach = on_attach,
-}
