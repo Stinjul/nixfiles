@@ -1,3 +1,3 @@
 { pkgs }: {
-  mason-nvim-dap-nvim = pkgs.callPackage ./mason-nvim-dap-nvim { };
+  mason-nvim-dap-nvim = pkgs.callPackage ./mason-nvim-dap-nvim.nix { };
 }
