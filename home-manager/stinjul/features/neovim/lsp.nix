@@ -25,7 +25,18 @@
       config = builtins.readFile (./lua/lualine.lua);
     }
     {
-      plugin = nvim-treesitter;
+      plugin = (nvim-treesitter.withPlugins (_: nvim-treesitter.allGrammars ++ [
+        (pkgs.tree-sitter.buildGrammar {
+          language = "templ";
+          version = "89e5957";
+          src = pkgs.fetchFromGitHub {
+            owner = "vrischmann";
+            repo = "tree-sitter-templ";
+            rev = "89e5957b47707b16be1832a2753367b91fb85be0";
+            sha256 = "0mrxpacdagjrfc34mw4jvp4jfxkivgb413jsg0hs1r17rfcb9l4w";
+          };
+        })
+      ]));
       type = "lua";
       config = builtins.readFile (./lua/treesitter.lua);
     }
@@ -127,7 +138,7 @@
       plugin = nvim-coverage;
       type = "lua";
       config = ''
-		require("coverage").setup()
+        		require("coverage").setup()
       '';
     }
     {
@@ -138,7 +149,7 @@
       plugin = trouble-nvim;
       type = "lua";
       config = ''
-		require("trouble").setup()
+        		require("trouble").setup()
       '';
     }
     {
