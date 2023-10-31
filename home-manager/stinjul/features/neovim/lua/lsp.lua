@@ -174,7 +174,6 @@ local servers = {
 	fsautocomplete = {},
 	gopls = {},
     templ = {},
-	groovyls = {},
 	html = {},
 	jdtls = {},
 	jsonls = {
