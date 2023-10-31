@@ -6,7 +6,7 @@ vimUtils.buildVimPlugin {
     owner = "jay-babu";
     repo = "mason-nvim-dap.nvim";
     rev = "f0cd12f7a8a310c58cecebddb6b219ffad1cfd0f";
-    sha256 = "0d3h8kjid7mkqzdhakbf9wiyj1vxrcw4n8dp678bxm0452n82vxl";
+    sha256 = "0l41mx0xdva1yr9igvd8m17glswy5bxknrsnbm6gclz5xf21v3d1";
   };
-  meta.homepage = "https://github.com/nvim-lua/plenary.nvim/";
+  meta.homepage = "https://github.com/jay-babu/mason-nvim-dap.nvim";
 }
