@@ -11,6 +11,8 @@
       )
       inputs;
   };
-  additions = final: _prev: import ../pkgs { pkgs = final; };
+  additions = final: _prev: import ../pkgs { pkgs = final; } // {
+    vimPlugins = prev.vimPlugins // final.callPackage ../pkgs/vim_plugins { };
+  };
   modifications = final: prev: { };
 }
