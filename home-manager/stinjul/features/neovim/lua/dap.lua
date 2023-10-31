@@ -1,6 +1,6 @@
 local dap = require("dap")
 local dapui = require("dapui")
-local mason = require("mason-nvim-dap")
+-- local mason = require("mason-nvim-dap")
 
 dap.adapters.lldb = {
   type = 'executable',
@@ -45,9 +45,9 @@ dap.configurations.elixir = {
 }
 
 
-mason.setup({
-	automatic_installation = true,
-})
+-- mason.setup({
+-- 	automatic_installation = true,
+-- })
 
 dapui.setup()
 dap.listeners.after.event_initialized["dapui_config"] = function()

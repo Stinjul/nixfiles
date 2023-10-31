@@ -1,6 +1,7 @@
 { pkgs, ... }: {
   programs.neovim = {
     extraPackages = with pkgs; [
+      ## LSP
       nodePackages.bash-language-server
       efm-langserver
       elixir-ls
@@ -23,6 +24,10 @@
       nodePackages.typescript-language-server
       nodePackages.vim-language-server
       yaml-language-server
+
+      ## DAP
+      lldb
+      # elixir debugger is part of ls
     ];
     plugins = with pkgs.vimPlugins; [
       {
@@ -120,10 +125,11 @@
           require("mason").setup()
         '';
       }
-      # {
-      #   plugin = mason-lspconfig-nvim;
-      #   type = "lua";
-      # }
+      ## Missing some servers atm
+      {
+        plugin = mason-lspconfig-nvim;
+        type = "lua";
+      }
       {
         plugin = efmls-configs-nvim;
         type = "lua";
@@ -137,10 +143,10 @@
         plugin = nvim-dap-ui;
         type = "lua";
       }
-      {
-        plugin = mason-nvim-dap-nvim;
-        type = "lua";
-      }
+      # {
+      #   plugin = mason-nvim-dap-nvim;
+      #   type = "lua";
+      # }
       {
         plugin = nvim-dap;
         type = "lua";
