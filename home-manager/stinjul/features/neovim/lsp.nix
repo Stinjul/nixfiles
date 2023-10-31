@@ -29,10 +29,10 @@
         plugin = neodev-nvim;
         type = "lua";
       }
-      {
-        plugin = plenary-nvim;
-        type = "lua";
-      }
+      # {
+      #   plugin = plenary-nvim;
+      #   type = "lua";
+      # }
       {
         plugin = vim-fugitive;
         type = "lua";
