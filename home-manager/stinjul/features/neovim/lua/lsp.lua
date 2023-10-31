@@ -1,4 +1,4 @@
-local mason = require("mason-lspconfig")
+-- local mason = require("mason-lspconfig")
 local lspconfig = require("lspconfig")
 
 --------------------------------------------------
@@ -146,9 +146,9 @@ local on_attach = function(client, bufnr)
 	end, bufopts)
 end
 
-mason.setup({
-	automatic_installation = true,
-})
+-- mason.setup({
+-- 	automatic_installation = true,
+-- })
 
 local servers = {
 	lua_ls = {
