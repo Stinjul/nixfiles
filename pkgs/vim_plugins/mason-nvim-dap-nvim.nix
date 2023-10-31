@@ -1,5 +1,5 @@
-{ buildNeovimPlugin, fetchFromGitHub }:
-buildNeovimPlugin {
+{ neovimUtils, fetchFromGitHub }:
+neovimUtils.buildNeovimPlugin {
   pname = "mason-nvim-dap.nvim";
   version = "v2.2.0";
   src = fetchFromGitHub {
