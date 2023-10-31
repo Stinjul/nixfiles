@@ -89,6 +89,10 @@
       type = "lua";
     }
     {
+      plugin = efmls-configs-nvim;
+      type = "lua";
+    }
+    {
       plugin = nvim-lspconfig;
       type = "lua";
       config = builtins.readFile (./lua/lsp.lua);
