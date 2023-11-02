@@ -19,8 +19,8 @@
             ["*"] = {'clip.exe'},
         },
         paste = {
-            ["+"] = {'pwershell.exe' , '-c', '[Console]::Out.Write($(Get-Clipboard -Raw).tostring().replace("`r", ""))'},
-            ["*"] = {'pwershell.exe' , '-c', '[Console]::Out.Write($(Get-Clipboard -Raw).tostring().replace("`r", ""))'},
+            ["+"] = {'powershell.exe' , '-c', '[Console]::Out.Write($(Get-Clipboard -Raw).tostring().replace("`r", ""))'},
+            ["*"] = {'powershell.exe' , '-c', '[Console]::Out.Write($(Get-Clipboard -Raw).tostring().replace("`r", ""))'},
         },
         cache_enabled = false,
       }
