@@ -7,8 +7,7 @@
     pkgs.k6
     pkgs.jmeter
     pkgs.elixir_ls
-    # Currently not working, waiting for new unstable release
-    # pkgs.talosctl
+    pkgs.talosctl
     pkgs.rnix-lsp
     pkgs.prismlauncher
     pkgs.inputs.nixgl.nixGLIntel
