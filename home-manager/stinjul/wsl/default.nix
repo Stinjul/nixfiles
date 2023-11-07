@@ -19,6 +19,10 @@
     age.keyFile = "${config.xdg.configHome}/sops/age/keys.txt";
   };
 
+  programs = {
+    ssh.enable = true;
+  };
+
   programs.neovim = {
     extraLuaConfig = ''
       vim.g.clipboard = {
