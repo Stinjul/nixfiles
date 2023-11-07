@@ -1,0 +1,15 @@
+keys:
+  - &stinjul_zentoo age17gj5x2w8c46lepd2j9vj592atxcfpg2dl59vwza4qfdje8yw6vsqh926gr
+  - &stinjul_wsl age1hux2w96t957ym0m9q3y2hkfljs6mnsmp2sc86lvztf7emtdr29yq9hfae6
+
+keychain:
+  - &stinjul_wsl_chain >-
+    age17gj5x2w8c46lepd2j9vj592atxcfpg2dl59vwza4qfdje8yw6vsqh926gr,
+    age1hux2w96t957ym0m9q3y2hkfljs6mnsmp2sc86lvztf7emtdr29yq9hfae6
+
+
+creation_rules:
+  - path_regex: home-manager/stinjul/global/secrets.yaml
+    age: *stinjul_zentoo
+  - path_regex: home-manager/stinjul/wsl/secrets.yaml
+    age: *stinjul_wsl_chain

@@ -18,10 +18,19 @@
     };
 
     hardware.url = "github:nixos/nixos-hardware";
-    nixgl.url = "github:guibou/nixGL";
+    nixgl = {
+      url = "github:guibou/nixGL";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     hyprland = {
       url = "github:hyprwm/hyprland";
       inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    sops-nix = {
+      url = "github:mic92/sops-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.nixpkgs-stable.follows = "nixpkgs";
     };
 
   };
@@ -73,7 +82,7 @@
           pkgs = nixpkgs.legacyPackages.x86_64-linux; # Home-manager requires 'pkgs' instance
           extraSpecialArgs = { inherit inputs outputs; };
           modules = [
-            ./home-manager/stinjul/wsl.nix
+            ./home-manager/stinjul/wsl
           ];
         };
         "stinjul@nixtop" = home-manager.lib.homeManagerConfiguration {

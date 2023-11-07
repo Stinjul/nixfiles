@@ -1,14 +1,23 @@
-{ inputs, outputs, pkgs, ... }: {
+{ config, inputs, outputs, pkgs, ... }: {
   imports = [
-    ./global
-    ./features/neovim
+    inputs.sops-nix.homeManagerModules.sops
 
-    ./features/desktop/common
-    ./features/desktop/common/wayland
+    ../global
+    ../features/neovim
+
+    ../features/desktop/common
+    ../features/desktop/common/wayland
+
+    ./git.nix
   ];
 
   home.packages = [
   ];
+
+  sops = {
+    defaultSopsFile = ./secrets.yaml;
+    age.keyFile = "${config.xdg.configHome}/sops/age/keys.txt";
+  };
 
   programs.neovim = {
     extraLuaConfig = ''
