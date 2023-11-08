@@ -13,7 +13,8 @@
     enable = true;
     #automountPath = "/mnt";
     wslConf = {
-        automount.root = "/mnt";
+      automount.root = "/mnt";
+      interop.appendWindowsPath = false;
     };
     defaultUser = "stinjul";
     startMenuLaunchers = true;
