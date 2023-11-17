@@ -43,6 +43,7 @@
     pkgs.gdbgui
     pkgs.yubikey-manager-qt
     pkgs.yubikey-personalization-gui
+    pkgs.grpcurl
   ];
 
   programs.fish = {
