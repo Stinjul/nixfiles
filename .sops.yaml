@@ -12,4 +12,11 @@ creation_rules:
   - path_regex: home-manager/stinjul/global/secrets.yaml
     age: *stinjul_zentoo
   - path_regex: home-manager/stinjul/wsl/secrets.yaml
-    age: *stinjul_wsl_chain
+    key_groups:
+      - age:
+        - *stinjul_zentoo
+        - *stinjul_wsl
+  - path_regex: hosts/common/secrets.yaml
+    key_groups:
+      - age:
+        - *stinjul_zentoo
