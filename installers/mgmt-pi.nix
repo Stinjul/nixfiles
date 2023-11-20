@@ -1,11 +1,9 @@
 { lib, ... }: {
 
-  imports = [
-    inputs.nixos-generators.nixosModules.sd-aarch64
-  ];
+  nixpkgs.hostPlatform = "aarch64-linux";
 
   users.extraUsers.nixos.openssh.authorizedKeys.keys = [
     (builtins.readFile ../home-manager/stinjul/ssh.pub)
   ];
-  services.sshd.enabled = true;
+  services.openssh.enable = true;
 }

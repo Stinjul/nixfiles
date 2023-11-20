@@ -41,7 +41,7 @@
 
   };
 
-  outputs = { self, nixpkgs, home-manager, ... }@inputs:
+  outputs = { self, nixpkgs, home-manager, nixos-generators, ... }@inputs:
     let
       inherit (self) outputs;
       lib = nixpkgs.lib // home-manager.lib;
@@ -59,9 +59,19 @@
       # Overlay for custom packages
       overlays = import ./overlays { inherit inputs; };
       # Custom modules
-      nixosModules = import ./modules/nixos;
+      # nixosModules = import ./modules/nixos;
       # Custom home-manager modules
-      homeManagerModules = import ./modules/home-manager;
+      # homeManagerModules = import ./modules/home-manager;
+      
+      # installers
+      mgmt-pi-installer = nixos-generators.nixosGenerate {
+        system = "aarch64-linux";
+        modules = [
+          ./installers/mgmt-pi.nix
+        ];
+
+        format = "sd-aarch64-installer";
+      };
 
       # 'nixos-rebuild --flake .#hostname'
       nixosConfigurations = {
@@ -72,10 +82,6 @@
         nixtop = nixpkgs.lib.nixosSystem {
           specialArgs = { inherit inputs outputs; };
           modules = [ ./hosts/nixtop ];
-        };
-        mgmt-pi-installer = nixpkgs.lib.nixosSystem {
-          specialArgs = { inherit inputs outputs; };
-          modules = [ ./installers/mgmt-pi ];
         };
         mgmt-pi-1 = nixpkgs.lib.nixosSystem {
           specialArgs = { inherit inputs outputs; };
