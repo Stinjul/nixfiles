@@ -1,6 +1,7 @@
 keys:
   - &stinjul_zentoo age17gj5x2w8c46lepd2j9vj592atxcfpg2dl59vwza4qfdje8yw6vsqh926gr
   - &stinjul_wsl age1hux2w96t957ym0m9q3y2hkfljs6mnsmp2sc86lvztf7emtdr29yq9hfae6
+  - &stinjul_nixtop age1syqdhere86l4d87jujju05e0sqqh6nqe5spjtthtnd2z7wvj7vjqv99hfm
 
 keychain:
   - &stinjul_wsl_chain >-
@@ -20,3 +21,4 @@ creation_rules:
     key_groups:
       - age:
         - *stinjul_zentoo
+        - *stinjul_nixtop
