@@ -59,9 +59,9 @@
       # Overlay for custom packages
       overlays = import ./overlays { inherit inputs; };
       # Custom modules
-      # nixosModules = import ./modules/nixos;
+      nixosModules = import ./modules/nixos;
       # Custom home-manager modules
-      # homeManagerModules = import ./modules/home-manager;
+      homeManagerModules = import ./modules/home-manager;
       
       # installers
       mgmt-pi-installer = nixos-generators.nixosGenerate {
