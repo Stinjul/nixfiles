@@ -3,6 +3,9 @@
     ./fish.nix
   ];
   home.packages = with pkgs; [
+    htop
+    ncdu
+
     unzip
 
     yubikey-personalization
