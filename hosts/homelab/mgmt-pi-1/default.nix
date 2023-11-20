@@ -4,8 +4,8 @@
 
     ./hardware-configuration.nix
 
-    ../common/global
-    ../common/users/stinjul
+    ../../common/global
+    ../../common/users/stinjul
   ];
 
   networking = {
