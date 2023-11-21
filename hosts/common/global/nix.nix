@@ -1,4 +1,4 @@
-{ lib, ... }: {
+{ config, lib, ... }: {
   nix = {
     settings = {
       trusted-users = [ "root" "@wheel" ];
@@ -16,4 +16,9 @@
       options = "--delete-older-than +3";
     };
   };
+  systemd.services.nix-gc.script = lib.mkForce ''
+    ${config.nix.package.out}/bin/nix-env --delete-generations +5
+    ${config.nix.package.out}/bin/nix-collect-garbage
+    ${config.nix.package.out}/bin/nix-store --optimise
+  '';
 }
