@@ -1,4 +1,4 @@
-{ inputs, outputs, ... }: {
+{ config, inputs, outputs, ... }: {
   imports = [
     inputs.sops-nix.nixosModules.sops
     ./fish.nix
@@ -8,7 +8,7 @@
   
   sops = {
     defaultSopsFile = ../secrets.yaml;
-    age.keyFile = "${config.xdg.configHome}/sops/age/keys.txt";
+    age.keyFile = "/var/lib/sops-nix/age-key.txt";
   };
 
   nixpkgs = {

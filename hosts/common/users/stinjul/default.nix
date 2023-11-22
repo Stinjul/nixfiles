@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{ config, pkgs, ... }: {
   users.mutableUsers = false;
   sops.secrets.stinjul-password.neededForUsers = true;
 
@@ -8,6 +8,6 @@
     shell = pkgs.fish;
     extraGroups = [ "wheel" ];
     openssh.authorizedKeys.keys = [ (builtins.readFile ../../../../home-manager/stinjul/ssh.pub) ];
-    packages = [ pkgs.home-manager ];
+    packages = [ pkgs.home-manager pkgs.kitty.terminfo ];
   };
 }

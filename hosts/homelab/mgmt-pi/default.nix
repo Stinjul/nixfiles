@@ -9,7 +9,6 @@
   ];
 
   networking = {
-    hostName = "mgmt-pi-1";
     useDHCP = true;
   };
 

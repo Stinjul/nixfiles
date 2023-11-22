@@ -85,7 +85,7 @@
         };
         mgmt-pi-1 = nixpkgs.lib.nixosSystem {
           specialArgs = { inherit inputs outputs; };
-          modules = [ ./hosts/homelab/mgmt-pi-1 ];
+          modules = [ ./hosts/homelab/mgmt-pi-1.nix ];
         };
       };
 
