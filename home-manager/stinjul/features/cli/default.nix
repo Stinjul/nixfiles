@@ -16,6 +16,7 @@
     argocd
     kustomize
     ksops
+    k3s
     terraform
   ];
 }
