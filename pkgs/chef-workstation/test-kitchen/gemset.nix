@@ -25,10 +25,10 @@
     platforms = [];
     source = {
       remotes = ["https://rubygems.org"];
-      sha256 = "1q5by0q1i443lds626cyq78jhzkwb6b1f8vcbv82q790q06vg1w9";
+      sha256 = "0087jwhqslfm3ygj507dmmdp3k0589j5jl54mkwgbabbwan7lzw2";
       type = "gem";
     };
-    version = "18.2.7";
+    version = "18.3.0";
   };
   concurrent-ruby = {
     groups = ["default"];
@@ -65,10 +65,10 @@
     platforms = [];
     source = {
       remotes = ["https://rubygems.org"];
-      sha256 = "1862ydmclzy1a0cjbvm8dz7847d9rch495ib0zb64y84d3xd4bkg";
+      sha256 = "1yvii03hcgqj30maavddqamqy50h7y6xcn2wcyq72wn823zl4ckd";
       type = "gem";
     };
-    version = "1.15.5";
+    version = "1.16.3";
   };
   gssapi = {
     dependencies = ["ffi"];
@@ -140,10 +140,10 @@
     platforms = [];
     source = {
       remotes = ["https://rubygems.org"];
-      sha256 = "1ma2hcz22ryqgwaxqf553yh3ixqa39jri1xnk39ikw3zr0ck0gwr";
+      sha256 = "175a98aifpn39vf3s2x7cfi8q78y8nzmdyq9a6k2g4xlpyg01gaq";
       type = "gem";
     };
-    version = "3.12.27";
+    version = "3.12.28";
   };
   mixlib-shellout = {
     dependencies = ["chef-utils"];
@@ -286,20 +286,20 @@
     platforms = [];
     source = {
       remotes = ["https://rubygems.org"];
-      sha256 = "00gy0j39i4qncgcgy3y29h9f96ylpy3zrylny459ihn4s3p6pj79";
+      sha256 = "0jjbfncfc41j50ibnndkcggndnbyppl08qhha50l491s3fq81ajh";
       type = "gem";
     };
-    version = "3.5.0";
+    version = "3.6.0";
   };
   thor = {
     groups = ["default"];
     platforms = [];
     source = {
       remotes = ["https://rubygems.org"];
-      sha256 = "0k7j2wn14h1pl4smibasw0bp66kg626drxb59z7rzflch99cd4rg";
+      sha256 = "1hx77jxkrwi66yvs10wfxqa8s25ds25ywgrrf66acm9nbfg7zp0s";
       type = "gem";
     };
-    version = "1.2.2";
+    version = "1.3.0";
   };
   tomlrb = {
     groups = ["default"];
@@ -379,10 +379,10 @@
     platforms = [];
     source = {
       remotes = ["https://rubygems.org"];
-      sha256 = "1gi82k102q7bkmfi7ggn9ciypn897ylln1jk9q67kjhr39fj043a";
+      sha256 = "1d0azx233nags5jx3fqyr23qa2rhgzbhv8pxp46dgbg1mpf82xky";
       type = "gem";
     };
-    version = "2.4.2";
+    version = "2.5.0";
   };
   unicode_utils = {
     groups = ["default"];
