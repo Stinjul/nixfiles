@@ -29,6 +29,7 @@
   xdg.portal = {
     enable = true;
     wlr.enable = true;
+    config.common.default = "*";
   };
 
   system.stateVersion = "23.11";
