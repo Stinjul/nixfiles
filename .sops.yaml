@@ -24,3 +24,9 @@ creation_rules:
         - *stinjul_zentoo
         - *stinjul_nixtop
         - *mgmt_pi
+  - path_regex: hosts/homelab/secrets.yaml
+    key_groups:
+      - age:
+        - *stinjul_zentoo
+        - *stinjul_nixtop
+        - *mgmt_pi
