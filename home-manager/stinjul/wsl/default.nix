@@ -11,7 +11,8 @@
     ./git.nix
   ];
 
-  home.packages = [
+  home.packages = with pkgs; [
+    vagrant-wsl
   ];
 
   sops = {
