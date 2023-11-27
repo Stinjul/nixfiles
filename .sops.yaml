@@ -1,6 +1,7 @@
 keys:
   - &stinjul_zentoo age17gj5x2w8c46lepd2j9vj592atxcfpg2dl59vwza4qfdje8yw6vsqh926gr
   - &stinjul_wsl age1hux2w96t957ym0m9q3y2hkfljs6mnsmp2sc86lvztf7emtdr29yq9hfae6
+  - &wsl age1lmmg0wlql6u48gzdul7qa2nadszaml8tefm5mp5r74yx0c0n7vts8drzcz
   - &stinjul_nixtop age1syqdhere86l4d87jujju05e0sqqh6nqe5spjtthtnd2z7wvj7vjqv99hfm
   - &mgmt_pi age1h996uvpeu3cl92sg20ygenurrf5z75yacym8qr2fa5eyv2cp6pqqkl9xnk
 
@@ -23,6 +24,7 @@ creation_rules:
       - age:
         - *stinjul_zentoo
         - *stinjul_nixtop
+        - *wsl
         - *mgmt_pi
   - path_regex: hosts/homelab/secrets.yaml
     key_groups:
