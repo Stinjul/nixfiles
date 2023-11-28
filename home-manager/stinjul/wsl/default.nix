@@ -13,6 +13,13 @@
 
   home.packages = with pkgs; [
     vagrant-wsl
+    chef-cli
+    cookstyle
+    knife
+    berkshelf
+    test-kitchen
+    inspec-bin
+    chef-vault
   ];
 
   sops = {
