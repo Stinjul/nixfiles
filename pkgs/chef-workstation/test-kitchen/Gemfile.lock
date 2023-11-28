@@ -15,6 +15,8 @@ GEM
       builder (>= 2.1.2)
       rexml (~> 3.0)
     httpclient (2.8.3)
+    kitchen-vagrant (1.14.2)
+      test-kitchen (>= 1.4, < 4)
     license-acceptance (2.1.13)
       pastel (~> 0.7)
       tomlrb (>= 1.2, < 3.0)
@@ -104,7 +106,8 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
-  test-kitchen!
+  kitchen-vagrant
+  test-kitchen
 
 BUNDLED WITH
    2.3.26

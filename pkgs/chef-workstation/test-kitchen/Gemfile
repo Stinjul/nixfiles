@@ -1,5 +1,3 @@
 source 'https://rubygems.org'
-
-source 'https://rubygems.org' do
-  gem 'test-kitchen'
-end
+gem 'kitchen-vagrant'
+gem 'test-kitchen'

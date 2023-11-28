@@ -102,6 +102,17 @@
     };
     version = "2.8.3";
   };
+  kitchen-vagrant = {
+    dependencies = ["test-kitchen"];
+    groups = ["default"];
+    platforms = [];
+    source = {
+      remotes = ["https://rubygems.org"];
+      sha256 = "1k6gip65jcch5fh2bx2sdgij6lp3cvcafiimgv22d348d208dlyg";
+      type = "gem";
+    };
+    version = "1.14.2";
+  };
   license-acceptance = {
     dependencies = ["pastel" "tomlrb" "tty-box" "tty-prompt"];
     groups = ["default"];
