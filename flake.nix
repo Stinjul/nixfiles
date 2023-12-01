@@ -87,6 +87,14 @@
           specialArgs = { inherit inputs outputs; };
           modules = [ ./hosts/homelab/mgmt-pi-1.nix ];
         };
+        mgmt-pi-2 = nixpkgs.lib.nixosSystem {
+          specialArgs = { inherit inputs outputs; };
+          modules = [ ./hosts/homelab/mgmt-pi-2.nix ];
+        };
+        mgmt-pi-3 = nixpkgs.lib.nixosSystem {
+          specialArgs = { inherit inputs outputs; };
+          modules = [ ./hosts/homelab/mgmt-pi-3.nix ];
+        };
       };
 
       # 'home-manager --flake .#stinjul@hostname'

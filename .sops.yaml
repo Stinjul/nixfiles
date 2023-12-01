@@ -3,7 +3,9 @@ keys:
   - &stinjul_wsl age1hux2w96t957ym0m9q3y2hkfljs6mnsmp2sc86lvztf7emtdr29yq9hfae6
   - &wsl age1lmmg0wlql6u48gzdul7qa2nadszaml8tefm5mp5r74yx0c0n7vts8drzcz
   - &stinjul_nixtop age1syqdhere86l4d87jujju05e0sqqh6nqe5spjtthtnd2z7wvj7vjqv99hfm
-  - &mgmt_pi age1h996uvpeu3cl92sg20ygenurrf5z75yacym8qr2fa5eyv2cp6pqqkl9xnk
+  - &mgmt_pi_1 age1h996uvpeu3cl92sg20ygenurrf5z75yacym8qr2fa5eyv2cp6pqqkl9xnk
+  - &mgmt_pi_2 age12ul5cq82uk78d7cjv89k64vakd4kkh3ejjy3ln4mvvmusklrjydqascekz
+  - &mgmt_pi_3 age1gmfgpdv6wl7upvmcm549wl9795aungu8d53yz729ye4krpgsz9tsqrmqn3
 
 keychain:
   - &stinjul_wsl_chain >-
@@ -12,6 +14,7 @@ keychain:
 
 
 creation_rules:
+  - age: *stinjul_zentoo
   - path_regex: home-manager/stinjul/global/secrets.yaml
     age: *stinjul_zentoo
   - path_regex: home-manager/stinjul/wsl/secrets.yaml
@@ -25,10 +28,14 @@ creation_rules:
         - *stinjul_zentoo
         - *stinjul_nixtop
         - *wsl
-        - *mgmt_pi
+        - *mgmt_pi_1
+        - *mgmt_pi_2
+        - *mgmt_pi_3
   - path_regex: hosts/homelab/secrets.yaml
     key_groups:
       - age:
         - *stinjul_zentoo
         - *stinjul_nixtop
-        - *mgmt_pi
+        - *mgmt_pi_1
+        - *mgmt_pi_2
+        - *mgmt_pi_3
