@@ -10,6 +10,7 @@
 
     yubikey-personalization
     yubikey-manager
+    yubikey-touch-detector
     age
     sops
 
