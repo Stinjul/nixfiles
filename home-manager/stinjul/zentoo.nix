@@ -3,47 +3,48 @@
     ./global
   ];
 
-  home.packages = [
-    pkgs.k6
-    pkgs.jmeter
-    pkgs.elixir_ls
-    pkgs.talosctl
-    pkgs.rnix-lsp
-    pkgs.prismlauncher
+  home.packages = with pkgs; [
+    k6
+    jmeter
+    elixir_ls
+    talosctl
+    rnix-lsp
+    prismlauncher
     pkgs.inputs.nixgl.nixGLIntel
-    pkgs.apache-directory-studio
-    pkgs.avalonia-ilspy
-    pkgs.devspace
-    pkgs.starsector
-    pkgs.font-manager
-    pkgs.bundix
-    pkgs.chef-cli
-    pkgs.cookstyle
-    pkgs.knife
-    pkgs.berkshelf
-    pkgs.test-kitchen
-    pkgs.inspec-bin
-    pkgs.chef-vault
-    pkgs.vault
-    pkgs.keystore-explorer
-    pkgs.jd-gui
-    pkgs.azure-cli
-    pkgs.nodePackages.cdktf-cli
-    pkgs.visualvm
-    pkgs.ventoy
-    pkgs.chromium
-    pkgs.globalprotect-openconnect
-    pkgs.payload-dumper-go
-    pkgs.robo3t
-    pkgs.r2modman
-    pkgs.gp-saml-gui
-    pkgs.grpc-client-cli
-    pkgs.trackma-full
-    pkgs.eww-wayland
-    pkgs.gdbgui
-    pkgs.yubikey-manager-qt
-    pkgs.yubikey-personalization-gui
-    pkgs.grpcurl
+    apache-directory-studio
+    avalonia-ilspy
+    devspace
+    starsector
+    font-manager
+    bundix
+    chef-cli
+    cookstyle
+    knife
+    berkshelf
+    test-kitchen
+    inspec-bin
+    chef-vault
+    vault
+    keystore-explorer
+    jd-gui
+    azure-cli
+    nodePackages.cdktf-cli
+    visualvm
+    ventoy
+    chromium
+    globalprotect-openconnect
+    payload-dumper-go
+    robo3t
+    r2modman
+    gp-saml-gui
+    grpc-client-cli
+    trackma-full
+    eww-wayland
+    gdbgui
+    yubikey-manager-qt
+    yubikey-personalization-gui
+    grpcurl
+    nixpkgs-fmt
   ];
 
   programs.fish = {

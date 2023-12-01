@@ -62,7 +62,7 @@
       nixosModules = import ./modules/nixos;
       # Custom home-manager modules
       homeManagerModules = import ./modules/home-manager;
-      
+
       # installers
       mgmt-pi-installer = nixos-generators.nixosGenerate {
         system = "aarch64-linux";
