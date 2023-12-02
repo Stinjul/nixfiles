@@ -18,11 +18,23 @@
       users = [ "deploy" ];
       commands = [
         {
+          command = "/run/current-system/sw/bin/env";
+          options = [ "NOPASSWD" ];
+        }
+        {
           command = "/run/current-system/sw/bin/nix-env";
           options = [ "NOPASSWD" ];
         }
         {
           command = "/nix/store/*/bin/switch-to-configuration";
+          options = [ "NOPASSWD" ];
+        }
+        {
+          command = "/nix/store/*/activate-rs";
+          options = [ "NOPASSWD" ];
+        }
+        {
+          command = "/run/current-system/sw/bin/rm /tmp/deploy-rs-canary-*";
           options = [ "NOPASSWD" ];
         }
         {

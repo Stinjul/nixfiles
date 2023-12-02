@@ -39,9 +39,14 @@
       inputs.nixpkgs-stable.follows = "nixpkgs";
     };
 
+    deploy-rs = {
+      url = "github:serokell/deploy-rs";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
   };
 
-  outputs = { self, nixpkgs, home-manager, nixos-generators, ... }@inputs:
+  outputs = { self, nixpkgs, home-manager, nixos-generators, deploy-rs, ... }@inputs:
     let
       inherit (self) outputs;
       lib = nixpkgs.lib // home-manager.lib;
@@ -121,5 +126,25 @@
           ];
         };
       };
+
+      deploy = {
+        sshUser = "deploy";
+        user = "root";
+        nodes = {
+          mgmt-pi-1 = {
+            hostname = "172.16.0.10";
+            profiles.system.path = deploy-rs.lib.aarch64-linux.activate.nixos self.nixosConfigurations.mgmt-pi-1;
+          };
+          mgmt-pi-2 = {
+            hostname = "172.16.0.11";
+            profiles.system.path = deploy-rs.lib.aarch64-linux.activate.nixos self.nixosConfigurations.mgmt-pi-2;
+          };
+          mgmt-pi-3 = {
+            hostname = "172.16.0.12";
+            profiles.system.path = deploy-rs.lib.aarch64-linux.activate.nixos self.nixosConfigurations.mgmt-pi-3;
+          };
+        };
+      };
+      checks = builtins.mapAttrs (system: deployLib: deployLib.deployChecks self.deploy) deploy-rs.lib;
     };
 }
