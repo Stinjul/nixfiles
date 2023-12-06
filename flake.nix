@@ -60,6 +60,7 @@
     {
       # Custom packages
       packages = forEachSystem (pkgs: import ./pkgs { inherit pkgs; });
+      devShells = forEachSystem (pkgs: import ./shell.nix { inherit pkgs; });
 
       # Overlay for custom packages
       overlays = import ./overlays { inherit inputs; };

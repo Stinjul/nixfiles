@@ -19,7 +19,8 @@
       useDHCP = true;
     };
     firewall = {
-      enable = true;
+      # We switched to cilium Host FW
+      enable = false;
       # cilium does not like this, disable it
       checkReversePath = false;
       allowedTCPPorts = [
@@ -39,7 +40,7 @@
     enable = true;
     role = "server";
     tokenFile = config.sops.secrets.k3s-token.path;
-    extraFlags = "--disable local-storage --disable metrics-server --disable traefik --disable servicelb --flannel-backend=none --disable-network-policy --disable-helm-controller --tls-san kube.k3s-mgmt.stinjul.com --node-name ${config.networking.hostName}";
+    extraFlags = "--disable local-storage --disable metrics-server --disable traefik --disable servicelb --flannel-backend=none --disable-network-policy --disable-helm-controller --disable-kube-proxy --tls-san kube.k3s-mgmt.stinjul.com --node-name ${config.networking.hostName}";
     # serverAddr = "https://kube.k3s-mgmt.stinjul.com:6443";
   };
 
