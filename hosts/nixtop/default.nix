@@ -9,6 +9,7 @@
     ../common/global
     ../common/users/stinjul
     ../common/features/pipewire.nix
+    ../common/features/libvirtd.nix
   ];
 
   networking = {
