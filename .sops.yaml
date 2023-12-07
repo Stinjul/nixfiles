@@ -3,6 +3,7 @@ keys:
   - &stinjul_wsl age1hux2w96t957ym0m9q3y2hkfljs6mnsmp2sc86lvztf7emtdr29yq9hfae6
   - &wsl age1lmmg0wlql6u48gzdul7qa2nadszaml8tefm5mp5r74yx0c0n7vts8drzcz
   - &stinjul_nixtop age1syqdhere86l4d87jujju05e0sqqh6nqe5spjtthtnd2z7wvj7vjqv99hfm
+  - &nixtop age1tq2qlwxj8fvc5hsjardwzga536t942mwnx4r8hr9r6k2fa08ra0st8ckvm
   - &mgmt_pi_1 age1h996uvpeu3cl92sg20ygenurrf5z75yacym8qr2fa5eyv2cp6pqqkl9xnk
   - &mgmt_pi_2 age12ul5cq82uk78d7cjv89k64vakd4kkh3ejjy3ln4mvvmusklrjydqascekz
   - &mgmt_pi_3 age1gmfgpdv6wl7upvmcm549wl9795aungu8d53yz729ye4krpgsz9tsqrmqn3
@@ -14,9 +15,11 @@ keychain:
 
 
 creation_rules:
-  - age: *stinjul_zentoo
   - path_regex: home-manager/stinjul/global/secrets.yaml
-    age: *stinjul_zentoo
+    key_groups:
+      - age:
+        - *stinjul_zentoo
+        - *stinjul_nixtop
   - path_regex: home-manager/stinjul/wsl/secrets.yaml
     key_groups:
       - age:
@@ -27,6 +30,7 @@ creation_rules:
       - age:
         - *stinjul_zentoo
         - *stinjul_nixtop
+        - *nixtop
         - *wsl
         - *mgmt_pi_1
         - *mgmt_pi_2
@@ -39,3 +43,4 @@ creation_rules:
         - *mgmt_pi_1
         - *mgmt_pi_2
         - *mgmt_pi_3
+  - age: *stinjul_zentoo
