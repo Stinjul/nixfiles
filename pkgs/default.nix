@@ -8,8 +8,12 @@
   inspec-bin = pkgs.callPackage ./chef-workstation/inspec-bin { };
   chef-vault = pkgs.callPackage ./chef-workstation/chef-vault { };
   vagrant-wsl = pkgs.callPackage ./vagrant-wsl.nix { };
-  # starsector-mod-manager-rust = pkgs.callPackage ./starsector-mod-manager-rust { };
   ksops = pkgs.callPackage ./ksops.nix { };
   trackma-full = pkgs.trackma.override { withQT = true; };
   eww-wayland = pkgs.eww.override { withWayland = true; };
+
+
+  # Disabled/Unifished packages
+  # nuget-to-nix_7 = pkgs.nuget-to-nix.override { dotnet-sdk = pkgs.dotnet-sdk_7; };
+  # powershell-editor-services = pkgs.callPackage ./powershell-editor-services { };
 }
