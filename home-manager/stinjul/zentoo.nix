@@ -63,6 +63,7 @@
         set -x _JAVA_OPTIONS "-Dawt.useSystemAAFontSettings=on"
         set -x XDG_CURRENT_DESKTOP "sway"
         set -x NIX_PATH $HOME/.nix-defexpr/channels
+        set -x VAGRANT_DEFAULT_PROVIDER libvirt
     
         fish_vi_key_bindings
         fish_add_path $HOME/go/bin/
