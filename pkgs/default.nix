@@ -1,4 +1,4 @@
-{ pkgs ? import <nixpkgs> { } }: rec {
+{ pkgs ? import <nixpkgs> { } }: {
   # old-zstd = pkgs.callPackage ./zstd { };
   cookstyle = pkgs.callPackage ./chef-workstation/cookstyle { };
   knife = pkgs.callPackage ./chef-workstation/knife { };
@@ -11,6 +11,7 @@
   ksops = pkgs.callPackage ./ksops.nix { };
   trackma-full = pkgs.trackma.override { withQT = true; };
   eww-wayland = pkgs.eww.override { withWayland = true; };
+  vagrant_2_4 = pkgs.callPackage ./vagrant_2_4 { };
 
 
   # Disabled/Unifished packages
