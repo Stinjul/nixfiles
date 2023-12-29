@@ -45,6 +45,7 @@
     yubikey-personalization-gui
     grpcurl
     nixpkgs-fmt
+    discord-mod
   ];
 
   programs.fish = {
