@@ -16,6 +16,7 @@
 
     argocd
     kustomize
+    k9s
     ksops
     k3s
     terraform
