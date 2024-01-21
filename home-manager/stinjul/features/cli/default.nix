@@ -1,10 +1,12 @@
 { pkgs, ... }: {
   imports = [
     ./fish.nix
+    ./ranger.nix
   ];
   home.packages = with pkgs; [
     htop
     ncdu
+    ranger
 
     unzip
 
