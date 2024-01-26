@@ -1,4 +1,4 @@
-{ config, lib, ... }: {
+{ inputs, config, lib, ... }: {
   nix = {
     settings = {
       trusted-users = [ "root" "@wheel" ];
@@ -15,6 +15,7 @@
       # Keep the last 3 generations
       options = "--delete-older-than +3";
     };
+    registry = lib.mapAttrs (_: value: { flake = value; }) inputs;
   };
   systemd.services.nix-gc.script = lib.mkForce ''
     ${config.nix.package.out}/bin/nix-env --delete-generations +5
