@@ -25,4 +25,13 @@
     stateVersion = "23.05";
   };
 
+  nix.registry = {
+    stinjul = {
+      from = { type = "indirect"; id = "stinjul"; };
+      flake = {
+        outPath = "/home/stinjul/Git_Projects/nixfiles";
+      };
+    };
+  };
+
 }
