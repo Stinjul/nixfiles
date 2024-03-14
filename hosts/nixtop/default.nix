@@ -8,6 +8,7 @@
 
     ../common/global
     ../common/users/stinjul
+    ../common/users/deploy
     ../common/features/pipewire.nix
     ../common/features/libvirtd.nix
   ];
