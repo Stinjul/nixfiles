@@ -132,6 +132,10 @@
         sshUser = "deploy";
         user = "root";
         nodes = {
+          nixtop = {
+            hostname = "192.168.1.4";
+            profiles.system.path = deploy-rs.lib.x86_64-linux.activate.nixos self.nixosConfigurations.nixtop;
+          };
           mgmt-pi-1 = {
             hostname = "172.16.0.10";
             profiles.system.path = deploy-rs.lib.aarch64-linux.activate.nixos self.nixosConfigurations.mgmt-pi-1;
