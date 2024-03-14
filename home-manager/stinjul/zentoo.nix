@@ -3,12 +3,20 @@
     ./global
   ];
 
+  nix = {
+    package= pkgs.nix;
+    settings = {
+      experimental-features = [ "nix-command" "flakes" ];
+      max-jobs = "auto";
+      cores = 24;
+    };
+  };
+
   home.packages = with pkgs; [
     k6
     jmeter
     elixir_ls
     talosctl
-    rnix-lsp
     prismlauncher
     pkgs.inputs.nixgl.nixGLIntel
     apache-directory-studio
@@ -39,7 +47,7 @@
     gp-saml-gui
     grpc-client-cli
     trackma-full
-    eww-wayland
+    eww
     gdbgui
     yubikey-manager-qt
     yubikey-personalization-gui

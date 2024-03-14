@@ -185,7 +185,15 @@ local servers = {
 	},
 	omnisharp = {},
 	r_language_server = {},
-	rnix = {},
+	nil_ls = {
+        settings = {
+            ["nil"] = {
+                formatting = {
+                    command = { "nixpkgs-fmt" },
+                },
+            },
+        },
+    },
 	rust_analyzer = {},
 	bashls = {},
 	solargraph = {},

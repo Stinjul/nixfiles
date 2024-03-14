@@ -10,7 +10,6 @@
   vagrant-wsl = pkgs.callPackage ./vagrant-wsl.nix { };
   ksops = pkgs.callPackage ./ksops.nix { };
   trackma-full = pkgs.trackma.override { withQT = true; };
-  eww-wayland = pkgs.eww.override { withWayland = true; };
   discord-mod = pkgs.discord.override { withOpenASAR = true; withVencord = true; };
   vagrant_2_4 = pkgs.callPackage ./vagrant_2_4 { };
 

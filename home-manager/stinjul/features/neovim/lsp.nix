@@ -14,7 +14,7 @@
       omnisharp-roslyn
       # powershell_es
       nodePackages.pyright
-      rnix-lsp
+      nil
       rPackages.languageserver
       rust-analyzer
       rubyPackages_3_2.solargraph
