@@ -1,0 +1,42 @@
+@theme "/dev/null"
+
+* {{
+    background-color: @background;
+    background: {background};
+    foreground: {color3};
+    border-color: {color3};
+    spacing: 2;
+    font: "Iosevka Nerd Font Mono 50";
+    text-color: @foreground;
+}}
+
+window {{
+  children: [ listview ];
+  padding: 1ch;
+  width: 17ch;
+  background-color: @background;
+}}
+
+listview {{
+  layout: horizontal;
+  spacing: 1ch;
+  lines: 4;
+}}
+
+element {{
+  padding: 0.5ch 1ch;
+  background-color: @background;
+  /*border-radius: 2ch;*/
+}}
+
+element-text, element-icon {{
+    background-color: inherit;
+    text-color:       inherit;
+}}
+
+element selected {{
+  background-color: @foreground;
+  text-color: @background;
+}}
+
+/* vim:ft=css */

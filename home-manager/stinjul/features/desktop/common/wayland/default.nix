@@ -2,6 +2,7 @@
   imports = [
     ./kitty.nix
     ./rofi.nix
+    ./ags
   ];
   home.packages = with pkgs; [
     wayvnc

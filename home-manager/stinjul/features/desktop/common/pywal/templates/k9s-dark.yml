@@ -1,0 +1,101 @@
+foreground: &foreground "{foreground}"
+background: &background "{background}"
+color0: &color0 "{color0}"
+color1: &color1 "{color1}"
+color2: &color2 "{color2}"
+color3: &color3 "{color3}"
+color4: &color4 "{color4}"
+color5: &color5 "{color5}"
+color6: &color6 "{color6}"
+color7: &color7 "{color7}"
+color8: &color8 "{color8}"
+color9: &color9 "{color9}"
+color10: &color10 "{color10}"
+color11: &color11 "{color11}"
+color12: &color12 "{color12}"
+color13: &color13 "{color13}"
+color14: &color14 "{color14}"
+color15: &color15 "{color15}"
+
+k9s:
+  body:
+    fgColor: *color6
+    bgColor: *background
+    logoColor: *color3
+  info:
+    fgColor: *foreground
+    sectionColor: *color6
+  dialog:
+    fgColor: *color6
+    bgColor: *background
+    buttonFgColor: *background
+    buttonBgColor: *color6
+    buttonFocusFgColor: *foreground
+    buttonFocusBgColor: *color5
+    labelFgColor: *color5
+    fieldFgColor: *color6
+  frame:
+    border:
+      fgColor: *color8
+      focusColor: *color3
+    menu:
+      fgColor: *foreground
+      keyColor: *color6
+      numKeyColor: *color1
+    crumbs:
+      fgColor: *background
+      bgColor: *color3
+      activeColor: *color3
+    status:
+      newColor: *color6
+      modifyColor: *color2
+      addColor: *color4
+      errorColor: *color1
+      pendingColor: *color8
+      highlightcolor: *color3
+      killColor: *color5
+      completedColor: *color7
+    title:
+      fgColor: *color3
+      bgColor: *background
+      highlightColor: *color1
+      counterColor: *foreground
+      filterColor: *color4
+  views:
+    # Charts skins...
+    charts:
+      bgColor: *background
+      defaultDialColors:
+        - *color2
+        - *color1
+      defaultChartColors:
+        - *color2
+        - *color1
+      dialBgColor: *color0
+      chartBgColor: *color0
+    table:
+      fgColor: *color2
+      bgColor: *background
+      cursorFgColor: *background
+      cursorBgColor: *color3
+      markColor: *color1
+      header:
+        fgColor: *foreground
+        bgColor: *background
+        sorterColor: *color3
+    xray:
+      fgColor: *color6
+      bgColor: *background
+      cursorColor: *color3
+      graphicColor: *color3
+      showIcons: false
+    yaml:
+      keyColor: *color6
+      colonColor: *foreground
+      valueColor: *foreground
+    logs:
+      fgColor: *foreground
+      bgColor: *background
+      indicator:
+        fgColor: *color6
+        bgColor: *background

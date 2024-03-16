@@ -4,11 +4,15 @@
     ../common/wayland
 
     #./init.nix
+    ./binds.nix
+    ./rules.nix
   ];
 
   wayland.windowManager.hyprland = {
     enable = true;
     package = pkgs.inputs.hyprland.hyprland;
+
+    sourceFirst = true;
 
     settings = {
       general = {
@@ -33,16 +37,6 @@
           ignore_opacity = true;
         };
       };
-
-
-      bind =
-        let
-          mainmod = "SUPER";
-          terminal = config.home.sessionVariables.TERMINAL;
-        in
-        [
-          "${mainmod},Return,exec,${terminal}"
-        ];
     };
   };
 
