@@ -113,7 +113,7 @@
           pkgs = nixpkgs.legacyPackages.x86_64-linux; # Home-manager requires 'pkgs' instance
           extraSpecialArgs = { inherit inputs outputs; };
           modules = [
-            ./home-manager/stinjul/zentoo.nix
+            ./home-manager/stinjul/zentoo
           ];
         };
         "stinjul@wsl" = home-manager.lib.homeManagerConfiguration {
