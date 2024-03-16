@@ -8,4 +8,5 @@
     yubikey-manager-qt
     yubikey-personalization-gui
   ];
+  xdg.portal.enable = true;
 }

@@ -1,10 +1,13 @@
 { config, inputs, outputs, ... }: {
   imports = [
     inputs.sops-nix.nixosModules.sops
+    inputs.home-manager.nixosModules.home-manager
     ./fish.nix
     ./nix.nix
     ./openssh.nix
   ];
+
+  home-manager.extraSpecialArgs = { inherit inputs outputs; };
   
   sops = {
     defaultSopsFile = ../secrets.yaml;

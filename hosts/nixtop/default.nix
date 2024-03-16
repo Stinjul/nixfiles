@@ -11,6 +11,7 @@
     ../common/users/deploy
     ../common/features/pipewire.nix
     ../common/features/libvirtd.nix
+    ../common/features/greetd.nix
   ];
 
   networking = {
