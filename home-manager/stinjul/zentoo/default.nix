@@ -1,6 +1,7 @@
 { inputs, outputs, pkgs, ... }: {
   imports = [
-    ./global
+    ../global
+    ./ags.nix
   ];
 
   nix = {
@@ -32,7 +33,7 @@
     test-kitchen
     inspec-bin
     chef-vault
-    vault
+    #vault
     keystore-explorer
     jd-gui
     azure-cli
@@ -54,6 +55,8 @@
     grpcurl
     nixpkgs-fmt
     discord-mod
+    bun
+    (ollama.override { acceleration = "rocm"; })
   ];
 
   programs.fish = {

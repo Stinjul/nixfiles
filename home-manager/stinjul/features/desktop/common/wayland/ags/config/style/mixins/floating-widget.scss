@@ -1,0 +1,8 @@
+@mixin floating-widget {
+    margin: max($spacing, 8px);
+    border: $border-width solid $popup-border-color;
+    background-color: $bg;
+    color: $fg;
+    border-radius: $popup-radius;
+    padding: $popup-padding;
+}

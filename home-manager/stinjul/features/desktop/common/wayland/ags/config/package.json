@@ -1,0 +1,13 @@
+{
+    "name": "ags-config",
+    "version": "1.0.0",
+    "description": "AGS",
+    "main": "config.js",
+    "author": "Stinjul",
+    "devDependencies": {
+        "eslint": "^8.44.0",
+        "@typescript-eslint/eslint-plugin": "^5.33.0",
+        "@typescript-eslint/parser": "^5.33.0",
+        "typescript": "^5.3.3"
+    }
+}

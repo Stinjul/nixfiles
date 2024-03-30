@@ -1,0 +1,17 @@
+$bar-spacing: $spacing * .3;
+
+@mixin bar-button() {
+    @include button;
+    >* {
+        margin: $bar-spacing;
+        padding: $padding * 0.4 $padding * 0.8;
+    }
+}
+
+.bar {
+    background-color: $bg;
+
+    .bar-button {
+        @include bar-button;
+    }
+}

@@ -1,0 +1,43 @@
+@mixin notification() {
+    .content {
+        .title {
+            margin-right: $spacing;
+            color: $fg;
+            font-size: 1.1em;
+        }
+
+        .time {
+            color: transparentize($fg, .2);
+        }
+
+        .description {
+            font-size: .9em;
+            color: transparentize($fg, .2);
+        }
+    }
+
+    button.close-button { 
+        @include button();
+        margin-left: $spacing / 2;
+        border-radius: $radius*0.8;
+        min-width: 1.2em;
+        min-height: 1.2em;
+
+        &:hover {
+            background-color: transparentize($error-bg, .2);
+        }
+
+        &:active {
+            background-image: none;
+            background-color: $error-bg;
+        }
+    }
+}
+
+window.notifications {
+    .notification {
+        @include notification;
+        @include floating-widget;
+        border-radius: $radius;
+    }
+}
