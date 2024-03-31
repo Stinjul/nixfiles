@@ -43,7 +43,7 @@ async function resetCss() {
         const fd = await sh(`fd ".scss" ${App.configDir}`)
         const files = fd.split(/\s+/).map(f => `@import '${f}';`)
         const scss = [`@import '${varfile}';`, ...files].join("\n")
-        const css = await bash`echo "${scss}" | sass --scss -C --stdin`
+        const css = await bash`echo "${scss}" | sass --stdin`
 
         App.applyCss(css, true)
     } catch (error) {
