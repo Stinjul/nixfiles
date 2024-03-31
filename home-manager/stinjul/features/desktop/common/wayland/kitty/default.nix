@@ -4,6 +4,9 @@
       TERMINAL = "kitty -1";
     };
   };
+  xdg.configFile."kitty/scratchpad.session" = {
+    source = ./scratchpad.session;
+  };
   programs.kitty = {
     enable = true;
     font = {
@@ -12,6 +15,7 @@
     };
     settings = {
         window_padding = 10;
+        background_opacity = "0.8";
     };
   };
 }

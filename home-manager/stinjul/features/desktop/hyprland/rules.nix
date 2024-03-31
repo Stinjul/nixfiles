@@ -8,5 +8,12 @@
       "workspace 8,class:^[Ss]team$"
       "workspace 9,class:^discord$"
     ];
+    workspace = 
+    let
+        terminal = config.home.sessionVariables.TERMINAL;
+    in
+    [
+        "special:scratchpad, gapsout:20, on-created-empty:${terminal} --class dropdown --session ~/.config/kitty/scratchpad.session --override background_opacity=1"
+    ];
   };
 }

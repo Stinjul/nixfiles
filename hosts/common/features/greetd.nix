@@ -5,6 +5,10 @@ let
   # vars = ''XDG_DATA_DIRS="$XDG_DATA_DIRS:${lib.concatStringsSep ":" homeShares}" GTK_USE_PORTAL=0'';
 
   sway-cmd = cmd: "${pkgs.dbus}/bin/dbus-run-session ${lib.getExe pkgs.sway} --unsupported-gpu --config ${pkgs.writeText "sway.config" ''
+    input "type:keyboard" {
+        xkb_layout be,us
+        xkb_numlock enabled
+    }
     input "type:touchpad" {
       tap enabled
     }
