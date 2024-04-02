@@ -1,6 +1,6 @@
 { pkgs, symlinkJoin, ... }: symlinkJoin {
   name = "vagrant-wsl";
-  paths = [ pkgs.vagrant ];
+  paths = [ (pkgs.vagrant.overrideAttrs (final: prev: { doInstallCheck = false; })) ];
 
   buildInputs = [ pkgs.makeWrapper ];
   postBuild = ''
