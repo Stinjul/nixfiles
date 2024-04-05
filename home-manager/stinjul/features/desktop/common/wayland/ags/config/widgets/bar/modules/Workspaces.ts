@@ -17,13 +17,22 @@ function Workspaces(monitor: number) {
 
     return Widget.Box({
         class_name: "workspaces",
-        children: Utils.watch(
-            workspaces(),
-            [
-                [hyprland, "workspace-added"],
-                [hyprland, "workspace-removed"],
-            ],
-            () => workspaces()),
+        // Use this is workspace-moved becomes a thing
+        // children: Utils.watch(
+        //     workspaces(),
+        //     [
+        //         [hyprland, "workspace-added"],
+        //         [hyprland, "workspace-removed"],
+        //     ],
+        //     () => workspaces()),
+        children: workspaces(),
+        setup: self => {
+            self.hook(hyprland, (self, event) => {
+                if (['createworkspace', 'destroyworkspace', 'moveworkspace'].includes(event)) {
+                    self.children = workspaces()
+                }
+            }, "event")
+        },
     })
 }
 
