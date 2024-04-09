@@ -29,8 +29,17 @@
       enable = true;
       matchBlocks = {
         zentoo = {
-            host = "10.8.0.1";
-            identityFile = "~/.ssh/id_ed25519";
+          host = "10.8.0.1";
+          identityFile = "~/.ssh/id_ed25519";
+          localForwards = [
+            {
+              bind.port = 5900;
+              host = {
+                address = "127.0.0.1";
+                port = 5900;
+              };
+            }
+          ];
         };
       };
     };
