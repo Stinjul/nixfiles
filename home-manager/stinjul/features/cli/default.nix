@@ -16,6 +16,7 @@
     yubikey-touch-detector
     age
     sops
+    wireguard-tools
 
     argocd
     kustomize
