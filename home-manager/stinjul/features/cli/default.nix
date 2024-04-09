@@ -7,6 +7,7 @@
     htop
     ncdu
     ranger
+    sshfs
 
     unzip
 
