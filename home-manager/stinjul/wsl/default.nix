@@ -25,6 +25,14 @@
   };
 
   programs = {
-    ssh.enable = true;
+    ssh = {
+      enable = true;
+      matchBlocks = {
+        zentoo = {
+            host = "10.8.0.1";
+            identityFile = "~/.ssh/id_ed25519";
+        };
+      };
+    };
   };
 }
