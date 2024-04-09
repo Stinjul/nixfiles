@@ -9,6 +9,8 @@
     ../common/features/pipewire.nix
   ];
 
+  home-manager.users.stinjul = import ../../home-manager/stinjul/wsl;
+
   wsl = {
     enable = true;
     #automountPath = "/mnt";

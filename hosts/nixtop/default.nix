@@ -13,6 +13,8 @@
     ../common/features/libvirtd.nix
     ../common/features/greetd.nix
   ];
+  
+  home-manager.users.stinjul = import ../../home-manager/stinjul/nixtop.nix;
 
   networking = {
     hostName = "nixtop";

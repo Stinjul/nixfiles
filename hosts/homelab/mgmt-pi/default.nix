@@ -9,6 +9,8 @@
     ../../common/users/deploy
   ];
 
+  home-manager.users.stinjul = import ../../../home-manager/stinjul/headless-generic.nix;
+
   sops.secrets.k3s-token.sopsFile = ../secrets.yaml;
   # man-db is slow as fuck when "cross"-compiling via qemu binfmt, we don't need it on these machines anyway
   documentation.man.man-db.enable = false;
