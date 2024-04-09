@@ -1,5 +1,5 @@
 { config, pkgs, ... }: {
-  home-manager.users.stinjul = import ../../../../home-manager/stinjul/${config.networking.hostName};
+  # home-manager.users.stinjul = import ../../../../home-manager/stinjul/${config.networking.hostName};
 
   users.mutableUsers = false;
   sops.secrets.stinjul-password.neededForUsers = true;
