@@ -1,45 +1,72 @@
-{ config, pkgs, ... }:
+{ inputs, config, pkgs, lib, ... }:
 {
   imports = [
-    ./lsp.nix
-    ./ui.nix
-    ./syntax.nix
-    ./testing.nix
-  ];
-  home.sessionVariables.EDITOR = "nvim";
+    inputs.nixvim.homeManagerModules.nixvim
 
-  programs.neovim = {
+    ./lsp.nix
+    ./efmls.nix
+    ./cmp.nix
+    ./dap.nix
+    ./neotest.nix
+    ./opts.nix
+  ];
+
+  programs.nixvim = {
     enable = true;
-    plugins = with pkgs.vimPlugins; [
+
+    globals = {
+      mapleader = " ";
+      maplocalleader = " ";
+    };
+
+    extraPlugins = with pkgs.vimPlugins; [
+      vim-argwrap
+    ];
+
+    keymaps = [
       {
-        plugin = neodev-nvim;
-        type = "lua";
-      }
-      {
-        plugin = vim-argwrap;
-        type = "lua";
-      }
-      {
-        plugin = vim-grammarous;
-        type = "lua";
-      }
-      {
-        plugin = nvim-surround;
-        type = "lua";
-        config = ''
-          require("nvim-surround").setup()
-        '';
-      }
-      {
-        plugin = editorconfig-nvim;
-        type = "lua";
-      }
-      {
-        plugin = neorg;
-        type = "lua";
-        config = builtins.readFile (./lua/neorg.lua);
+        mode = [ "n" ];
+        key = "<leader>a";
+        action = "<cmd>ArgWrap<CR>";
+        options = {
+          silent = true;
+          noremap = true;
+        };
       }
     ];
-    extraLuaConfig = builtins.readFile (./lua/init.lua);
+
+    editorconfig.enable = true;
+
+    plugins = {
+      treesitter.enable = true;
+      lualine = {
+        enable = true;
+        theme = "16color";
+      };
+      gitsigns.enable = true;
+      diffview.enable = true;
+      neogit.enable = true;
+
+      luasnip.enable = true;
+      surround.enable = true;
+
+      coverage.enable = true;
+      telescope.enable = true;
+      trouble.enable = true;
+
+      # TODO: wait for https://github.com/NixOS/nixpkgs/pull/302442
+      # neorg = {
+      #   enable = true;
+      #   modules = {
+      #     "core.defaults" = { __empty = null; };
+      #     "core.completion" = {
+      #       config = {
+      #         engine = "nvim-cmp";
+      #       };
+      #     };
+      #   };
+      # };
+    };
+
   };
 }

@@ -1,90 +1,43 @@
-{ pkgs, ... }: {
-  programs.neovim = {
-    extraPackages = with pkgs; [
-      ## LSP
-      nodePackages.bash-language-server
-      efm-langserver
-      elixir-ls
-      fsautocomplete
-      vscode-langservers-extracted # html,css,json
-      gopls
-      jdt-language-server
-      lemminx
-      lua-language-server
-      omnisharp-roslyn
-      # powershell_es
-      nodePackages.pyright
-      nil
-      rPackages.languageserver
-      rust-analyzer
-      rubyPackages_3_2.solargraph
-      # sql-language-server
-      # templ
-      terraform-ls
-      nodePackages.typescript-language-server
-      nodePackages.vim-language-server
-      yaml-language-server
+{
+  programs.nixvim.plugins.lsp = {
+    enable = true;
+    keymaps = {
+      diagnostic = { };
+      lspBuf = {
+        "gD" = "declaration";
+        "gd" = "definition";
+        "K" = "hover";
+        "gi" = "implementation";
+        "<leader>rn" = "rename";
+        "<leader>ca" = "code_action";
+        "<leader>f" = "format";
+      };
+    };
 
-      ## DAP
-      lldb
-      # elixir debugger is part of ls
-    ];
-    plugins = with pkgs.vimPlugins; [
-      {
-        plugin = luasnip;
-        type = "lua";
-      }
-      {
-        plugin = cmp-nvim-lsp;
-        type = "lua";
-      }
-      {
-        plugin = cmp-path;
-        type = "lua";
-      }
-      {
-        plugin = cmp_luasnip;
-        type = "lua";
-      }
-      {
-        plugin = nvim-cmp;
-        type = "lua";
-        config = builtins.readFile (./lua/cmp.lua);
-      }
-      {
-        plugin = mason-nvim;
-        type = "lua";
-        config = ''
-          require("mason").setup()
-        '';
-      }
-      ## Missing some servers atm
-      {
-        plugin = mason-lspconfig-nvim;
-        type = "lua";
-      }
-      {
-        plugin = efmls-configs-nvim;
-        type = "lua";
-      }
-      {
-        plugin = nvim-lspconfig;
-        type = "lua";
-        config = builtins.readFile (./lua/lsp.lua);
-      }
-      {
-        plugin = nvim-dap-ui;
-        type = "lua";
-      }
-      # {
-      #   plugin = mason-nvim-dap-nvim;
-      #   type = "lua";
-      # }
-      {
-        plugin = nvim-dap;
-        type = "lua";
-        config = builtins.readFile (./lua/dap.lua);
-      }
-    ];
+    servers = {
+      lua-ls.enable = true;
+      pyright.enable = true;
+      cssls.enable = true;
+      elixirls.enable = true;
+      eslint.enable = true;
+      gopls.enable = true;
+      templ.enable = true;
+      html.enable = true;
+      java-language-server.enable = true;
+      jsonls.enable = true;
+      # nil_ls.enable = true;
+      nixd.enable = true;
+      omnisharp.enable = true;
+      # r_language_server
+      bashls.enable = true;
+      solargraph.enable = true;
+      sqls.enable = true;
+      terraformls.enable = true;
+      tsserver.enable = true;
+      lemminx.enable = true;
+      yamlls.enable = true;
+      efm.enable = true;
+      ltex.enable = true;
+    };
   };
 }

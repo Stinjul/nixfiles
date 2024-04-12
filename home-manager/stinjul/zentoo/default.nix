@@ -1,6 +1,8 @@
 { inputs, outputs, pkgs, ... }: {
   imports = [
     ../global
+    ../features/neovim
+
     ./ags.nix
   ];
 
