@@ -1,4 +1,7 @@
 {
+  imports = [
+    ./jsonls.nix
+  ];
   programs.nixvim.plugins.lsp = {
     enable = true;
     keymaps = {
@@ -24,7 +27,7 @@
       templ.enable = true;
       html.enable = true;
       java-language-server.enable = true;
-      jsonls.enable = true;
+      # jsonls.enable = true;
       # nil_ls.enable = true;
       nixd.enable = true;
       omnisharp.enable = true;

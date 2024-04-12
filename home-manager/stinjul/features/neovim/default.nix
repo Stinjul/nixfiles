@@ -3,7 +3,7 @@
   imports = [
     inputs.nixvim.homeManagerModules.nixvim
 
-    ./lsp.nix
+    ./lsp
     ./efmls.nix
     ./cmp.nix
     ./dap.nix
