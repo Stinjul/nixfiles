@@ -1,4 +1,4 @@
-{ inputs, outputs, pkgs, ... }: {
+{ pkgs, lib, ... }: {
   imports = [
     ../global
     ../features/neovim
@@ -15,16 +15,18 @@
     };
   };
 
+  systemd.user.enable = false;
+  home.activation.reloadSystemd = lib.mkForce "";
+
   home.packages = with pkgs; [
     k6
-    jmeter
+    #jmeter
     elixir_ls
     talosctl
     prismlauncher
-    pkgs.inputs.nixgl.nixGLIntel
+    inputs.nixgl.nixGLIntel
     apache-directory-studio
     avalonia-ilspy
-    devspace
     starsector
     font-manager
     bundix
@@ -43,14 +45,11 @@
     visualvm
     ventoy
     chromium
-    globalprotect-openconnect
     payload-dumper-go
     robo3t
     r2modman
-    gp-saml-gui
     grpc-client-cli
     trackma-full
-    eww
     gdbgui
     yubikey-manager-qt
     yubikey-personalization-gui

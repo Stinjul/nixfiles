@@ -1,4 +1,4 @@
-{ inputs, outputs, lib, config, pkgs, ... }: {
+{ outputs, ... }: {
   imports = [
     ../features/cli
   ] ++ (builtins.attrValues outputs.homeManagerModules);
@@ -22,7 +22,7 @@
   home = {
     username = "stinjul";
     homeDirectory = "/home/stinjul";
-    stateVersion = "23.05";
+    stateVersion = "23.11";
   };
 
   nix.registry = {
