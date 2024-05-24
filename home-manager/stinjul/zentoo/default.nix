@@ -1,5 +1,7 @@
-{ pkgs, lib, ... }: {
+{ config, inputs, pkgs, lib, ... }: {
   imports = [
+    inputs.sops-nix.homeManagerModules.sops
+
     ../global
     ../features/neovim
 
@@ -7,7 +9,7 @@
   ];
 
   nix = {
-    package= pkgs.nix;
+    package = pkgs.nix;
     settings = {
       experimental-features = [ "nix-command" "flakes" ];
       max-jobs = "auto";
@@ -16,7 +18,12 @@
   };
 
   systemd.user.enable = false;
-  home.activation.reloadSystemd = lib.mkForce "";
+  home = {
+    activation.reloadSystemd = lib.mkForce "";
+    homeDirectory = "/home/stinjul";
+    # TODO: fix this ugly hack when https://github.com/nix-community/impermanence/pull/171 gets fixed
+    persistence = lib.mkForce {};
+  };
 
   home.packages = with pkgs; [
     k6
@@ -24,7 +31,7 @@
     elixir_ls
     talosctl
     prismlauncher
-    inputs.nixgl.nixGLIntel
+    pkgs.inputs.nixgl.nixGLIntel
     apache-directory-studio
     avalonia-ilspy
     starsector
@@ -83,5 +90,9 @@
         fish_add_path $HOME/.krew/bin/
         fish_add_path $HOME/.cargo/bin
       '';
+  };
+
+  programs.ssh = {
+    enable = false;
   };
 }

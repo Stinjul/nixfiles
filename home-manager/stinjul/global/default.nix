@@ -1,4 +1,4 @@
-{ outputs, ... }: {
+{ outputs, pkgs, lib, ... }: {
   imports = [
     ../features/cli
   ] ++ (builtins.attrValues outputs.homeManagerModules);
@@ -25,11 +25,18 @@
     stateVersion = "23.11";
   };
 
-  nix.registry = {
-    stinjul = {
-      from = { type = "indirect"; id = "stinjul"; };
-      flake = {
-        outPath = "/home/stinjul/Git_Projects/nixfiles";
+  nix = {
+    package = lib.mkDefault pkgs.nix;
+    settings = {
+      substituters = [ "https://hyprland.cachix.org" ];
+      trusted-public-keys = [ "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc=" ];
+    };
+    registry = {
+      stinjul = {
+        from = { type = "indirect"; id = "stinjul"; };
+        flake = {
+          outPath = "/home/stinjul/Git_Projects/nixfiles";
+        };
       };
     };
   };

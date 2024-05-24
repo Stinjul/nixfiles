@@ -1,17 +1,21 @@
-{ config, inputs, outputs, ... }: {
+{ config, lib, inputs, outputs, ... }:
+let
+    hasPersistence = config.environment.persistence ? "/persist";
+in {
   imports = [
     inputs.sops-nix.nixosModules.sops
     inputs.home-manager.nixosModules.home-manager
     ./fish.nix
     ./nix.nix
     ./openssh.nix
+    ./locale.nix
   ];
 
   home-manager.extraSpecialArgs = { inherit inputs outputs; };
   
   sops = {
     defaultSopsFile = ../secrets.yaml;
-    age.keyFile = "/var/lib/sops-nix/age-key.txt";
+    age.keyFile = "${lib.optionalString hasPersistence "/persist"}/var/lib/sops-nix/age-key.txt";
   };
 
   nixpkgs = {

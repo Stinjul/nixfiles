@@ -2,9 +2,10 @@
   imports = [
     ./fish.nix
     ./ranger.nix
+    ./htop.nix
+    ./ssh.nix
   ];
   home.packages = with pkgs; [
-    htop
     ncdu
     ranger
     sshfs

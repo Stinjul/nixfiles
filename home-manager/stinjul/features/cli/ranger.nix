@@ -1,7 +1,12 @@
-{ pkgs, ... }: {
-  home.packages = with pkgs; [
-    ranger
-  ];
+{ pkgs, config, ... }: {
+  home = {
+    packages = with pkgs; [
+        ranger
+    ];
+    persistence = {
+      "/persist${config.home.homeDirectory}".directories = [ ".local/share/ranger" ];
+    };
+  };
 
   xdg.configFile."ranger/rc.conf".text = ''
     default_linemode devicons

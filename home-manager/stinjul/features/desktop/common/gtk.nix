@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, config, ... }:
 # home.packages = with pkgs; [
 #   gnome.adwaita-icon-theme
 # ];
@@ -13,10 +13,17 @@ in
     file.".local/share/themes/${theme.name}" = {
       source = "${theme.package}/share/themes/${theme.name}";
     };
+    persistence = {
+      "/persist${config.home.homeDirectory}".directories = [ ".config/dconf" ];
+    };
   };
   gtk = {
     inherit theme;
     enable = true;
+    font = {
+      name = config.fontProfiles.regular.family;
+      size = 11;
+    };
     iconTheme = {
       name = "Adwaita";
       package = pkgs.gnome.adwaita-icon-theme;

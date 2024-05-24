@@ -1,6 +1,10 @@
 { config, lib, pkgs, ... }: {
-  programs.wofi = {
+  programs.rofi = {
     enable = true;
-    package = pkgs.rofi-wayland-unwrapped;
+    package  = pkgs.rofi-wayland;
+    extraConfig = {
+        run-command = "fish -c '{cmd}'";
+        run-list-command = "fish -c functions";
+    };
   };
 }

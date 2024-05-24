@@ -1,4 +1,4 @@
-{ config, inputs, outputs, pkgs, ... }: {
+{ config, inputs, outputs, pkgs, lib, ... }: {
   imports = [
     inputs.sops-nix.homeManagerModules.sops
 
@@ -7,6 +7,9 @@
 
     ./git.nix
   ];
+
+  # TODO: fix this ugly hack when https://github.com/nix-community/impermanence/pull/171 gets fixed
+  home.persistence = lib.mkForce {};
 
   home.packages = with pkgs; [
     vagrant-wsl

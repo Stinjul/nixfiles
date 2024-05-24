@@ -20,7 +20,7 @@
         gaps_in = 3;
         gaps_out = 10;
         border_size = 3;
-        cursor_inactive_timeout = 4;
+        #cursor_inactive_timeout = 4;
       };
       input = {
         kb_layout = "be,us";

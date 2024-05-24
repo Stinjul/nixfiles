@@ -12,6 +12,8 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    impermanence.url = "github:nix-community/impermanence";
+
     nixos-wsl = {
       url = "github:nix-community/nixos-wsl";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -33,8 +35,9 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     hyprland = {
-      url = "github:hyprwm/hyprland";
-      inputs.nixpkgs.follows = "nixpkgs";
+      url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
+      # https://wiki.hyprland.org/Nix/Cachix/
+      # inputs.nixpkgs.follows = "nixpkgs";
     };
     ags = {
       url = "github:Aylur/ags";
@@ -89,6 +92,10 @@
 
       # 'nixos-rebuild --flake .#hostname'
       nixosConfigurations = {
+        zennix = nixpkgs.lib.nixosSystem {
+          specialArgs = { inherit inputs outputs; };
+          modules = [ ./hosts/zennix ];
+        };
         wsl = nixpkgs.lib.nixosSystem {
           specialArgs = { inherit inputs outputs; };
           modules = [ ./hosts/wsl ];
@@ -113,6 +120,13 @@
 
       # 'home-manager --flake .#stinjul@hostname'
       homeConfigurations = {
+        "stinjul@zennix" = home-manager.lib.homeManagerConfiguration {
+          pkgs = nixpkgs.legacyPackages.x86_64-linux; # Home-manager requires 'pkgs' instance
+          extraSpecialArgs = { inherit inputs outputs; };
+          modules = [
+            ./home-manager/stinjul/zennix
+          ];
+        };
         "stinjul@zentoo" = home-manager.lib.homeManagerConfiguration {
           pkgs = nixpkgs.legacyPackages.x86_64-linux; # Home-manager requires 'pkgs' instance
           extraSpecialArgs = { inherit inputs outputs; };
