@@ -10,7 +10,7 @@
       ];
       files = [
         "/etc/machine-id"
-        "/var/lib/sops-nix/age-key.txt"
+        # "/var/lib/sops-nix/age-key.txt"
       ];
     };
   };
