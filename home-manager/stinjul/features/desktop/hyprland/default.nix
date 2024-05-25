@@ -8,6 +8,11 @@
     ./rules.nix
     ./execs.nix
   ];
+  
+  # Yeah, I know, but I need to set the primary monitor for XWayland somehow
+  home.packages = [
+    pkgs.xorg.xrandr
+  ];
 
   wayland.windowManager.hyprland = {
     enable = true;

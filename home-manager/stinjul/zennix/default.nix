@@ -10,6 +10,7 @@
 
     ./ssh.nix
     ./git.nix
+    ./monitors.nix
   ];
 
   sops = {
@@ -45,15 +46,22 @@
 
   wayland.windowManager.hyprland.settings = {
     monitor =
-      let
-        disp1 = "DP-2";
-        disp2 = "DP-3";
-        dispKVM = "HDMI-A-1";
-      in
-      [
-        "${disp1}, 2560x1440@120, 0x0, 1, transform, 3"
-        "${disp2}, 2560x1440@120, 1440x0, 1"
-        "${dispKVM}, preferred, 5000x0, 1"
-      ];
+      # let
+      #   disp1 = "DP-2";
+      #   disp2 = "DP-3";
+      #   dispKVM = "HDMI-A-1";
+      # in
+      # [
+      #   "${disp1}, 2560x1440@120, 0x0, 1, transform, 3"
+      #   "${disp2}, 2560x1440@120, 1440x0, 1"
+      #   "${dispKVM}, preferred, 5000x0, 1"
+      # ];
+      map (
+        m: "${m.name}, ${
+            if m.enabled
+            then "${toString m.width}x${toString m.height}@${toString m.refreshRate},${toString m.x}x${toString m.y},1"
+            else "disable"
+        }, ${toString ((builtins.div m.rotate 90) + (if m.flipped then 4 else 0))}"
+      ) (config.monitors);
   };
 }
