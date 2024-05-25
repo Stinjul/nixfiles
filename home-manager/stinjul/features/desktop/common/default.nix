@@ -10,6 +10,9 @@
   home.packages = with pkgs; [
     yubikey-manager-qt
     yubikey-personalization-gui
+
+    coppwr
+    pavucontrol
   ];
   xdg.portal.enable = true;
 }

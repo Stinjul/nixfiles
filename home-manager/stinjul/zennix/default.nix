@@ -25,8 +25,19 @@
     files = [".config/sops/age/keys.txt"];
   };
 
-  home.packages = [
+  home.packages = with pkgs; [
   ];
+  
+  nix = {
+    registry = {
+      stinjul = {
+        from = { type = "indirect"; id = "stinjul"; };
+        flake = {
+          outPath = "/home/stinjul/Git/nixfiles";
+        };
+      };
+    };
+  };
 
   wayland.windowManager.hyprland.settings = {
     monitor =

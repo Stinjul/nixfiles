@@ -1,4 +1,4 @@
-{ outputs, pkgs, lib, ... }: {
+{ outputs, pkgs, lib, inputs, ... }: {
   imports = [
     ../features/cli
   ] ++ (builtins.attrValues outputs.homeManagerModules);
@@ -32,12 +32,10 @@
       trusted-public-keys = [ "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc=" ];
     };
     registry = {
-      stinjul = {
-        from = { type = "indirect"; id = "stinjul"; };
-        flake = {
-          outPath = "/home/stinjul/Git_Projects/nixfiles";
-        };
-      };
+#       nixpkgs = {
+#         from = { type = "indirect"; id = "nixpkgs"; };
+#         flake = inputs.nixpkgs;
+#       };
     };
   };
 

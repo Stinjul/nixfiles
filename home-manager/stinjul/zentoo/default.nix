@@ -15,6 +15,14 @@
       max-jobs = "auto";
       cores = 24;
     };
+    registry = {
+      stinjul = {
+        from = { type = "indirect"; id = "stinjul"; };
+        flake = {
+          outPath = "/home/stinjul/Git_Projects/nixfiles";
+        };
+      };
+    };
   };
 
   systemd.user.enable = false;
