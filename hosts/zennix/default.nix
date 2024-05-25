@@ -12,6 +12,7 @@
     ../common/features/pipewire.nix
     ../common/features/libvirtd.nix
     ../common/features/greetd.nix
+    ../common/features/bluetooth.nix
   ];
 
   home-manager.users.stinjul = import ../../home-manager/stinjul/zennix;
@@ -19,6 +20,11 @@
   networking = {
     hostName = "zennix";
     useDHCP = true;
+    firewall = {
+      # 1714 -> 1764: KDEConnect
+      allowedTCPPortRanges = [ { from = 1714; to = 1764; } ];
+      allowedUDPPortRanges = [ { from = 1714; to = 1764; } ];
+    };
   };
 
   console.keyMap = "azerty";

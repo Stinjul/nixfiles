@@ -6,6 +6,7 @@
     ./pywal
     ./firefox.nix
     ./discord.nix
+    ./kdeconnect.nix
   ];
   home.packages = with pkgs; [
     yubikey-manager-qt

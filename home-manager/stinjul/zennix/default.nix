@@ -27,6 +27,10 @@
 
   home.packages = with pkgs; [
   ];
+
+  services = {
+    blueman-applet.enable = true;
+  };
   
   nix = {
     registry = {
