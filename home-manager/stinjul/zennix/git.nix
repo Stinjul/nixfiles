@@ -9,7 +9,7 @@
             name = "Stinjul";
           };
         };
-        condition = "hasconfig:remote.*.url:ssh://git@github.com:*/**";
+        condition = "hasconfig:remote.*.url:git@github.com:*/**";
       }
       {
         contents = {
@@ -18,7 +18,7 @@
             name = "Stinjul";
           };
         };
-        condition = "hasconfig:remote.*.url:ssh://git@gitlab.com:*/**";
+        condition = "hasconfig:remote.*.url:git@gitlab.com:*/**";
       }
     ];
   };
