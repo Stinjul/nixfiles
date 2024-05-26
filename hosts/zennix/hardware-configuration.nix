@@ -44,6 +44,15 @@
     device = "/dev/disk/by-uuid/52576efe-a2e2-42d0-a828-3d4f9166f2fb";
     fsType = "xfs";
   };
+  
+  fileSystems."/mnt/hdd_steam_library" = {
+    device = "/dev/disk/by-uuid/22c7fd3f-3d57-4857-9eba-25f84e2eff83";
+    options = [
+      "noatime"
+      "compress=zstd"
+    ];
+    fsType = "btrfs";
+  };
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
 }
