@@ -40,5 +40,10 @@
     fsType = "ext4";
   };
 
+  fileSystems."/mnt/steam_library" = {
+    device = "/dev/disk/by-uuid/52576efe-a2e2-42d0-a828-3d4f9166f2fb";
+    fsType = "xfs";
+  };
+
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
 }

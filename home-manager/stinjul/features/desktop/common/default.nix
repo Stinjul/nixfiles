@@ -8,6 +8,8 @@
     ./discord.nix
     ./kdeconnect.nix
     ./polkit-agent.nix
+    ./steam.nix
+    ./xivlauncher.nix
   ];
   home.packages = with pkgs; [
     yubikey-manager-qt

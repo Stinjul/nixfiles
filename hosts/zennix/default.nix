@@ -16,7 +16,10 @@
     ../common/features/polkit.nix
   ];
 
-  home-manager.users.stinjul = import ../../home-manager/stinjul/zennix;
+  home-manager = {
+    backupFileExtension = "backup";
+    users.stinjul = import ../../home-manager/stinjul/zennix;
+  };
 
   networking = {
     hostName = "zennix";
@@ -39,6 +42,14 @@
     dconf.enable = true;
     yubikey-touch-detector.enable = true;
     partition-manager.enable = true;
+    steam = {
+      enable = true;
+      remotePlay.openFirewall = true;
+      localNetworkGameTransfers.openFirewall = true;
+      extraCompatPackages = with pkgs; [
+        proton-ge-bin
+      ];
+    };
   };
 
   xdg.portal = {

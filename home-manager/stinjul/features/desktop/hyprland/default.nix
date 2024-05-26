@@ -16,7 +16,7 @@
 
   wayland.windowManager.hyprland = {
     enable = true;
-    package = pkgs.inputs.hyprland.hyprland;
+    # package = pkgs.inputs.hyprland.hyprland;
 
     sourceFirst = true;
 
@@ -48,8 +48,10 @@
 
 
   xdg.portal = {
-    extraPortals = [ pkgs.inputs.hyprland.xdg-desktop-portal-hyprland ];
-    configPackages = [ pkgs.inputs.hyprland.hyprland ];
+    # extraPortals = [ pkgs.inputs.hyprland.xdg-desktop-portal-hyprland ];
+    extraPortals = [ pkgs.xdg-desktop-portal-hyprland ];
+    # configPackages = [ pkgs.inputs.hyprland.hyprland ];
+    configPackages = [ pkgs.hyprland ];
   };
 
 }
