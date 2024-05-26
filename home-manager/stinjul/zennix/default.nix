@@ -59,9 +59,9 @@
       map (
         m: "${m.name}, ${
             if m.enabled
-            then "${toString m.width}x${toString m.height}@${toString m.refreshRate},${toString m.x}x${toString m.y},1"
+            then "${toString m.width}x${toString m.height}@${toString m.refreshRate}, ${toString m.x}x${toString m.y}, 1"
             else "disable"
-        }, ${toString ((builtins.div m.rotate 90) + (if m.flipped then 4 else 0))}"
+        }, transform, ${toString ((builtins.div m.rotate 90) + (if m.flipped then 4 else 0))}"
       ) (config.monitors);
   };
 }
