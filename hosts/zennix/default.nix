@@ -13,6 +13,7 @@
     ../common/features/libvirtd.nix
     ../common/features/greetd.nix
     ../common/features/bluetooth.nix
+    ../common/features/polkit.nix
   ];
 
   home-manager.users.stinjul = import ../../home-manager/stinjul/zennix;
@@ -37,6 +38,7 @@
   programs = {
     dconf.enable = true;
     yubikey-touch-detector.enable = true;
+    partition-manager.enable = true;
   };
 
   xdg.portal = {

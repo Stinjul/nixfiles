@@ -7,6 +7,7 @@
     ./firefox.nix
     ./discord.nix
     ./kdeconnect.nix
+    ./polkit-agent.nix
   ];
   home.packages = with pkgs; [
     yubikey-manager-qt
