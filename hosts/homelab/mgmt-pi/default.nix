@@ -1,4 +1,4 @@
-{ pkgs, inputs, config, ... }: {
+{ inputs, config, lib, ... }: {
   imports = [
     inputs.hardware.nixosModules.raspberry-pi-4
 
@@ -8,6 +8,9 @@
     ../../common/users/stinjul
     ../../common/users/deploy
   ];
+  
+  # TODO: fix this ugly hack when https://github.com/nix-community/impermanence/pull/171 gets fixed
+  environment.persistence = lib.mkForce {};
 
   home-manager.users.stinjul = import ../../../home-manager/stinjul/headless-generic.nix;
 

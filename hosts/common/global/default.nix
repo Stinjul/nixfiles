@@ -25,5 +25,9 @@ in {
     };
   };
 
+  security.sudo.extraConfig = ''
+    Defaults lecture = never
+  '';
+
   hardware.enableRedistributableFirmware = true;
 }

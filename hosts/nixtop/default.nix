@@ -1,4 +1,4 @@
-{ pkgs, inputs, ... }: {
+{ pkgs, inputs, lib, ... }: {
   imports = [
     inputs.hardware.nixosModules.common-cpu-intel
     inputs.hardware.nixosModules.common-gpu-nvidia
@@ -14,6 +14,9 @@
     ../common/features/greetd.nix
   ];
   
+  # TODO: fix this ugly hack when https://github.com/nix-community/impermanence/pull/171 gets fixed
+  environment.persistence = lib.mkForce {};
+
   home-manager.users.stinjul = import ../../home-manager/stinjul/nixtop.nix;
 
   networking = {
