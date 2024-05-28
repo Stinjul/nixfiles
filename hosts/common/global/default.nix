@@ -5,6 +5,7 @@ in {
   imports = [
     inputs.sops-nix.nixosModules.sops
     inputs.home-manager.nixosModules.home-manager
+    inputs.impermanence.nixosModules.impermanence
     ./fish.nix
     ./nix.nix
     ./openssh.nix

@@ -1,4 +1,4 @@
-{ outputs, pkgs, lib, config, ... }: 
+{ inputs, outputs, pkgs, lib, config, ... }:
 let
   # https://github.com/NixOS/nixpkgs/blob/master/nixos/lib/systemd-lib.nix#L54
   shellEscape = s: (lib.replaceStrings [ "\\" ] [ "\\\\" ] s);
@@ -18,6 +18,8 @@ let
 
 in {
   imports = [
+    inputs.impermanence.nixosModules.home-manager.impermanence
+
     ../features/cli
   ] ++ (builtins.attrValues outputs.homeManagerModules);
   nixpkgs = {
