@@ -3,7 +3,14 @@ let
   inherit (lib) mkIf;
 in
 {
-  home.packages = [ pkgs.pywal ];
+  home = {
+    packages = [ pkgs.pywal ];
+    persistence = {
+      "/persist${config.home.homeDirectory}" = {
+        directories = [".cache/wal"];
+      };
+    };
+  };
 
   xdg.configFile."wal/templates/" = {
     source = ./templates;
@@ -27,9 +34,11 @@ in
   systemd.user.services.pywal = {
     Unit = {
       Description = "Run pywal";
+      Before = [ "graphical-session-pre.target" ];
     };
     Install = {
-      WantedBy = [ "graphical-session-pre.target" ];
+      # WantedBy = [ "graphical-session-pre.target" ];
+      WantedBy = [ "default.target" ];
     };
     Service = {
       Type = "oneshot";
