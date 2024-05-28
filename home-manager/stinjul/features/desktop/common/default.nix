@@ -10,6 +10,7 @@
     ./polkit-agent.nix
     ./steam.nix
     ./xivlauncher.nix
+    ./remmina.nix
   ];
   home.packages = with pkgs; [
     yubikey-manager-qt

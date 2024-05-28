@@ -7,6 +7,7 @@
     ../features/persist.nix
     ../features/neovim
     ../features/desktop/hyprland
+    ../features/desktop/common/chromium.nix
 
     ./ssh.nix
     ./git.nix
@@ -27,8 +28,6 @@
   };
 
   home.packages = with pkgs; [
-    chromium
-    remmina
   ];
 
   services = {

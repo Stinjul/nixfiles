@@ -10,6 +10,10 @@
         ".local/share/Paradox Interactive"
         ".paradoxlauncher"
       ];
+      files = [
+        ".steam/steam.token"
+        ".steam/registry.vdf"
+      ];
     };
   };
 }
