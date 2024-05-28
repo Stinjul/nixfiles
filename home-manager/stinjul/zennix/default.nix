@@ -1,4 +1,4 @@
-{ inputs, outputs, pkgs, config, ... }: {
+{ inputs, pkgs, config, ... }: {
   imports = [
     inputs.sops-nix.homeManagerModules.sops
 
@@ -27,6 +27,8 @@
   };
 
   home.packages = with pkgs; [
+    chromium
+    remmina
   ];
 
   services = {

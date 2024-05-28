@@ -13,6 +13,7 @@
       "Games"
       "Git"
       ".local/share/nix"
+      "Mount"
     ];
     allowOther = true;
   };
