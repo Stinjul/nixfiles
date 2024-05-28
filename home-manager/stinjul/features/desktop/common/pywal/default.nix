@@ -23,4 +23,19 @@ in
   '';
 
   programs.rofi.theme = "${config.xdg.cacheHome}/wal/colors-rofi-dark.rasi";
+  
+  systemd.user.services.pywal = {
+    Unit = {
+      Description = "Run pywal";
+    };
+    Install = {
+      WantedBy = [ "graphical-session-pre.target" ];
+    };
+    Service = {
+      Type = "oneshot";
+      ExecStart = ''
+        ${pkgs.pywal}/bin/wal --theme main -ste
+      '';
+    };
+  };
 }
