@@ -1,16 +1,15 @@
 { pkgs, config, lib, ... }:
 let
   inherit (lib) mkIf;
-  configFolder = "${config.xdg.configHome}/wal";
 in
 {
   home.packages = [ pkgs.pywal ];
 
-  xdg.configFile."templates/" = {
+  xdg.configFile."wal/templates/" = {
     source = ./templates;
     recursive = true;
   };
-  xdg.configFile."colorschemes/" = {
+  xdg.configFile."wal/colorschemes/" = {
     source = ./colorschemes;
     recursive = true;
   };
