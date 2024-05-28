@@ -8,6 +8,7 @@
       ];
       files = [
         "/etc/machine-id"
+        "/etc/adjtime"
         # "/var/lib/sops-nix/age-key.txt"
       ];
     };
