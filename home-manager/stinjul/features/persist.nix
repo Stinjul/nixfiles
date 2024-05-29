@@ -9,6 +9,7 @@
       "Git"
       ".local/share/nix"
       "Mount"
+      ".local/state/wireplumber"
     ];
     allowOther = true;
   };
