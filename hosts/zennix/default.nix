@@ -14,6 +14,7 @@
     ../common/features/greetd.nix
     ../common/features/bluetooth.nix
     ../common/features/polkit.nix
+    ../common/features/mullvad.nix
   ];
 
   home-manager = {
