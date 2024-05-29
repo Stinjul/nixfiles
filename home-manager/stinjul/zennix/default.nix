@@ -1,4 +1,4 @@
-{ inputs, pkgs, config, ... }: {
+{ inputs, pkgs, config, lib, ... }: {
   imports = [
     inputs.sops-nix.homeManagerModules.sops
 
@@ -46,6 +46,7 @@
   };
 
   wayland.windowManager.hyprland.settings = {
+    workspace = map (w: "${toString w}, monitor:DP-2,monitor:DP-3") (lib.range 1 10);
     monitor =
       # let
       #   disp1 = "DP-2";
