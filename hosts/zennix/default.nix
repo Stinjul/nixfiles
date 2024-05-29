@@ -5,6 +5,7 @@
     inputs.hardware.nixosModules.common-pc-ssd
 
     ./hardware-configuration.nix
+    ./wireguard.nix
 
     ../common/global
     ../common/users/stinjul

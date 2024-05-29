@@ -28,6 +28,7 @@ creation_rules:
       - age:
         - *stinjul_zentoo
         - *stinjul_zennix
+        - *stinjul_nixtop
         - *stinjul_wsl
   - path_regex: hosts/common/secrets.yaml
     key_groups:
@@ -50,4 +51,15 @@ creation_rules:
         - *mgmt_pi_1
         - *mgmt_pi_2
         - *mgmt_pi_3
-  - age: *stinjul_zentoo
+  - path_regex: hosts/zennix/secrets.yaml
+    key_groups:
+      - age:
+        - *stinjul_zentoo
+        - *stinjul_zennix
+        - *stinjul_nixtop
+        - *zennix
+  - key_groups:
+      - age: 
+        - *stinjul_zentoo
+        - *stinjul_zennix
+        - *stinjul_nixtop
