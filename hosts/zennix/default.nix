@@ -4,9 +4,6 @@
     inputs.hardware.nixosModules.common-gpu-amd
     inputs.hardware.nixosModules.common-pc-ssd
 
-    ./hardware-configuration.nix
-    ./wireguard.nix
-
     ../common/global
     ../common/users/stinjul
     ../common/features/persist.nix
@@ -16,6 +13,10 @@
     ../common/features/bluetooth.nix
     ../common/features/polkit.nix
     ../common/features/mullvad.nix
+
+    ./hardware-configuration.nix
+    ./wireguard.nix
+    ./dns.nix
   ];
 
   home-manager = {
