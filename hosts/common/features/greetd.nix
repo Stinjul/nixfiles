@@ -30,4 +30,7 @@ in
     enable = true;
     settings.default_session.command = sway-cmd (lib.getExe config.programs.regreet.package);
   };
+  environment.persistence = {
+    "/persist".directories = ["/var/cache/regreet"];
+  };
 }
