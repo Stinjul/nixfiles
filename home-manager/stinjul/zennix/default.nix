@@ -8,6 +8,7 @@
     ../features/neovim
     ../features/desktop/hyprland
     ../features/desktop/common/chromium.nix
+    ../features/desktop/common/mullvad.nix
 
     ./ssh.nix
     ./git.nix
