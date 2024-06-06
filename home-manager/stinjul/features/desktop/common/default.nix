@@ -11,6 +11,7 @@
     ./steam.nix
     ./xivlauncher.nix
     ./remmina.nix
+    ./mpv.nix
   ];
   home.packages = with pkgs; [
     yubikey-manager-qt
