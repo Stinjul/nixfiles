@@ -19,6 +19,9 @@
 
     coppwr
     pavucontrol
+
+    yt-dlp
+    ffmpeg-full
   ];
   xdg.portal.enable = true;
 }
