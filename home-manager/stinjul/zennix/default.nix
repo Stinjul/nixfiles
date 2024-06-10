@@ -30,6 +30,8 @@
 
   home.packages = with pkgs; [
     winbox
+
+    krita
   ];
 
   services = {

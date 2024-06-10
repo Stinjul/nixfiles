@@ -1,4 +1,4 @@
-{ lib, config, pkgs, ... }: {
+{ pkgs, ... }: {
   imports = [
     ../common
     ../common/wayland
@@ -10,8 +10,9 @@
   ];
   
   # Yeah, I know, but I need to set the primary monitor for XWayland somehow
-  home.packages = [
-    pkgs.xorg.xrandr
+  home.packages = with pkgs; [
+    xorg.xrandr
+    grimblast
   ];
 
   wayland.windowManager.hyprland = {

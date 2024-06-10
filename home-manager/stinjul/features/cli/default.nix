@@ -4,6 +4,7 @@
     ./ranger.nix
     ./htop.nix
     ./ssh.nix
+    ./k8s.nix
   ];
   home.packages = with pkgs; [
     ncdu
@@ -19,11 +20,6 @@
     sops
     wireguard-tools
 
-    argocd
-    kustomize
-    k9s
-    ksops
-    k3s
     terraform
   ];
 }
