@@ -29,7 +29,10 @@
       java-language-server.enable = true;
       # jsonls.enable = true;
       # nil_ls.enable = true;
-      nixd.enable = true;
+      nixd = {
+        enable = true;
+        settings.formatting.command = [ "nixpkgs-fmt" ];
+      };
       omnisharp.enable = true;
       # r_language_server
       bashls.enable = true;
