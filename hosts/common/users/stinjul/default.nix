@@ -12,4 +12,8 @@
     openssh.authorizedKeys.keys = lib.splitString "\n" (builtins.readFile ../../../../home-manager/stinjul/ssh.pub);
     packages = [ pkgs.home-manager pkgs.kitty.terminfo ];
   };
+
+  security.pam.loginLimits = [
+    { domain = "stinjul"; item = "nofile"; type = "-"; value = "1048576"; }
+  ];
 }

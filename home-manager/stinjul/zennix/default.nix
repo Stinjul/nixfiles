@@ -14,6 +14,7 @@
     ./ssh.nix
     ./git.nix
     ./monitors.nix
+    ./starsector.nix
   ];
 
   sops = {
