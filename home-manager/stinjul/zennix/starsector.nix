@@ -154,6 +154,11 @@
           url = "https://bitbucket.org/Chozo/fleetsizebydp/downloads/FleetSizeByDP-1.0.2b_97.zip";
           sha256 = "sha256-j6g9rzWST2QencMC60ah0gsf1wRQK2C3s1H/ndYzCXI=";
         }
+        {
+          name = "Secrets_of_the_Frontier";
+          url = "https://github.com/InventRaccoon/secrets-of-the-frontier/releases/download/0.14.1b/Secrets.of.the.Frontier.Prerelease.14.1b.zip";
+          sha256 = "sha256-37AhjwPXLuV0HWJWueGyRje1pRXCi6LRL0t9jdhH+fM=";
+        }
         # Mods with unusable download links, manual version changes or other weird stuff:
         # KoC
         # AotD

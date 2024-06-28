@@ -1,9 +1,12 @@
-{config, ...}: {
+{ config, ... }: {
   home.persistence = {
     "/persist${config.home.homeDirectory}" = {
       allowOther = true;
       directories = [
-        ".local/share/Steam"
+        {
+          directory = ".local/share/Steam";
+          method = "symlink";
+        }
         ".factorio"
         ".config/unity3d/IronGate/Valheim"
         ".config/unity3d/Ludeon Studios/RimWorld by Ludeon Studios"
