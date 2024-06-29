@@ -1,7 +1,7 @@
 {config, pkgs, ...}: {
   home = {
     packages = [
-        pkgs.xivlauncher
+        pkgs.xivlauncher-manual
     ];
     persistence = {
       "/persist${config.home.homeDirectory}" = {

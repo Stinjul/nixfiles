@@ -12,6 +12,7 @@
   trackma-full = pkgs.trackma.override { withQT = true; };
   discord-mod = pkgs.discord.override { withOpenASAR = true; withVencord = true; };
   starsector-mod-manager-rust = pkgs.callPackage ./starsector-mod-manager-rust { };
+  xivlauncher-manual = pkgs.callPackage ./xivlauncher { };
 
 
   # Disabled/Unifished packages
