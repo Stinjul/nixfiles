@@ -34,6 +34,9 @@
     winbox
 
     krita
+
+    steampipe
+    powerpipe
   ];
 
   services = {
