@@ -70,8 +70,11 @@
         "aarch64-linux"
         "x86_64-linux"
       ];
-      forEachSystem = f: lib.genAttrs systems (sys: f pkgsFor.${sys});
-      pkgsFor = nixpkgs.legacyPackages;
+      forEachSystem = f: lib.genAttrs systems (system: f pkgsFor.${system});
+      pkgsFor = lib.genAttrs systems (system: import nixpkgs {
+        inherit system;
+        config.allowUnfree = true;
+      });
     in
     {
       # Custom packages
@@ -93,6 +96,15 @@
         ];
 
         format = "sd-aarch64-installer";
+      };
+
+      mgmt-nuc-installer = nixos-generators.nixosGenerate {
+        system = "x86_64-linux";
+        modules = [
+          ./installers/mgmt-nuc.nix
+        ];
+
+        format = "install-iso";
       };
 
       # 'nixos-rebuild --flake .#hostname'
@@ -120,6 +132,10 @@
         mgmt-pi-3 = nixpkgs.lib.nixosSystem {
           specialArgs = { inherit inputs outputs; };
           modules = [ ./hosts/homelab/mgmt-pi-3.nix ];
+        };
+        mgmt-nuc-1 = nixpkgs.lib.nixosSystem {
+          specialArgs = { inherit inputs outputs; };
+          modules = [ ./hosts/homelab/mgmt-nuc-1.nix ];
         };
       };
 
@@ -162,6 +178,10 @@
           nixtop = {
             hostname = "192.168.1.4";
             profiles.system.path = deploy-rs.lib.x86_64-linux.activate.nixos self.nixosConfigurations.nixtop;
+          };
+          mgmt-nuc-1 = {
+            hostname = "172.16.10.5";
+            profiles.system.path = deploy-rs.lib.x86_64-linux.activate.nixos self.nixosConfigurations.mgmt-nuc-1;
           };
           mgmt-pi-1 = {
             hostname = "172.16.0.10";

@@ -9,6 +9,7 @@ keys:
   - &mgmt_pi_1 age1h996uvpeu3cl92sg20ygenurrf5z75yacym8qr2fa5eyv2cp6pqqkl9xnk
   - &mgmt_pi_2 age12ul5cq82uk78d7cjv89k64vakd4kkh3ejjy3ln4mvvmusklrjydqascekz
   - &mgmt_pi_3 age1gmfgpdv6wl7upvmcm549wl9795aungu8d53yz729ye4krpgsz9tsqrmqn3
+  - &mgmt_nuc_1 age1t0g5rxrh3pr85detsnk65396cda79kdynv36tqjdaceujgu5qatq0whnyz
 
 keychain:
   - &stinjul_wsl_chain >-
@@ -42,6 +43,7 @@ creation_rules:
         - *mgmt_pi_1
         - *mgmt_pi_2
         - *mgmt_pi_3
+        - *mgmt_nuc_1
   - path_regex: hosts/homelab/secrets.yaml
     key_groups:
       - age:
@@ -51,6 +53,7 @@ creation_rules:
         - *mgmt_pi_1
         - *mgmt_pi_2
         - *mgmt_pi_3
+        - *mgmt_nuc_1
   - path_regex: hosts/zennix/secrets.yaml
     key_groups:
       - age:

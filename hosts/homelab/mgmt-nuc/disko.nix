@@ -1,0 +1,68 @@
+{
+  disko.devices = {
+    disk = {
+      sata = {
+        type = "disk";
+        device = "/dev/disk/by-path/pci-0000:00:17.0-ata-1";
+        content = {
+          type = "gpt";
+          partitions = {
+            BOOT = {
+              priority = 1;
+              size = "16G";
+              type = "EF00";
+              label = "BOOT";
+              content = {
+                type = "filesystem";
+                format = "vfat";
+                mountpoint = "/boot";
+              };
+            };
+            lvm = {
+              size = "100%";
+              content = {
+                type = "lvm_pv";
+                vg = "ssd_boot";
+              };
+            };
+          };
+        };
+      };
+    };
+    lvm_vg = {
+      ssd_boot = {
+        type = "lvm_vg";
+        lvs = {
+          root = {
+            size = "16G";
+            content = {
+              type = "btrfs";
+              extraArgs = [ "-f" ]; # Override existing partition
+              subvolumes = {
+                "/root" = {
+                  mountpoint = "/";
+                };
+              };
+            };
+          };
+          nix = {
+            size = "128G";
+            content = {
+              type = "btrfs";
+              mountpoint = "/nix";
+              mountOptions = [ "compress=zstd" "noatime" ];
+            };
+          };
+          persist = {
+            size = "100%FREE";
+            content = {
+              type = "btrfs";
+              mountpoint = "/persist";
+              mountOptions = [ "compress=zstd" "noatime" ];
+            };
+          };
+        };
+      };
+    };
+  };
+}
