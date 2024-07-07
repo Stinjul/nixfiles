@@ -19,8 +19,12 @@
     extraConfig = "IdentityFile ${config.sops.secrets.ssh_key_zennix.path}";
     matchBlocks = {
       "deploy" = {
-        match = "host 172.16.0.* user deploy";
+        match = "host 172.16.* user deploy";
         identityFile = config.sops.secrets.ssh_key_deploy.path;
+      };
+      "installer" = {
+        match = "host 172.16.* user nixos";
+        identityFile = config.sops.secrets.ssh_key_zennix.path;
       };
       "github" = {
         hostname = "github.com";

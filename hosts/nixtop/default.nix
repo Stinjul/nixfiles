@@ -13,9 +13,9 @@
     ../common/features/libvirtd.nix
     ../common/features/greetd.nix
   ];
-  
+
   # TODO: fix this ugly hack when https://github.com/nix-community/impermanence/pull/171 gets fixed
-  environment.persistence = lib.mkForce {};
+  environment.persistence = lib.mkForce { };
 
   home-manager.users.stinjul = import ../../home-manager/stinjul/nixtop.nix;
 
@@ -50,10 +50,9 @@
         intelBusId = "PCI:0:2:0";
       };
     };
-    opengl = {
+    graphics = {
       enable = true;
-      driSupport = true;
-      driSupport32Bit = true;
+      enable32Bit = true;
     };
   };
 
