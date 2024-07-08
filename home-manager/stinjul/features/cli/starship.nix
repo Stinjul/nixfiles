@@ -125,7 +125,7 @@
           "[ $duration ]($style)"
         ];
         style = "bg:black fg:bright-black";
-        show_notifications = true;
+        show_notifications = false;
         notification_timeout = 10000;
       };
       username = {
