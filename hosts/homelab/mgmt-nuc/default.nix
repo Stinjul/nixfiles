@@ -16,13 +16,14 @@
 
   networking = {
     useDHCP = false;
-    defaultGateway = {
-      address = "172.16.10.1";
-      interface = "enp86s0";
-    };
-    nameservers = [
-      "172.16.10.1"
-    ];
+    interfaces.enp86s0.useDHCP = true;
+    # defaultGateway = {
+    #   address = "172.16.10.1";
+    #   interface = "enp86s0";
+    # };
+    # nameservers = [
+    #   "172.16.10.1"
+    # ];
     firewall = {
       # We switched to cilium Host FW
       enable = false;
