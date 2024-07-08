@@ -31,7 +31,7 @@
         ##"$pulumi"
         #"$ruby"
         #"$golang"
-        #"$kubernetes"
+        "$kubernetes"
         #"$terraform"
         #"$nix_shell" does not work with nix shell :(
         "$shlvl"
@@ -46,7 +46,7 @@
         ];
         style = "bg:black fg:bright-white";
         symbols = {
-            NixOS = " ";
+          NixOS = " ";
         };
       };
       directory = {
@@ -154,6 +154,15 @@
           "[$number ]($style)"
         ];
         style = "bg:black fg:green";
+      };
+      kubernetes = {
+        disabled = false;
+        symbol = "󱃾 ";
+        format = lib.concatStrings [
+          "[ ](bg:black fg:bright-black)"
+          "[$symbol $context/$namespace ]($style)"
+        ];
+        style = "bg:black fg:blue";
       };
       shlvl = {
         disabled = false;
