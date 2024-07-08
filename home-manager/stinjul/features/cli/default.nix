@@ -1,6 +1,7 @@
 { pkgs, ... }: {
   imports = [
     ./fish.nix
+    ./starship.nix
     ./ranger.nix
     ./htop.nix
     ./ssh.nix
