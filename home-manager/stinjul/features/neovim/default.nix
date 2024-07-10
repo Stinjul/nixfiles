@@ -1,5 +1,4 @@
-{ inputs, config, pkgs, lib, ... }:
-{
+{ inputs, config, pkgs, lib, ... }: {
   imports = [
     inputs.nixvim.homeManagerModules.nixvim
 
@@ -21,21 +20,26 @@
       maplocalleader = " ";
     };
 
-    extraPlugins = with pkgs.vimPlugins; [
-      vim-argwrap
-    ];
+    extraPlugins = with pkgs.vimPlugins; [ treesj ];
 
-    keymaps = [
-      {
-        mode = [ "n" ];
-        key = "<leader>a";
-        action = "<cmd>ArgWrap<CR>";
-        options = {
-          silent = true;
-          noremap = true;
-        };
-      }
-    ];
+    extraConfigLua = ''
+      require('treesj').setup({})
+    '';
+
+    opts = {
+      number = true;
+      relativenumber = true;
+    };
+
+    keymaps = [{
+      mode = [ "n" ];
+      key = "<leader>a";
+      action = "<cmd>TSJToggle<CR>";
+      options = {
+        silent = true;
+        noremap = true;
+      };
+    }];
 
     editorconfig.enable = true;
 
@@ -50,11 +54,25 @@
       neogit.enable = true;
 
       luasnip.enable = true;
-      surround.enable = true;
+      # surround.enable = true;
 
       coverage.enable = true;
       telescope.enable = true;
       trouble.enable = true;
+
+      mini = {
+        enable = true;
+        modules = {
+          hipatterns = {
+            highlighters.hex_color.__raw =
+              ''require("mini.hipatterns").gen_highlighter.hex_color()'';
+          };
+          indentscope = { };
+          pairs = { };
+          # splitjoin = { };
+          surround = { };
+        };
+      };
 
       # TODO: wait for https://github.com/NixOS/nixpkgs/pull/302442
       # neorg = {
