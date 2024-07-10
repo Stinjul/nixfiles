@@ -1,8 +1,16 @@
-{ inputs, config, lib, ... }: {
+{
+  inputs,
+  config,
+  lib,
+  ...
+}:
+{
   imports = [
+    inputs.disko.nixosModules.disko
     inputs.hardware.nixosModules.common-cpu-intel-cpu-only
 
     ./hardware-configuration.nix
+    ./disko.nix
 
     ../../common/global
     ../../common/users/stinjul

@@ -1,6 +1,14 @@
-# Setup
+# Install
+
+set the nixos user password
+
+nix run github:nix-community/nixos-anywhere -- --no-reboot --flake .#mgmt-nuc-x root@172.16.10.x
+
+# Post-install
 
 sudo mkdir -p /mnt/persist/var/lib/sops-nix/
+
+sudo vim /mnt/persist/var/lib/sops-nix/age-key.txt
 
 sudo mkdir -p /mnt/persist/etc/ssh/
 
