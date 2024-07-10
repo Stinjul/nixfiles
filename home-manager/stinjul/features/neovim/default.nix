@@ -1,4 +1,11 @@
-{ inputs, config, pkgs, lib, ... }: {
+{
+  inputs,
+  config,
+  pkgs,
+  lib,
+  ...
+}:
+{
   imports = [
     inputs.nixvim.homeManagerModules.nixvim
 
@@ -31,15 +38,21 @@
       relativenumber = true;
     };
 
-    keymaps = [{
-      mode = [ "n" ];
-      key = "<leader>a";
-      action = "<cmd>TSJToggle<CR>";
-      options = {
-        silent = true;
-        noremap = true;
-      };
-    }];
+    clipboard = {
+      providers.wl-copy.enable = true;
+    };
+
+    keymaps = [
+      {
+        mode = [ "n" ];
+        key = "<leader>a";
+        action = "<cmd>TSJToggle<CR>";
+        options = {
+          silent = true;
+          noremap = true;
+        };
+      }
+    ];
 
     editorconfig.enable = true;
 
@@ -64,8 +77,7 @@
         enable = true;
         modules = {
           hipatterns = {
-            highlighters.hex_color.__raw =
-              ''require("mini.hipatterns").gen_highlighter.hex_color()'';
+            highlighters.hex_color.__raw = ''require("mini.hipatterns").gen_highlighter.hex_color()'';
           };
           indentscope = { };
           pairs = { };
