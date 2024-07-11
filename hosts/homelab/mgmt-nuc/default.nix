@@ -50,6 +50,15 @@
     };
   };
 
+  environment.persistence."/persist" = {
+    files = [ "/var/lib/logrotate.status" ];
+    directories = [
+      "/etc/rancher"
+      "/var/lib/rancher"
+      "/var/lib/kubelet"
+    ];
+  };
+
   services.k3s = {
     enable = true;
     role = "server";
