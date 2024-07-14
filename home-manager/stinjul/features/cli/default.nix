@@ -11,6 +11,7 @@
     ncdu
     ranger
     sshfs
+    bind
 
     unzip
 

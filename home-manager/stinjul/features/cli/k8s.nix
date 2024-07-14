@@ -5,6 +5,7 @@
     k9s
     ksops
     k3s
+    kubernetes-helm
   ];
   home = {
     persistence = {
