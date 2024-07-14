@@ -56,6 +56,8 @@
       "/etc/rancher"
       "/var/lib/rancher"
       "/var/lib/kubelet"
+      "/opt/cni"
+      "/etc/cni"
     ];
   };
 
