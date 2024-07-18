@@ -7,7 +7,8 @@
       "workspace 7,class:^steam_app_.*"
       "workspace 7,title:.*(i?)wine.*"
       "workspace 8 silent,class:^[Ss]team$"
-      "workspace 9,class:^discord$"
+      "workspace 9,class:^[Vv]esktop$"
+      "workspace 9,class:^[Dd]iscord$"
     ];
     workspace =
       let
