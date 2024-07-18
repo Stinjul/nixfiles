@@ -1,4 +1,5 @@
-{ pkgs, ... }: {
+{ pkgs, ... }:
+{
   imports = [ ./jsonls.nix ];
   programs.nixvim = {
     extraPackages = with pkgs; [ nixfmt-rfc-style ];
@@ -42,7 +43,17 @@
         tsserver.enable = true;
         lemminx.enable = true;
         yamlls.enable = true;
-        efm.enable = true;
+        efm = {
+          enable = true;
+          extraOptions.init_options = {
+            documentFormatting = true;
+            documentRangeFormatting = true;
+            hover = true;
+            documentSymbol = true;
+            codeAction = true;
+            completion = true;
+          };
+        };
         ltex.enable = true;
       };
     };

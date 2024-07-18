@@ -22,6 +22,12 @@
   programs.nixvim = {
     enable = true;
 
+    colorschemes.base16 = {
+      enable = true;
+      setUpBar = true;
+      colorscheme = "schemer-dark";
+    };
+
     globals = {
       mapleader = " ";
       maplocalleader = " ";
@@ -57,10 +63,16 @@
     editorconfig.enable = true;
 
     plugins = {
-      treesitter.enable = true;
+      treesitter = {
+        enable = true;
+        settings = {
+          highlight = {
+            enable = true;
+          };
+        };
+      };
       lualine = {
         enable = true;
-        theme = "16color";
       };
       gitsigns.enable = true;
       diffview.enable = true;
