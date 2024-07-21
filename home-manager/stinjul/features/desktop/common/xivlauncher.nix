@@ -1,12 +1,16 @@
-{config, pkgs, ...}: {
+{ config, pkgs, ... }:
+{
   home = {
-    packages = [
-        pkgs.xivlauncher
-    ];
+    packages = [ pkgs.xivlauncher ];
     persistence = {
       "/persist${config.home.homeDirectory}" = {
         allowOther = true;
-        directories = [".xlcore"];
+        directories = [
+          {
+            directory = ".xlcore";
+            method = "symlink";
+          }
+        ];
       };
     };
   };
