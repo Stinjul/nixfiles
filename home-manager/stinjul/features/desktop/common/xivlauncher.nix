@@ -1,7 +1,7 @@
 { config, pkgs, ... }:
 {
   home = {
-    packages = [ pkgs.xivlauncher ];
+    packages = [ pkgs.xivlauncher-gamemode ];
     persistence = {
       "/persist${config.home.homeDirectory}" = {
         allowOther = true;

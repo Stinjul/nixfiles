@@ -55,6 +55,7 @@
         proton-ge-bin
       ];
     };
+    gamemode.enable = true;
   };
 
   xdg.portal = {

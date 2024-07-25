@@ -1,4 +1,7 @@
-{ pkgs ? import <nixpkgs> { } }: {
+{
+  pkgs ? import <nixpkgs> { },
+}:
+{
   # old-zstd = pkgs.callPackage ./zstd { };
   cookstyle = pkgs.callPackage ./chef-workstation/cookstyle { };
   knife = pkgs.callPackage ./chef-workstation/knife { };
@@ -10,10 +13,16 @@
   vagrant-wsl = pkgs.callPackage ./vagrant-wsl.nix { };
   ksops = pkgs.callPackage ./ksops.nix { };
   trackma-full = pkgs.trackma.override { withQT = true; };
-  discord-mod = pkgs.discord.override { withOpenASAR = true; withVencord = true; };
+  discord-mod = pkgs.discord.override {
+    withOpenASAR = true;
+    withVencord = true;
+  };
   starsector-mod-manager-rust = pkgs.callPackage ./starsector-mod-manager-rust { };
   xivlauncher-manual = pkgs.callPackage ./xivlauncher { };
 
+  xivlauncher-gamemode = pkgs.xivlauncher.override {
+    steam = pkgs.steam.override { extraLibraries = pkgs: [ pkgs.gamemode.lib ]; };
+  };
 
   # Disabled/Unifished packages
   # nuget-to-nix_7 = pkgs.nuget-to-nix.override { dotnet-sdk = pkgs.dotnet-sdk_7; };
