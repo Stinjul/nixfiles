@@ -21,7 +21,5 @@
     age
     sops
     wireguard-tools
-
-    terraform
   ];
 }

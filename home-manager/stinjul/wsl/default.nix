@@ -20,6 +20,7 @@
     test-kitchen
     inspec-bin
     chef-vault
+    terraform
   ];
 
   sops = {

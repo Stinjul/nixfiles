@@ -37,6 +37,8 @@
 
     steampipe
     powerpipe
+
+    terraform
   ];
 
   services = {
