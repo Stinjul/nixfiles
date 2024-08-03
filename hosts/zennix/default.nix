@@ -1,4 +1,5 @@
-{ pkgs, inputs, ... }: {
+{ pkgs, inputs, ... }:
+{
   imports = [
     inputs.hardware.nixosModules.common-cpu-amd
     inputs.hardware.nixosModules.common-gpu-amd
@@ -29,8 +30,18 @@
     useDHCP = true;
     firewall = {
       # 1714 -> 1764: KDEConnect
-      allowedTCPPortRanges = [{ from = 1714; to = 1764; }];
-      allowedUDPPortRanges = [{ from = 1714; to = 1764; }];
+      allowedTCPPortRanges = [
+        {
+          from = 1714;
+          to = 1764;
+        }
+      ];
+      allowedUDPPortRanges = [
+        {
+          from = 1714;
+          to = 1764;
+        }
+      ];
     };
   };
 
@@ -40,6 +51,8 @@
     kernelPackages = pkgs.linuxKernel.packages.linux_testing;
     binfmt.emulatedSystems = [ "aarch64-linux" ];
   };
+
+  environment.systemPackages = with pkgs; [ eid-mw ];
 
   programs = {
     dconf.enable = true;
@@ -51,11 +64,16 @@
       enable = true;
       remotePlay.openFirewall = true;
       localNetworkGameTransfers.openFirewall = true;
-      extraCompatPackages = with pkgs; [
-        proton-ge-bin
-      ];
+      extraCompatPackages = with pkgs; [ proton-ge-bin ];
     };
     gamemode.enable = true;
+  };
+
+  services = {
+    pcscd = {
+      enable = true;
+      plugins = [ pkgs.libacr38u ];
+    };
   };
 
   xdg.portal = {
