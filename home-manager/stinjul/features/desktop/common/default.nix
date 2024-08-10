@@ -1,4 +1,5 @@
-{ pkgs, ... }: {
+{ pkgs, ... }:
+{
   imports = [
     ./font.nix
     ./gtk.nix
@@ -24,5 +25,8 @@
     yt-dlp
     ffmpeg-full
   ];
-  xdg.portal.enable = true;
+  xdg = {
+    portal.enable = true;
+    mimeApps.enable = true;
+  };
 }
