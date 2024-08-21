@@ -1,4 +1,9 @@
-{ pkgs, ... }: {
+{ pkgs, config, ... }:
+let
+  cursor = "Bibata-Modern-Classic-Hyprcursor";
+  cursorPackage = pkgs.bibata-hyprcursor;
+in
+{
   imports = [
     ../common
     ../common/wayland
@@ -8,7 +13,7 @@
     ./rules.nix
     ./execs.nix
   ];
-  
+
   # Yeah, I know, but I need to set the primary monitor for XWayland somehow
   home.packages = with pkgs; [
     xorg.xrandr
@@ -22,6 +27,12 @@
     sourceFirst = true;
 
     settings = {
+      env = [
+        "HYPRCURSOR_THEME,${cursor}"
+        "HYPRCURSOR_SIZE,${toString config.home.pointerCursor.size}"
+      ];
+      exec-once = [ "hyprctl setcursor ${cursor} ${toString config.home.pointerCursor.size}" ];
+
       general = {
         gaps_in = 3;
         gaps_out = 10;
@@ -47,6 +58,7 @@
     };
   };
 
+  xdg.dataFile."icons/${cursor}".source = "${cursorPackage}/share/icons/${cursor}";
 
   xdg.portal = {
     # extraPortals = [ pkgs.inputs.hyprland.xdg-desktop-portal-hyprland ];

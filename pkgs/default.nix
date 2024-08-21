@@ -19,7 +19,8 @@
   };
   starsector-mod-manager-rust = pkgs.callPackage ./starsector-mod-manager-rust { };
   xivlauncher-manual = pkgs.callPackage ./xivlauncher { };
-  
+  bibata-hyprcursor = pkgs.callPackage ./bibata-hyprcursor { };
+
   # Both seem to have the same result, but they also both build kclvm for some reason
   # Keeping the second one around just in case
   # kcl-language-server = pkgs.callPackage ./kcl-language-server { };
