@@ -19,6 +19,27 @@
   };
   starsector-mod-manager-rust = pkgs.callPackage ./starsector-mod-manager-rust { };
   xivlauncher-manual = pkgs.callPackage ./xivlauncher { };
+  
+  # Both seem to have the same result, but they also both build kclvm for some reason
+  # Keeping the second one around just in case
+  # kcl-language-server = pkgs.callPackage ./kcl-language-server { };
+  kcl-language-server = pkgs.kclvm.override (prev: {
+    rustPlatform = prev.rustPlatform // {
+      buildRustPackage =
+        args:
+        prev.rustPlatform.buildRustPackage (
+          args
+          // {
+            pname = "kcl-language-server";
+            cargoBuildFlags = [
+              "--manifest-path"
+              "tools/src/LSP/Cargo.toml"
+            ];
+          }
+        );
+    };
+
+  });
 
   xivlauncher-gamemode = pkgs.xivlauncher.override {
     steam = pkgs.steam.override { extraLibraries = pkgs: [ pkgs.gamemode.lib ]; };

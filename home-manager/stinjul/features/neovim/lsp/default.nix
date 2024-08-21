@@ -1,9 +1,13 @@
 { pkgs, ... }:
 {
-  imports = [ ./jsonls.nix ];
+  imports = [
+    ./jsonls.nix
+    ./kcl-language-server.nix
+  ];
   programs.nixvim = {
     extraPackages = with pkgs; [ nixfmt-rfc-style ];
     plugins.lsp = {
+        
       enable = true;
       keymaps = {
         diagnostic = { };

@@ -33,7 +33,7 @@
       maplocalleader = " ";
     };
 
-    extraPlugins = with pkgs.vimPlugins; [ treesj ];
+    extraPlugins = with pkgs.vimPlugins; [ treesj kcl-nvim ];
 
     extraConfigLua = ''
       require('treesj').setup({})
