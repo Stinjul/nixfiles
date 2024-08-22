@@ -66,6 +66,11 @@
       url = "github:nix-community/disko";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    neorg = {
+      url = "github:nvim-neorg/nixpkgs-neorg-overlay";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =

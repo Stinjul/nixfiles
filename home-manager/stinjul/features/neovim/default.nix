@@ -33,7 +33,10 @@
       maplocalleader = " ";
     };
 
-    extraPlugins = with pkgs.vimPlugins; [ treesj kcl-nvim ];
+    extraPlugins = with pkgs.vimPlugins; [
+      treesj
+      kcl-nvim
+    ];
 
     extraConfigLua = ''
       require('treesj').setup({})
@@ -99,17 +102,27 @@
       };
 
       # TODO: wait for https://github.com/NixOS/nixpkgs/pull/302442
-      # neorg = {
-      #   enable = true;
-      #   modules = {
-      #     "core.defaults" = { __empty = null; };
-      #     "core.completion" = {
-      #       config = {
-      #         engine = "nvim-cmp";
-      #       };
-      #     };
-      #   };
-      # };
+      neorg = {
+        enable = true;
+        modules = {
+          "core.defaults" = {
+            __empty = null;
+          };
+          "core.dirman" = {
+            config = {
+              workspaces = {
+                personal = "~/Documents/Notes";
+                work = "~/Work/Documents/Notes";
+              };
+            };
+          };
+          "core.completion" = {
+            config = {
+              engine = "nvim-cmp";
+            };
+          };
+        };
+      };
     };
 
   };
