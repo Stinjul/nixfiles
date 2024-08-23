@@ -56,7 +56,6 @@
 
   programs = {
     dconf.enable = true;
-    yubikey-touch-detector.enable = true;
     partition-manager.enable = true;
     nix-ld.enable = true;
     wireshark.enable = true;
