@@ -14,6 +14,7 @@
     ./remmina.nix
     ./mpv.nix
     ./prismlauncher.nix
+    ./r2modman.nix
   ];
   home.packages = with pkgs; [
     yubikey-manager-qt
