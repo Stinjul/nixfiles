@@ -1,8 +1,6 @@
 {
   inputs,
-  config,
   pkgs,
-  lib,
   ...
 }:
 {
@@ -15,6 +13,8 @@
     ./dap.nix
     ./neotest.nix
     ./opts.nix
+    ./keybinds.nix
+    ./neorg.nix
   ];
 
   home.sessionVariables.EDITOR = "nvim";
@@ -42,26 +42,9 @@
       require('treesj').setup({})
     '';
 
-    opts = {
-      number = true;
-      relativenumber = true;
-    };
-
     clipboard = {
       providers.wl-copy.enable = true;
     };
-
-    keymaps = [
-      {
-        mode = [ "n" ];
-        key = "<leader>a";
-        action = "<cmd>TSJToggle<CR>";
-        options = {
-          silent = true;
-          noremap = true;
-        };
-      }
-    ];
 
     editorconfig.enable = true;
 
@@ -87,6 +70,8 @@
       coverage.enable = true;
       telescope.enable = true;
       trouble.enable = true;
+      
+      image.enable = true;
 
       mini = {
         enable = true;
@@ -100,30 +85,6 @@
           surround = { };
         };
       };
-
-      # TODO: wait for https://github.com/NixOS/nixpkgs/pull/302442
-      neorg = {
-        enable = true;
-        modules = {
-          "core.defaults" = {
-            __empty = null;
-          };
-          "core.dirman" = {
-            config = {
-              workspaces = {
-                personal = "~/Documents/Notes";
-                work = "~/Work/Documents/Notes";
-              };
-            };
-          };
-          "core.completion" = {
-            config = {
-              engine = "nvim-cmp";
-            };
-          };
-        };
-      };
     };
-
   };
 }
