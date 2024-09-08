@@ -2,6 +2,7 @@
   programs.nixvim = { helpers, ... }: {
     extraPackages = with pkgs; [
       lldb
+      delve
     ];
 
     plugins.dap = {
@@ -13,10 +14,10 @@
       };
       adapters.executables = {
         lldb = {
-          command = "lldb-vscode";
+          command = "lldb-dap";
         };
         elixir = {
-          command = "elixir-ls-debugger";
+          command = "elixir-debug-adapter";
         };
       };
       configurations =
