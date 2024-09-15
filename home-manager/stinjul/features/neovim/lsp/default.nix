@@ -1,13 +1,19 @@
-{ pkgs, ... }:
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}:
 {
   imports = [
     ./jsonls.nix
     ./kcl-language-server.nix
+    ./ts_ls.nix
   ];
   programs.nixvim = {
     extraPackages = with pkgs; [ nixfmt-rfc-style ];
     plugins.lsp = {
-        
+
       enable = true;
       keymaps = {
         diagnostic = { };
@@ -44,7 +50,9 @@
         solargraph.enable = true;
         sqls.enable = true;
         terraformls.enable = true;
-        tsserver.enable = true;
+        # https://github.com/neovim/nvim-lspconfig/pull/3232 :((
+        # see ts_ls.nix, until nixvim fixes this
+        # tsserver.enable = true;
         lemminx.enable = true;
         yamlls.enable = true;
         efm = {

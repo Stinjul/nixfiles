@@ -70,7 +70,7 @@
       coverage.enable = true;
       telescope.enable = true;
       trouble.enable = true;
-      
+
       image.enable = true;
 
       mini = {

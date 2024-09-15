@@ -3,12 +3,12 @@
   programs.nixvim = {
     extraPackages = [ pkgs.kcl-language-server ];
     plugins.lsp = {
-      preConfig = ''
-        do
-            local server_config = require 'lspconfig.configs'
-            server_config.kcl = { default_config = {}, }
-        end
-      '';
+      # preConfig = ''
+      #   do
+      #       local server_config = require 'lspconfig.configs'
+      #       server_config.kcl = { default_config = {}, }
+      #   end
+      # '';
       enabledServers = [
         {
           name = "kcl";
