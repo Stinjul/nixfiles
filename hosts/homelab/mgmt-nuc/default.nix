@@ -24,7 +24,8 @@
 
   networking = {
     useDHCP = false;
-    interfaces.enp86s0.useDHCP = true;
+    # interfaces.enp86s0.useDHCP = true;
+    # useNetworkd = true;
     # defaultGateway = {
     #   address = "172.16.10.1";
     #   interface = "enp86s0";
@@ -47,6 +48,19 @@
       # allowedUDPPorts = [
       #   8472
       # ];
+    };
+  };
+
+  systemd.network = {
+    enable = true;
+    networks = {
+      "10-lan" = {
+        matchConfig.Name = "enp86s0";
+        networkConfig = {
+          DHCP = "ipv4";
+        };
+        linkConfig.RequiredForOnline = "routable";
+      };
     };
   };
 
