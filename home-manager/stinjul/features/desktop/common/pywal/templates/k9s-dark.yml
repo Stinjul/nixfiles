@@ -20,7 +20,7 @@ color15: &color15 "{color15}"
 k9s:
   body:
     fgColor: *color6
-    bgColor: *background
+    bgColor: default
     logoColor: *color3
   info:
     fgColor: *foreground

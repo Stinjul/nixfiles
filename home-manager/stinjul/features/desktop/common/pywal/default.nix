@@ -1,4 +1,9 @@
-{ pkgs, config, lib, ... }:
+{
+  pkgs,
+  config,
+  lib,
+  ...
+}:
 let
   inherit (lib) mkIf;
 in
@@ -7,7 +12,7 @@ in
     packages = [ pkgs.pywal ];
     persistence = {
       "/persist${config.home.homeDirectory}" = {
-        directories = [".cache/wal"];
+        directories = [ ".cache/wal" ];
       };
     };
   };
@@ -25,12 +30,16 @@ in
     include ${config.xdg.cacheHome}/wal/colors-kitty.conf
   '';
 
-  wayland.windowManager.hyprland.extraConfig = mkIf config.wayland.windowManager.hyprland.enable  ''
+  wayland.windowManager.hyprland.extraConfig = mkIf config.wayland.windowManager.hyprland.enable ''
     source=${config.xdg.cacheHome}/wal/hyprland_colors.conf
   '';
 
+  xdg.configFile."k9s/skins/dark.yaml".source = mkIf config.programs.k9s.enable (
+    config.lib.file.mkOutOfStoreSymlink "${config.xdg.cacheHome}/wal/k9s-dark.yml"
+  );
+
   programs.rofi.theme = "${config.xdg.cacheHome}/wal/colors-rofi-dark.rasi";
-  
+
   systemd.user.services.pywal = {
     Unit = {
       Description = "Run pywal";
