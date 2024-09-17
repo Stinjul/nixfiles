@@ -3,7 +3,7 @@
     initrd = {
       availableKernelModules = [ "xhci_pci" "thunderbolt" "ahci" "nvme" "usb_storage" "sd_mod" ];
     };
-    kernelModules = [ "kvm-intel" ];
+    kernelModules = [ "kvm-intel" "thunderbolt-net" ];
     loader = {
       systemd-boot.enable = true;
       efi.canTouchEfiVariables = true;

@@ -24,15 +24,6 @@
 
   networking = {
     useDHCP = false;
-    # interfaces.enp86s0.useDHCP = true;
-    # useNetworkd = true;
-    # defaultGateway = {
-    #   address = "172.16.10.1";
-    #   interface = "enp86s0";
-    # };
-    # nameservers = [
-    #   "172.16.10.1"
-    # ];
     firewall = {
       # We switched to cilium Host FW
       enable = false;
@@ -53,6 +44,30 @@
 
   systemd.network = {
     enable = true;
+    links = {
+        "10-thunderbolt-port-1" = {
+            matchConfig = {
+                Path = "pci-0000:00:0d.3";
+                Driver = "thunderbolt-net";
+            };
+            linkConfig = {
+                Name = "enp0s13f3";
+                Alias = "tb1";
+                AlternativeName = "tb1";
+            };
+        };
+        "10-thunderbolt-port-2" = {
+            matchConfig = {
+                Path = "pci-0000:00:0d.2";
+                Driver = "thunderbolt-net";
+            };
+            linkConfig = {
+                Name = "enp0s13f2";
+                Alias = "tb2";
+                AlternativeName = "tb2";
+            };
+        };
+    };
     networks = {
       "10-lan" = {
         matchConfig.Name = "enp86s0";
