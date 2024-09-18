@@ -36,9 +36,6 @@
 
     krita
 
-    steampipe
-    powerpipe
-
     terraform
   ];
 
