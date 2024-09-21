@@ -24,6 +24,13 @@
 
   networking = {
     useDHCP = false;
+    thunderboltFabric = {
+      enable = false; #TODO: wait for https://github.com/NixOS/nixpkgs/pull/327099
+      interfaces = [
+        config.systemd.network.links."20-thunderbolt-port-1".linkConfig.Name
+        config.systemd.network.links."20-thunderbolt-port-2".linkConfig.Name
+      ];
+    };
     firewall = {
       # We switched to cilium Host FW
       enable = false;
@@ -45,31 +52,31 @@
   systemd.network = {
     enable = true;
     links = {
-        "10-thunderbolt-port-1" = {
-            matchConfig = {
-                Path = "pci-0000:00:0d.3";
-                Driver = "thunderbolt-net";
-            };
-            linkConfig = {
-                Name = "enp0s13f3";
-                Alias = "tb1";
-                AlternativeName = "tb1";
-            };
+      "20-thunderbolt-port-1" = {
+        matchConfig = {
+          Path = "pci-0000:00:0d.3";
+          Driver = "thunderbolt-net";
         };
-        "10-thunderbolt-port-2" = {
-            matchConfig = {
-                Path = "pci-0000:00:0d.2";
-                Driver = "thunderbolt-net";
-            };
-            linkConfig = {
-                Name = "enp0s13f2";
-                Alias = "tb2";
-                AlternativeName = "tb2";
-            };
+        linkConfig = {
+          Name = "enp0s13f3";
+          Alias = "tb1";
+          AlternativeName = "tb1";
         };
+      };
+      "20-thunderbolt-port-2" = {
+        matchConfig = {
+          Path = "pci-0000:00:0d.2";
+          Driver = "thunderbolt-net";
+        };
+        linkConfig = {
+          Name = "enp0s13f2";
+          Alias = "tb2";
+          AlternativeName = "tb2";
+        };
+      };
     };
     networks = {
-      "10-lan" = {
+      "20-lan" = {
         matchConfig.Name = "enp86s0";
         networkConfig = {
           DHCP = "ipv4";

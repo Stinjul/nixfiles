@@ -10,7 +10,7 @@ in {
     ./nix.nix
     ./openssh.nix
     ./locale.nix
-  ];
+  ] ++ (builtins.attrValues outputs.nixosModules);
 
   home-manager.extraSpecialArgs = { inherit inputs outputs; };
   
