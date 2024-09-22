@@ -42,6 +42,19 @@
 
   });
 
+  # See the comment block in the thunderbolt-network-frr.nix module
+  # This should go away whenever the relevant PR gets merged
+  frr-fixed = pkgs.frr.overrideAttrs (prev: {
+    configureFlags = pkgs.lib.lists.forEach prev.configureFlags (
+      x: if x == "--sbindir=$(out)/libexec/frr" then "--sbindir=${placeholder "out"}/libexec/frr" else x
+    );
+    postPatch = ''
+      substituteInPlace tools/frr-reload \
+        --replace-quiet /usr/lib/frr/ $out/libexec/frr/
+      sed -i '/^PATH=/ d' tools/frr.in tools/frrcommon.sh.in
+    '';
+  });
+
   xivlauncher-gamemode = pkgs.xivlauncher.override {
     steam = pkgs.steam.override { extraLibraries = pkgs: [ pkgs.gamemode.lib ]; };
   };

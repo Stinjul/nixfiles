@@ -30,24 +30,30 @@ in
 
   config = lib.mkIf cfg.enable {
     #TODO: wait for https://github.com/NixOS/nixpkgs/pull/327099 and rework if required
-    services.frr.fabric = {
-      enable = true;
-      config = ''
-        ip forwarding
-        ipv6 forwarding
-        !
-        ${lib.concatMapStringsSep "\n" (interface: ''
-          interface ${interface}
-            ip router openfabric 1
-            ipv6 router openfabric 1
-          !'') cfg.interfaces}
-        interface lo
-          ip router openfabric 1
-          ipv6 router openfabric 1
-          openfabric passive
-        !
-        router openfabric 1
-          net ${cfg.nsap}'';
+    services.frr = {
+      fabric = {
+        enable = true;
+        config = ''
+          interface lo
+           openfabric passive
+           ip router openfabric 1
+           ipv6 router openfabric 1
+          !
+          ${lib.concatMapStringsSep "\n" (interface: ''
+            interface ${interface}
+             ip router openfabric 1
+             ipv6 router openfabric 1
+            !'') cfg.interfaces}
+          router openfabric 1
+           net ${cfg.nsap}'';
+      };
+      zebra = {
+        enable = true;
+        config = ''
+          ip forwarding
+          ipv6 forwarding
+        '';
+      };
     };
     systemd.network = {
       networks = {

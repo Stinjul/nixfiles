@@ -25,7 +25,7 @@
   networking = {
     useDHCP = false;
     thunderboltFabric = {
-      enable = false; #TODO: wait for https://github.com/NixOS/nixpkgs/pull/327099
+      enable = true; #TODO: wait for https://github.com/NixOS/nixpkgs/pull/327099
       interfaces = [
         config.systemd.network.links."20-thunderbolt-port-1".linkConfig.Name
         config.systemd.network.links."20-thunderbolt-port-2".linkConfig.Name
