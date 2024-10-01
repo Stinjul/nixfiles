@@ -6,6 +6,7 @@
     ../features/neovim
 
     ./git.nix
+    ./ssh.nix
   ];
 
   # TODO: fix this ugly hack when https://github.com/nix-community/impermanence/pull/171 gets fixed
