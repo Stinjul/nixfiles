@@ -75,10 +75,12 @@
 
       mini = {
         enable = true;
+        mockDevIcons = true;
         modules = {
           hipatterns = {
             highlighters.hex_color.__raw = ''require("mini.hipatterns").gen_highlighter.hex_color()'';
           };
+          icons = { };
           indentscope = { };
           pairs = { };
           # splitjoin = { };
