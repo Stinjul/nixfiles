@@ -29,7 +29,7 @@
       };
 
       servers = {
-        lua-ls.enable = true;
+        lua_ls.enable = true;
         pyright.enable = true;
         cssls.enable = true;
         elixirls.enable = true;
@@ -37,7 +37,7 @@
         gopls.enable = true;
         templ.enable = true;
         html.enable = true;
-        java-language-server.enable = true;
+        java_language_server.enable = true;
         # jsonls.enable = true;
         # nil_ls.enable = true;
         nixd = {
