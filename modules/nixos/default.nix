@@ -1,3 +1,3 @@
 {
-  thunderboltFabric = import ./thunderbolt-network-frr.nix;
+  thunderboltFabric = import ./thunderbolt-network.nix;
 }

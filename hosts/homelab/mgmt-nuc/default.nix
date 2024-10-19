@@ -1,7 +1,7 @@
 {
   inputs,
   config,
-  lib,
+  pkgs,
   ...
 }:
 {
@@ -25,7 +25,7 @@
   networking = {
     useDHCP = false;
     thunderboltFabric = {
-      enable = true; #TODO: wait for https://github.com/NixOS/nixpkgs/pull/327099
+      enable = true; # TODO: wait for https://github.com/NixOS/nixpkgs/pull/327099
       interfaces = [
         config.systemd.network.links."20-thunderbolt-port-1".linkConfig.Name
         config.systemd.network.links."20-thunderbolt-port-2".linkConfig.Name
@@ -48,6 +48,11 @@
       # ];
     };
   };
+
+  # systemd.tmpfiles.rules = [
+  #   # "C /opt/cni/bin/host-device - - - - ${pkgs.cni-plugins}/bin/host-device"
+  #   # "C /opt/cni/bin/host-local - - - - ${pkgs.cni-plugins}/bin/host-local"
+  # ];
 
   systemd.network = {
     enable = true;
@@ -92,6 +97,7 @@
       "/etc/rancher"
       "/var/lib/rancher"
       "/var/lib/kubelet"
+      "/var/lib/rook"
       "/opt/cni"
       "/etc/cni"
     ];

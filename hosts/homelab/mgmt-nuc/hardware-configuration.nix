@@ -14,6 +14,7 @@
     kernelModules = [
       "kvm-intel"
       "thunderbolt-net"
+      "dm-snapshot"
     ];
     loader = {
       systemd-boot.enable = true;

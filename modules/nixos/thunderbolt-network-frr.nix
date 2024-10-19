@@ -60,7 +60,8 @@ in
             matchConfig.Driver = "thunderbolt-net";
             linkConfig = {
               ActivationPolicy = "up";
-              MTUBytes = "65520";
+              # MTUBytes = "65520";
+              MTUBytes = "1500";
             };
             networkConfig = {
               LinkLocalAddressing = "no";
