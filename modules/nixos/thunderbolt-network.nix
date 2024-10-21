@@ -67,7 +67,7 @@ in
       services = {
         frr = {
           requires = lib.lists.forEach cfg.interfaces (i: "sys-subsystem-net-devices-${i}.device");
-          # after = lib.lists.forEach cfg.interfaces (i: "sys-subsystem-net-devices-${i}.device");
+          after = lib.lists.forEach cfg.interfaces (i: "sys-subsystem-net-devices-${i}.device");
         };
         "pin-thunderbolt-to-p-cores" = {
           description = "Pins the thunderbolt IRQs to the P-Cores";
