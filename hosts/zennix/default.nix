@@ -18,6 +18,7 @@
     ./hardware-configuration.nix
     ./wireguard.nix
     ./dns.nix
+    ./monitors.nix
   ];
 
   home-manager = {

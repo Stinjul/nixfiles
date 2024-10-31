@@ -1,4 +1,4 @@
-{ inputs, pkgs, config, lib, ... }: {
+{ inputs, pkgs, config, lib, osConfig, ... }: {
   imports = [
     inputs.sops-nix.homeManagerModules.sops
 
@@ -14,7 +14,6 @@
 
     ./ssh.nix
     ./git.nix
-    ./monitors.nix
     ./starsector.nix
   ];
 
@@ -73,6 +72,6 @@
             then "${toString m.width}x${toString m.height}@${toString m.refreshRate}, ${toString m.x}x${toString m.y}, 1"
             else "disable"
         }, transform, ${toString ((builtins.div m.rotate 90) + (if m.flipped then 4 else 0))}"
-      ) (config.monitors);
+      ) (osConfig.monitors);
   };
 }

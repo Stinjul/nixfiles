@@ -1,4 +1,4 @@
 {
   fonts = import ./fonts.nix;
-  monitors = import ./monitors.nix;
+  monitors = import ../shared/monitors.nix;
 }
