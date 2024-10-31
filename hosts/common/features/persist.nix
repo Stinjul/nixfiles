@@ -14,6 +14,7 @@
     };
   };
   programs.fuse.userAllowOther = true;
+  systemd.suppressedSystemUnits = [ "systemd-machine-id-commit.service" ];
 
   system.activationScripts.persistent-dirs.text =
     let
