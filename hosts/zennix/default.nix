@@ -14,6 +14,7 @@
     ../common/features/bluetooth.nix
     ../common/features/polkit.nix
     ../common/features/mullvad.nix
+    ../common/features/podman.nix
 
     ./hardware-configuration.nix
     ./wireguard.nix

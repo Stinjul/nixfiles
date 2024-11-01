@@ -6,6 +6,7 @@
     ksops
     k3s
     kubernetes-helm
+    kustomize-kcl
   ];
   home = {
     persistence = {

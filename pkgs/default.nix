@@ -39,8 +39,8 @@
           }
         );
     };
-
   });
+  kustomize-kcl = pkgs.callPackage ./kustomize-kcl { };
 
   # See the comment block in the thunderbolt-network-frr.nix module
   # This should go away whenever the relevant PR gets merged
