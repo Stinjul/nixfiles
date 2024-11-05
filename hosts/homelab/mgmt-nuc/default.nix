@@ -98,6 +98,7 @@
       "/var/lib/rancher"
       "/var/lib/kubelet"
       "/var/lib/rook"
+      "/var/lib/grafana-alloy"
       "/opt/cni"
       "/etc/cni"
     ];
