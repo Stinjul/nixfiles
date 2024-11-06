@@ -36,6 +36,7 @@
     extraPlugins = with pkgs.vimPlugins; [
       treesj
       kcl-nvim
+      vim-alloy
     ];
 
     extraConfigLua = ''
