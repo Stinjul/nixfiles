@@ -1,7 +1,11 @@
-{ config, options, lib, ... }:
+{
+  config,
+  lib,
+  ...
+}:
 let
-  # hasPersistence = options.home ? "persistence" && config.home.persistence ? "/persist/home/stinjul";
 in
+# hasPersistence = options.home ? "persistence" && config.home.persistence ? "/persist/home/stinjul";
 {
   programs.ssh = {
     enable = lib.mkDefault true;
@@ -17,4 +21,4 @@ in
   #     ".ssh/known_hosts"
   #   ];
   # };
-} 
+}
