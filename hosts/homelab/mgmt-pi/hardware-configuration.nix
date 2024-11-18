@@ -1,9 +1,10 @@
-{ pkgs, lib, ... }: {
+{ pkgs, lib, ... }:
+{
   boot = {
     initrd = {
+      includeDefaultModules = false;
       availableKernelModules = [ "xhci_pci" ];
     };
-    # kernelPackages = pkgs.pkgsCross.aarch64-multiplatform.linuxKernel.packages.linux_rpi4;
     kernelPackages =
       let
         crossPkgs = import pkgs.path {
@@ -11,7 +12,19 @@
           crossSystem.system = "aarch64-linux";
         };
       in
-      crossPkgs.linuxKernel.packages.linux_rpi4;
+      pkgs.linuxPackagesFor (
+        # The default kernel config for nixos is thicc AF, so let's turn it off since we need to build it ourselves for cilium 
+        ## (and ceph/rook technically, but don't run that on a pi for the love of god)
+        # We're talking about multiple hours vs 7 minutes on my AMD 3900X
+        crossPkgs.linuxKernel.packages.linux_rpi4.kernel.override {
+          # argsOverride seems to be the "normal way" of passing overrides to the kernel,
+          ## but linux-rpi.nix also passes the normal args to the kernel anyway so ¯\_(ツ)_/¯
+          # argsOverride = {
+          autoModules = false;
+          enableCommonConfig = false;
+          # };
+        }
+      );
     kernelParams = [
       "cgroup_enable=cpuset"
       "cgroup_memory=1"
