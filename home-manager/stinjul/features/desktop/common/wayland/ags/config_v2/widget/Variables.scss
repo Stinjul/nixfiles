@@ -1,0 +1,29 @@
+// https://gitlab.gnome.org/GNOME/gtk/-/blob/gtk-3-24/gtk/theme/Adwaita/_colors-public.scss
+//$theme_fg_color: "@theme_fg_color";
+//$theme_bg_color: "@theme_bg_color";
+@use "sass:color";
+
+$fg: #f1efee;
+$bg: #1b1918;
+$primary_fg: $bg;
+$primary_bg: #a87214;
+$error_fg: $bg;
+$error_bg: #dd0e23;
+
+$widget: $primary_bg;
+$widget_opacity: 94%;
+
+$hover_fg: color.scale($bg, $lightness: 8%);
+$hover_bg: color.scale($widget, $alpha: $widget_opacity);
+// $hover_fg: #0000FF;
+// $hover_bg: #FF0000;
+
+$border_color: $primary_bg;
+$border_width: 2px;
+$border_opacity: 96%;
+$border: $border-width solid $border-color;
+
+$padding: 7pt;
+$spacing: 12pt;
+$radius: 15px;
+$transition: 200ms;

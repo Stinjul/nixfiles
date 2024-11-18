@@ -1,0 +1,95 @@
+@use "../Variables.scss";
+
+@mixin bar-item {
+  transition: Variables.$transition;
+  border-radius: Variables.$radius;
+  color: Variables.$fg;
+
+  background-color: transparent;
+  background-image: none;
+  box-shadow: none;
+
+  margin: 0px Variables.$spacing * 0.1;
+
+  >* {
+    padding: Variables.$padding * 0.4 Variables.$padding * 0.8;
+    margin: Variables.$spacing * 0.3;
+  }
+}
+
+@mixin bar-item-active {
+  box-shadow: inset 0 0 0 Variables.$border_width Variables.$border_color;
+  // background-image: Variables.$active-gradient;
+  background-color: Variables.$primary_bg;
+  color: Variables.$primary_fg;
+}
+
+@mixin bar-item-focus() {
+  box-shadow: inset 0 0 0 Variables.$border_width Variables.$primary_bg;
+  background-color: Variables.$hover_bg;
+  color: Variables.$hover_fg;
+}
+
+@mixin bar-item-hover() {
+  box-shadow: inset 0 0 0 Variables.$border_width Variables.$border_color;
+  background-color: Variables.$hover_bg;
+  color: Variables.$hover_fg;
+}
+
+@mixin unset($rec: false) {
+  all: unset;
+
+  @if $rec {
+    * {
+      all: unset;
+    }
+  }
+}
+
+window.Bar {
+  // background-color: transparent;
+  background-color: Variables.$bg;
+  //color: Variables.$fg;
+  font-weight: bold;
+
+  >centerbox {
+    padding: 2px;
+
+    * eventbox * {
+      margin-left: 2px;
+    }
+  }
+
+  button {
+    @include unset;
+    @include bar-item;
+
+    &:focus,
+    &.focused {
+      @include bar-item-focus;
+    }
+
+    &:hover {
+      @include bar-item-hover;
+    }
+
+    &:active,
+    &.on,
+    &.active,
+    &:checked {
+      @include bar-item-active;
+
+      &:hover {
+        box-shadow:
+          inset 0 0 0 Variables.$border-width Variables.$border-color,
+          inset 0 0 0 99px Variables.$hover-bg;
+      }
+    }
+  }
+
+  .bar-indicator {
+    margin: Variables.$spacing * 0.3;
+
+    @include bar-item;
+  }
+}
