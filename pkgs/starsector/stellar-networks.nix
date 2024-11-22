@@ -11,7 +11,7 @@ buildStarsectorMod rec {
     url = "https://github.com/jaghaimo/stelnet/releases/download/${version}/stelnet-${version}.zip";
     sha256 = "sha256-hnjypn3aaz6DdDFWtEk0U9i50gcI40wQ5eNdrRmayn0=";
   };
-  buildPhase = ''
-    ${jaq}/bin/jaq -i '.gameVersion = "0.97a"' ./mod_info.json
+  postInstall = ''
+    ${jaq}/bin/jaq -i '.gameVersion = "0.97a"' $out/mod_info.json
   '';
 }

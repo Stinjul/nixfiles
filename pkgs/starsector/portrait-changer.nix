@@ -3,8 +3,6 @@
   fetchzip,
   unrar,
   jaq,
-  fixjson,
-  gnused,
 }:
 buildStarsectorMod {
   pname = "portrait-changer";
@@ -16,10 +14,7 @@ buildStarsectorMod {
     extension = "rar";
     sha256 = "sha256-cbQsCcaiTdrpLC4QX9KS4moGu3LWdgSqoBoI8MnZW10=";
   };
-  # I HATE JSON COMMENTS I HATE JSON COMMENTS I HATE JSON COMMENTS
-  buildPhase = ''
-    ${gnused}/bin/sed -i 's|#.*||' ./mod_info.json
-    ${fixjson}/bin/fixjson -w ./mod_info.json
-    ${jaq}/bin/jaq -i '.gameVersion = "0.97a"' ./mod_info.json
+  postInstall = ''
+    ${jaq}/bin/jaq -i '.gameVersion = "0.97a"' $out/mod_info.json
   '';
 }

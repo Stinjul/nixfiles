@@ -1,6 +1,7 @@
 {
   stdenv,
-  p7zip,
+  gnused,
+  fixjson,
 }:
 
 attrs@{
@@ -17,23 +18,24 @@ attrs@{
 
   sourceRoot ? "source",
   unpackCmd ? "",
-  # nativeBuildInputs ? [ ],
 }:
 stdenv.mkDerivation (
   attrs
   // {
     inherit name;
-    # inherit src;
     inherit sourceRoot;
     inherit unpackCmd;
     inherit unpackPhase configurePhase buildPhase;
-    # nativeBuildInputs = [ p7zip ] ++ nativeBuildInputs;
 
     inherit preInstall postInstall;
     installPhase = ''
       runHook preInstall
-
+      
       cp -r ./ $out
+      
+      # I HATE JSON COMMENTS I HATE JSON COMMENTS I HATE JSON COMMENTS
+      ${gnused}/bin/sed -i 's|#.*||' $out/mod_info.json
+      ${fixjson}/bin/fixjson -w $out/mod_info.json
 
       runHook postInstall
     '';

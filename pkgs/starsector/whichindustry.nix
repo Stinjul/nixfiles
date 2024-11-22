@@ -14,7 +14,7 @@ buildStarsectorMod {
     extension = "rar";
     sha256 = "sha256-LFIAATtX5xdzK5vZn3cXooptO/Xu6sfYHAfqEmcu8rQ=";
   };
-  buildPhase = ''
-    ${jaq}/bin/jaq -i '.gameVersion = "0.97a"' ./mod_info.json
+  postInstall = ''
+    ${jaq}/bin/jaq -i '.gameVersion = "0.97a"' $out/mod_info.json
   '';
 }
