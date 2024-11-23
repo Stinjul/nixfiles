@@ -3,6 +3,7 @@
   xdg.dataFile."starsector/mods".source =
     let
       mods = with pkgs.starsectorMods; [
+        a-new-level-of-confidence-40
         angry-periphery
         aotd-ashlib
         aotd-cryosleeper-options
@@ -10,6 +11,7 @@
         aotd-vaults-of-knowledge
         aotd-virtues-of-society
         armaa
+        automated-commands
         autosave
         brighton-federation
         combat-chatter

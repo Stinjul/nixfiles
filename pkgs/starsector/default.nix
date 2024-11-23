@@ -5,6 +5,7 @@
 
 lib.makeScope newScope (
   self: with self; {
+    a-new-level-of-confidence-40 = callPackage ./a-new-level-of-confidence-40.nix { };
     angry-periphery = callPackage ./angry-periphery.nix { };
     aotd-ashlib = callPackage ./aotd-ashlib.nix { };
     aotd-cryosleeper-options = callPackage ./aotd-cryosleeper-options.nix { };
@@ -12,6 +13,7 @@ lib.makeScope newScope (
     aotd-vaults-of-knowledge = callPackage ./aotd-vaults-of-knowledge.nix { };
     aotd-virtues-of-society = callPackage ./aotd-virtues-of-society.nix { };
     armaa = callPackage ./armaa.nix { };
+    automated-commands = callPackage ./automated-commands.nix { };
     autosave = callPackage ./autosave.nix { };
     brighton-federation = callPackage ./brighton.nix { };
     buildStarsectorMod = callPackage ./buildStarsectorMod.nix { };
