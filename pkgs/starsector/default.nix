@@ -55,6 +55,7 @@ lib.makeScope newScope (
     speedup = callPackage ./speedup.nix { };
     starship-legends = callPackage ./starship-legends.nix { };
     stellar-networks = callPackage ./stellar-networks.nix { };
+    stinger-shipyards = callPackage ./stinger-shipyards.nix { };
     substance-abuse = callPackage ./substance-abuse.nix { };
     tahlan-shipworks = callPackage ./tahlan-shipworks.nix { };
     terraforming-and-station-construction = callPackage ./tasc.nix { };

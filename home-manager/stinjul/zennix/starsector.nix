@@ -52,6 +52,7 @@
         speedup
         starship-legends
         stellar-networks
+        stinger-shipyards
         substance-abuse
         tahlan-shipworks
         terraforming-and-station-construction
