@@ -18,4 +18,8 @@ buildStarsectorMod rec {
 
   unpackCmd = ''${p7zip}/bin/7z x -aoa "$curSrc" -osource'';
   sourceRoot = "source/What\ remains\ of\ Stinger\ Shipyards";
+  
+  postInstall = ''
+    mv $out/graphics/ships/lg/sex_gryphon_lg.png $out/graphics/ships/lg/sex_gryphon_LG.png
+  '';
 }
