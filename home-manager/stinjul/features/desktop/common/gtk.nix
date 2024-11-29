@@ -17,8 +17,10 @@ in
       "/persist${config.home.homeDirectory}".directories = [ ".config/dconf" ];
     };
     pointerCursor = {
-      package = pkgs.bibata-cursors;
-      name = "Bibata-Modern-Classic";
+      #package = pkgs.bibata-cursors;
+      #name = "Bibata-Modern-Classic";
+      package = pkgs.phinger-cursors;
+      name = "phinger-cursors-dark";
       size = 24;
       gtk.enable = true;
       x11.enable = true;
