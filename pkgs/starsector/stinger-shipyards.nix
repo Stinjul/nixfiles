@@ -21,5 +21,7 @@ buildStarsectorMod rec {
   
   postInstall = ''
     mv $out/graphics/ships/lg/sex_gryphon_lg.png $out/graphics/ships/lg/sex_gryphon_LG.png
+    # This makes sure GC doesn't touch it so you don't have to redownload it whenever you run GC
+    ln -s $src $out/source.zip
   '';
 }
