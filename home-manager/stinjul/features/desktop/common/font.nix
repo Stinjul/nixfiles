@@ -1,9 +1,10 @@
-{ pkgs, ... }: {
+{ pkgs, ... }:
+{
   fontProfiles = {
     enable = true;
     monospace = {
-      family = "Iosevka Nerd Font";
-      package = pkgs.nerdfonts.override { fonts = [ "Iosevka" "IosevkaTerm" ]; };
+      family = "IosevkaTerm Nerd Font Mono";
+      package = pkgs.nerd-fonts.iosevka-term;
     };
     regular = {
       family = "Iosevka";

@@ -35,7 +35,7 @@ window {{
     width: 50%;
     border: 3;
     padding: 2.5ch;
-    font: "Iosevka Nerd Font Mono 18";
+    font: "IosevkaTerm Nerd Font Mono 18";
 }}
 
 mainbox {{

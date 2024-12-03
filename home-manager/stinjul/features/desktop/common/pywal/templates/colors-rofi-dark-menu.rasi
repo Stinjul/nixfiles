@@ -6,7 +6,7 @@
     foreground: {color3};
     border-color: {color3};
     spacing: 2;
-    font: "Iosevka Nerd Font Mono 50";
+    font: "IosevkaTerm Nerd Font Mono 50";
     text-color: @foreground;
 }}
 

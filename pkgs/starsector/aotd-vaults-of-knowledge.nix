@@ -8,7 +8,7 @@ buildStarsectorMod {
 
   src = fetchzip {
     url = "https://drive.google.com/uc?export=download&id=1rtCUH6htJqSs-nn8LLxxzAaUb4dkgOTU";
-    sha256 = "sha256-avPaOCMpCWGJuqRJYyHFBQ68LkLWzYtvFPp6x+IWB18=";
+    sha256 = "sha256-5tJClkQa+kGWKVzZVjdqWpwkglZNzkgsuCUrHBc7n/k=";
     extension = "zip";
     stripRoot = false;
   };
