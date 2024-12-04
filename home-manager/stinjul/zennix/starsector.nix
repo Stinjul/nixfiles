@@ -40,6 +40,7 @@
         phillip-andrada-gas-station-manager
         portrait-changer
         progressive-smods
+        random-assortment-of-things
         retrolib
         roider-union
         ruthless-sector

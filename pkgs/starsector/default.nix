@@ -43,6 +43,7 @@ lib.makeScope newScope (
     phillip-andrada-gas-station-manager = callPackage ./PAGSM.nix { };
     portrait-changer = callPackage ./portrait-changer.nix { };
     progressive-smods = callPackage ./progressive-smods.nix { };
+    random-assortment-of-things = callPackage ./RAT.nix { };
     retrolib = callPackage ./retrolib.nix { };
     roider-union = callPackage ./roider-union.nix { };
     ruthless-sector = callPackage ./ruthless-sector.nix { };
