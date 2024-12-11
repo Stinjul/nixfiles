@@ -87,5 +87,14 @@
     ];
   };
 
+  fileSystems."/k3s" = {
+    device = "/dev/ssd_boot/k3s";
+    fsType = "ext4";
+    neededForBoot = true;
+    options = [
+      "discard"
+    ];
+  };
+
   nixpkgs.hostPlatform = "x86_64-linux";
 }

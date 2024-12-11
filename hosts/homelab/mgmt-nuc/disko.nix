@@ -50,7 +50,19 @@
             content = {
               type = "btrfs";
               mountpoint = "/nix";
-              mountOptions = [ "compress=zstd" "noatime" ];
+              mountOptions = [
+                "compress=zstd"
+                "noatime"
+              ];
+            };
+          };
+          k3s = {
+            size = "16G";
+            content = {
+              type = "filesystem";
+              format = "ext4";
+              mountpoint = "/k3s";
+              mountOptions = [ "discard" ];
             };
           };
           persist = {
@@ -58,7 +70,10 @@
             content = {
               type = "btrfs";
               mountpoint = "/persist";
-              mountOptions = [ "compress=zstd" "noatime" ];
+              mountOptions = [
+                "compress=zstd"
+                "noatime"
+              ];
             };
           };
         };

@@ -107,6 +107,12 @@
     ];
   };
 
+  environment.persistence."/k3s" = {
+    directories = [
+      "/var/lib/rancher/k3s/server/db"
+    ];
+  };
+
   services.k3s = {
     enable = true;
     role = "server";
