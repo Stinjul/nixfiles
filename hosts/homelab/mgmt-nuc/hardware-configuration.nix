@@ -15,6 +15,7 @@
       "kvm-intel"
       "thunderbolt-net"
       "dm-snapshot"
+      "drivetemp"
     ];
     loader = {
       systemd-boot.enable = true;
