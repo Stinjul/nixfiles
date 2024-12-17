@@ -2,7 +2,7 @@
   # TODO: wait for https://github.com/NixOS/nixpkgs/pull/302442
   programs.nixvim.plugins.neorg = {
     enable = true;
-    modules = {
+    settings.load = {
       "core.defaults" = {
         __empty = null;
       };

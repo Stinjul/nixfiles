@@ -66,7 +66,12 @@
             completion = true;
           };
         };
-        ltex.enable = true;
+        ltex = {
+          enable = true;
+          package = pkgs.ltex-ls-plus;
+          cmd = [ "ltex-ls-plus" ];
+          settings.additionalRules.motherTongue = "nl-BE";
+        };
       };
     };
   };
