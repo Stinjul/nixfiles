@@ -22,7 +22,7 @@
         "$username"
         "$hostname"
         "$jobs"
-        #"$direnv"
+        "$direnv"
         #"$nodejs"
         #"$python"
         #"$rust"
@@ -154,6 +154,20 @@
           "[$number ]($style)"
         ];
         style = "bg:black fg:green";
+      };
+      direnv = {
+        disabled = false;
+        symbol = "󱁿 ";
+        format = lib.concatStrings [
+          "[ ](bg:black fg:bright-black)"
+          "[$symbol$allowed$loaded ]($style)"
+        ];
+        allowed_msg = ""; #" "
+        not_allowed_msg = " ";
+        denied_msg = " ";
+        loaded_msg = ""; #" ";
+        unloaded_msg = " ";
+        style = "bg:black fg:bright-yellow";
       };
       kubernetes = {
         disabled = false;

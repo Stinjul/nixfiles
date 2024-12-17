@@ -6,6 +6,7 @@
     ./htop.nix
     ./ssh.nix
     ./k8s.nix
+    ./direnv.nix
   ];
   home.packages = with pkgs; [
     ncdu
