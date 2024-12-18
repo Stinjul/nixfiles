@@ -15,6 +15,7 @@
     ./opts.nix
     ./keybinds.nix
     ./neorg.nix
+    ./autocmd.nix
   ];
 
   home.sessionVariables.EDITOR = "nvim";
