@@ -12,7 +12,8 @@
         privateKeyFile = config.sops.secrets.wg_server_key.path;
         peers = [
           { # Shittop
-              publicKey = "GSLRWEKej4HLD5SEp7NCBs+ews8G63k0I30WcQkGuWs=";
+              #publicKey = "GSLRWEKej4HLD5SEp7NCBs+ews8G63k0I30WcQkGuWs=";
+              publicKey = "YZcDZyP7IklZ/il/MU314dyaRWY3xlWSitSSaUIyQ2s=";
               allowedIPs = [ "10.8.0.2/32" ]; # Client IP
           }
           { # Phone
