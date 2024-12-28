@@ -2,7 +2,7 @@ title >(((°>
 launch fish
 new_tab htop
 launch htop
-new_tab ranger
-launch ranger
+new_tab yazi
+launch yazi
 # new_tab ncmpcpp
 # launch fish -c musicPlayer

@@ -2,7 +2,8 @@
   imports = [
     ./fish.nix
     ./starship.nix
-    ./ranger.nix
+    # ./ranger.nix
+    ./yazi.nix
     ./htop.nix
     ./ssh.nix
     ./k8s.nix
@@ -10,7 +11,6 @@
   ];
   home.packages = with pkgs; [
     ncdu
-    ranger
     sshfs
     bind
 
