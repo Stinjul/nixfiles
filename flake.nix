@@ -66,13 +66,13 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    neorg = {
-      #url = "github:nvim-neorg/nixpkgs-neorg-overlay";
-      # https://github.com/NixOS/nixpkgs/issues/356274
-      # https://github.com/nvim-neorg/nixpkgs-neorg-overlay/pull/11
-      url = "github:nvim-neorg/nixpkgs-neorg-overlay?ref=pull/11/head";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    # neorg = {
+    #   url = "github:nvim-neorg/nixpkgs-neorg-overlay";
+    #   # https://github.com/NixOS/nixpkgs/issues/356274
+    #   # https://github.com/nvim-neorg/nixpkgs-neorg-overlay/pull/11
+    #   # url = "github:nvim-neorg/nixpkgs-neorg-overlay?ref=pull/11/head";
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    # };
   };
 
   outputs =

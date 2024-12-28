@@ -18,5 +18,5 @@
     };
   modifications = final: prev: { };
   # Flakes with overlays
-  neorg = inputs.neorg.overlays.default;
+  # neorg = inputs.neorg.overlays.default;
 }
