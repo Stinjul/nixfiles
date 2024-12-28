@@ -4,11 +4,11 @@
 }:
 buildStarsectorMod {
   pname = "aotd-vaults-of-knowledge";
-  version = "2.4.11";
+  version = "3.0.3";
 
   src = fetchzip {
-    url = "https://drive.google.com/uc?export=download&id=1rtCUH6htJqSs-nn8LLxxzAaUb4dkgOTU";
-    sha256 = "sha256-5tJClkQa+kGWKVzZVjdqWpwkglZNzkgsuCUrHBc7n/k=";
+    url = "https://drive.google.com/uc?export=download&id=1gvck8DcbYSy_GHHp7_VFEqoRtdt9DXz5";
+    sha256 = "sha256-iCYVkb2Q2qoAidamwGviz7zBR3+cafDsJOU+q432B8w=";
     extension = "zip";
     stripRoot = false;
   };

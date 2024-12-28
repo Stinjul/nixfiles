@@ -4,11 +4,11 @@
 }:
 buildStarsectorMod {
   pname = "aotd-ashlib";
-  version = "1.0.2";
+  version = "1.0.4";
 
   src = fetchzip {
-    url = "https://drive.google.com/uc?export=download&id=1rtCUH6htJqSs-nn8LLxxzAaUb4dkgOTU";
-    sha256 = "sha256-5tJClkQa+kGWKVzZVjdqWpwkglZNzkgsuCUrHBc7n/k=";
+    url = "https://drive.google.com/uc?export=download&id=1gvck8DcbYSy_GHHp7_VFEqoRtdt9DXz5";
+    sha256 = "sha256-iCYVkb2Q2qoAidamwGviz7zBR3+cafDsJOU+q432B8w=";
     extension = "zip";
     stripRoot = false;
   };
