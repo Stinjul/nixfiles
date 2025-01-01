@@ -20,7 +20,7 @@
     registry = lib.mapAttrs (_: value: { flake = value; }) inputs;
   };
   systemd.services.nix-gc.script = lib.mkForce ''
-    ${config.nix.package.out}/bin/nix-env --delete-generations +5
+    ${config.nix.package.out}/bin/nix-env -p /nix/var/nix/profiles/system --delete-generations +5
     ${config.nix.package.out}/bin/nix-collect-garbage
     ${config.nix.package.out}/bin/nix-store --optimise
   '';
