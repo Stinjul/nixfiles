@@ -72,6 +72,9 @@
           cmd = [ "ltex-ls-plus" ];
           settings.additionalRules.motherTongue = "nl-BE";
         };
+        texlab = {
+          enable = true;
+        };
       };
     };
   };
