@@ -16,6 +16,7 @@ lib.makeScope newScope (
     automated-commands = callPackage ./automated-commands.nix { };
     autosave = callPackage ./autosave.nix { };
     brighton-federation = callPackage ./brighton.nix { };
+    building-menu-overhaul = callPackage ./building-menu-overhaul.nix { };
     buildStarsectorMod = callPackage ./buildStarsectorMod.nix { };
     combat-chatter = callPackage ./combat-chatter.nix { };
     commissioned-crews = callPackage ./commissioned-crews.nix { };

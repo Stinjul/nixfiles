@@ -14,6 +14,7 @@
         automated-commands
         autosave
         brighton-federation
+        building-menu-overhaul
         combat-chatter
         commissioned-crews
         console-commands
