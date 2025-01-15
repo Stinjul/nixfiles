@@ -1,4 +1,5 @@
-{ inputs, lib, ... }: {
+{ inputs, lib, ... }:
+{
   imports = [
     inputs.nixos-wsl.nixosModules.wsl
 
@@ -10,9 +11,9 @@
 
     ./wireguard.nix
   ];
-  
+
   # TODO: fix this ugly hack when https://github.com/nix-community/impermanence/pull/171 gets fixed
-  environment.persistence = lib.mkForce {};
+  environment.persistence = lib.mkForce { };
 
   home-manager.users.stinjul = import ../../home-manager/stinjul/wsl;
 
@@ -31,6 +32,12 @@
 
   programs = {
     dconf.enable = true;
+  };
+
+  services = {
+    openssh = {
+      ports = [ 2022 ];
+    };
   };
 
   xdg.portal = {
