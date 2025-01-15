@@ -6,6 +6,7 @@
 
     ../features/persist.nix
     ../features/neovim
+    ../features/cli/adb.nix
     ../features/desktop/hyprland
     ../features/desktop/common/chromium.nix
     ../features/desktop/common/mullvad.nix

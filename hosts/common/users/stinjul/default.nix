@@ -17,7 +17,7 @@ in
     isNormalUser = true;
     hashedPasswordFile = config.sops.secrets.stinjul-password.path;
     shell = pkgs.fish;
-    extraGroups = [ "wheel" ] ++ ifTheyExist [ "wireshark" "gamemode" "podman" ];
+    extraGroups = [ "wheel" ] ++ ifTheyExist [ "wireshark" "gamemode" "podman" "adbusers" ];
     openssh.authorizedKeys.keys = lib.splitString "\n" (
       builtins.readFile ../../../../home-manager/stinjul/ssh.pub
     );
