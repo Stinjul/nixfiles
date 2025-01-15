@@ -13,7 +13,7 @@
   home.persistence = lib.mkForce {};
 
   home.packages = with pkgs; [
-    vagrant-wsl
+    # vagrant-wsl
     chef-cli
     cookstyle
     knife
