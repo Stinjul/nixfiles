@@ -3,10 +3,21 @@
 
   boot = {
     initrd = {
-      availableKernelModules = [ "nvme" "xhci_pci" "ahci" "usbhid" "usb_storage" "sd_mod" "sr_mod" ];
+      availableKernelModules = [
+        "nvme"
+        "xhci_pci"
+        "ahci"
+        "usbhid"
+        "usb_storage"
+        "sd_mod"
+        "sr_mod"
+      ];
       kernelModules = [ "dm-snapshot" ];
     };
-    kernelModules = [ "kvm-amd" ];
+    kernelModules = [
+      "kvm-amd"
+      "it87"
+    ];
     extraModulePackages = [ ];
     loader = {
       systemd-boot.enable = true;
@@ -50,7 +61,10 @@
   fileSystems."/boot" = {
     device = "/dev/disk/by-uuid/F2BF-33D5";
     fsType = "vfat";
-    options = [ "fmask=0022" "dmask=0022" ];
+    options = [
+      "fmask=0022"
+      "dmask=0022"
+    ];
   };
 
   fileSystems."/nix" = {
@@ -72,7 +86,7 @@
     device = "/dev/disk/by-uuid/52576efe-a2e2-42d0-a828-3d4f9166f2fb";
     fsType = "xfs";
   };
-  
+
   fileSystems."/mnt/hdd_steam_library" = {
     device = "/dev/disk/by-uuid/22c7fd3f-3d57-4857-9eba-25f84e2eff83";
     options = [
