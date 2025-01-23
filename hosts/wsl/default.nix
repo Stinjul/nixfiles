@@ -1,4 +1,4 @@
-{ inputs, lib, ... }:
+{ inputs, lib, pkgs, ... }:
 {
   imports = [
     inputs.nixos-wsl.nixosModules.wsl
@@ -26,6 +26,10 @@
     };
     defaultUser = "stinjul";
     startMenuLaunchers = true;
+    usbip = {
+      enable = true;
+      autoAttach = [ "2-3" ];
+    };
   };
 
   console.keyMap = "azerty";
@@ -38,6 +42,11 @@
     openssh = {
       ports = [ 2022 ];
     };
+    udev.packages = [ pkgs.yubikey-personalization ];
+    udev.extraRules = ''
+        SUBSYSTEM=="usb", ENV{ID_SECURITY_TOKEN}=="1", MODE="0660", GROUP="wheel"
+        SUBSYSTEM=="hidraw", ENV{ID_SECURITY_TOKEN}=="1", MODE="0660", GROUP="wheel"
+    '';
   };
 
   xdg.portal = {
