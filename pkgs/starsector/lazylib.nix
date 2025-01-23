@@ -8,6 +8,6 @@ buildStarsectorMod rec {
 
   src = fetchzip {
     url = "https://github.com/LazyWizard/lazylib/releases/download/${version}/LazyLib.${version}.zip";
-    sha256 = "sha256-0HypoB/ZW/1HdHJMTxEktnbSBWQBjvuxAgoq6c2uzbs=";
+    sha256 = "sha256-u9usk9JChw2y152cbAYeyELHPkpHjfgFlzIliP/Ph/I=";
   };
 }
