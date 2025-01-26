@@ -75,6 +75,19 @@
 
       image.enable = true;
 
+      molten.enable = true;
+      quarto.enable = true;
+      jupytext = {
+        enable = true;
+        settings.custom_language_formatting = {
+          python = {
+            extension = "qmd";
+            style = "quarto";
+            force_ft = "quarto";
+          };
+        };
+      };
+
       mini = {
         enable = true;
         mockDevIcons = true;
