@@ -119,6 +119,15 @@
     tokenFile = config.sops.secrets.k3s-token-mgmt.path;
     extraFlags = "--disable local-storage --disable metrics-server --disable traefik --disable servicelb --flannel-backend=none --disable-network-policy --disable-helm-controller --disable-kube-proxy --tls-san kube.k3s-mgmt.stinjul.com --node-name ${config.networking.hostName}";
     # serverAddr = "https://kube.k3s-mgmt.stinjul.com:6443";
+    registries = {
+      mirrors = {
+        "docker.io".endpoint = [ "https://docker-registry.mgmt.stinjul.com" ];
+        "registry.k8s.io".endpoint = [ "https://k8s-registry.mgmt.stinjul.com" ];
+        "ghcr.io".endpoint = [ "https://github-registry.mgmt.stinjul.com" ];
+        "quay.io".endpoint = [ "https://quay-registry.mgmt.stinjul.com" ];
+        "xpkg.upbound.io".endpoint = [ "https://upbound-registry.mgmt.stinjul.com" ];
+      };
+    };
   };
 
   console.keyMap = "azerty";
