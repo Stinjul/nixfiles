@@ -1,11 +1,16 @@
 {
   programs.nixvim = {
-    extraPython3Packages = p: with p; [ plotly kaleido ];
+    extraPython3Packages =
+      p: with p; [
+        plotly
+        kaleido
+      ];
     plugins = {
       molten = {
         enable = true;
         settings = {
           image_provider = "image.nvim";
+          wrap_output = true;
         };
       };
       quarto = {

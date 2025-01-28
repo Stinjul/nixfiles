@@ -8,6 +8,7 @@
     ../common/global
     ../common/users/stinjul
     ../common/features/pipewire.nix
+    ../common/features/odbc.nix
 
     ./wireguard.nix
   ];
