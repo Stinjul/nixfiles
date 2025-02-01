@@ -6,19 +6,23 @@ import { bind, timeout, Variable } from "astal"
 function Player(player: Mpris.Player) {
     const currentTrack = Variable("");
 
+    let timeoutCount = 0;
+
     return <revealer
         clickThrough
         visible
         transitionType={Gtk.RevealerTransitionType.SLIDE_RIGHT}
         setup={
             self => {
-                bind(player, "title").subscribe((title) => {
-                    currentTrack.set(title)
+                bind(player, "metadata").subscribe(() => {
+                    currentTrack.set(player.title)
                     self.reveal_child = true;
                     const lastTrack = currentTrack.get()
+                    timeoutCount++
                     timeout(3000, () => {
+                        timeoutCount--
                         if (lastTrack === currentTrack.get())
-                            if (self)
+                            if (self && timeoutCount == 0)
                                 self.reveal_child = false;
                     })
                 })
@@ -28,7 +32,7 @@ function Player(player: Mpris.Player) {
         <label
             truncate
             maxWidthChars={50}
-            label={bind(player, "title").as(
+            label={bind(player, "metadata").as(
                 () => {
                     if (player.artist)
                         return `${player.artist} - ${player.title}`
