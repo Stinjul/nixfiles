@@ -14,7 +14,7 @@ function Player(player: Mpris.Player) {
         transitionType={Gtk.RevealerTransitionType.SLIDE_RIGHT}
         setup={
             self => {
-                bind(player, "metadata").subscribe(() => {
+                bind(player, "title").subscribe(() => {
                     currentTrack.set(player.title)
                     self.reveal_child = true;
                     const lastTrack = currentTrack.get()
