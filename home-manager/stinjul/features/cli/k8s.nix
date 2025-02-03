@@ -3,7 +3,7 @@
   home.packages = with pkgs; [
     argocd
     kustomize
-    ksops
+    kustomize-sops
     k3s
     kubernetes-helm
     kustomize-kcl

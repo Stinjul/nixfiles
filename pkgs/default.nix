@@ -11,7 +11,6 @@
   inspec-bin = pkgs.callPackage ./chef-workstation/inspec-bin { };
   chef-vault = pkgs.callPackage ./chef-workstation/chef-vault { };
   vagrant-wsl = pkgs.callPackage ./vagrant-wsl.nix { };
-  ksops = pkgs.callPackage ./ksops.nix { };
   trackma-full = pkgs.trackma.override { withQT = true; };
   discord-mod = pkgs.discord.override {
     withOpenASAR = true;
