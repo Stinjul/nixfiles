@@ -45,6 +45,7 @@ lib.makeScope newScope (
     portrait-changer = callPackage ./portrait-changer.nix { };
     progressive-smods = callPackage ./progressive-smods.nix { };
     random-assortment-of-things = callPackage ./RAT.nix { };
+    refit-filters = callPackage ./refit-filters.nix { };
     retrolib = callPackage ./retrolib.nix { };
     roider-union = callPackage ./roider-union.nix { };
     ruthless-sector = callPackage ./ruthless-sector.nix { };

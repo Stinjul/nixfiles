@@ -42,6 +42,7 @@
         portrait-changer
         progressive-smods
         random-assortment-of-things
+        refit-filters
         retrolib
         roider-union
         ruthless-sector
