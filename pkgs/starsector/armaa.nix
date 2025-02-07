@@ -4,11 +4,11 @@
 }:
 buildStarsectorMod rec {
   pname = "armaa";
-  version = "3.0.6"; # This file was swapped with a hotfixed version 3.0.6.1, but idk
+  version = "3.1.5";
 
   src = fetchzip {
     url = "https://github.com/gomarz/SS-armaa/releases/download/v${version}/SS-armaa-${version}.zip";
-    sha256 = "sha256-fKiU7HSJCqiwOz2iC3z19W03U2kn1DqIzwEsWexgH7c=";
+    sha256 = "sha256-MnfN6zLH1tvsrlIw2OQuK7XuUHExgh1N42g2fQPnv+c=";
     stripRoot = false;
   };
   
