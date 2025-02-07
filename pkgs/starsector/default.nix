@@ -8,7 +8,7 @@ lib.makeScope newScope (
     a-new-level-of-confidence-40 = callPackage ./a-new-level-of-confidence-40.nix { };
     angry-periphery = callPackage ./angry-periphery.nix { };
     aotd-ashlib = callPackage ./aotd-ashlib.nix { };
-    aotd-cryosleeper-options = callPackage ./aotd-cryosleeper-options.nix { };
+    aotd-dreams-of-past = callPackage ./aotd-dreams-of-past.nix { };
     aotd-question-of-loyalty = callPackage ./aotd-question-of-loyalty.nix { };
     aotd-vaults-of-knowledge = callPackage ./aotd-vaults-of-knowledge.nix { };
     aotd-virtues-of-society = callPackage ./aotd-virtues-of-society.nix { };

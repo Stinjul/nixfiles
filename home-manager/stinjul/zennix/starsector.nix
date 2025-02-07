@@ -6,7 +6,7 @@
         a-new-level-of-confidence-40
         angry-periphery
         aotd-ashlib
-        aotd-cryosleeper-options
+        aotd-dreams-of-past
         aotd-question-of-loyalty
         aotd-vaults-of-knowledge
         aotd-virtues-of-society

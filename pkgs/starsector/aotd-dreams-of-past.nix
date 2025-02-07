@@ -4,7 +4,7 @@
 }:
 buildStarsectorMod {
   pname = "aotd-cryosleeper-options";
-  version = "2.0.3";
+  version = "3.0.0";
 
   src = fetchzip {
     url = "https://drive.google.com/uc?export=download&id=1TMkvYUEyJQBkimgd30BkXHOcmOzTfAun";
