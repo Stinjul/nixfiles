@@ -1,4 +1,12 @@
-{ config, inputs, outputs, pkgs, lib, ... }: {
+{
+  config,
+  inputs,
+  outputs,
+  pkgs,
+  lib,
+  ...
+}:
+{
   imports = [
     inputs.sops-nix.homeManagerModules.sops
 
@@ -10,7 +18,7 @@
   ];
 
   # TODO: fix this ugly hack when https://github.com/nix-community/impermanence/pull/171 gets fixed
-  home.persistence = lib.mkForce {};
+  home.persistence = lib.mkForce { };
 
   home.packages = with pkgs; [
     # vagrant-wsl
@@ -28,6 +36,10 @@
     defaultSopsFile = ./secrets.yaml;
     age.keyFile = "${config.xdg.configHome}/sops/age/keys.txt";
   };
+
+  sops.secrets.nix_github_access_token = { };
+
+  nix.extraOptions = "!include ${config.sops.secrets.nix_github_access_token.path}";
 
   programs = {
     ssh = {
