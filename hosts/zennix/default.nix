@@ -76,6 +76,7 @@
       enable = true;
       plugins = [ pkgs.libacr38u ];
     };
+    gvfs.enable = true;
   };
 
   xdg.portal = {

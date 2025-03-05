@@ -2,7 +2,10 @@
 {
   programs.firefox = {
     enable = true;
-    package = pkgs.firefox.override { pkcs11Modules = [ pkgs.eid-mw ]; };
+    package = pkgs.firefox.override {
+      pkcs11Modules = [ pkgs.eid-mw ];
+      nativeMessagingHosts = [ pkgs.plasma-browser-integration ];
+    };
   };
   xdg.mimeApps.defaultApplications = {
     "text/html" = [ "firefox.desktop" ];
