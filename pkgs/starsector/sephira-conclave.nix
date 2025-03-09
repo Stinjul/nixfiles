@@ -2,12 +2,12 @@
   buildStarsectorMod,
   fetchzip,
 }:
-buildStarsectorMod rec {
+buildStarsectorMod {
   pname = "sephira-conclave";
-  version = "1.6eDEV";
+  version = "1.7c";
 
   src = fetchzip {
-    url = "https://gitgud.io/KindaStrange/sephira-conclave-bb/-/raw/master/Sephira%20Conclave-${version}.zip";
-    sha256 = "sha256-30ec2kFa6kLsSd8dHd9+E3Y5fj9X/76t6pTvRni+iN8=";
+    url = "https://gitgud.io/Meiyu/sephira-conclave/-/raw/4cd6135b32a334244886c1ad892c3f54e271f17b/downloads/Sephira_Conclave.zip";
+    sha256 = "sha256-O54nmloI1fKPCHfqwO5lLdxZMvh9kRnzP6/Yo840Fo0=";
   };
 }

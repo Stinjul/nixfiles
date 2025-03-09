@@ -4,7 +4,7 @@
     enable = true;
     package = pkgs.firefox.override {
       pkcs11Modules = [ pkgs.eid-mw ];
-      nativeMessagingHosts = [ pkgs.plasma-browser-integration ];
+      nativeMessagingHosts = [ pkgs.kdePackages.plasma-browser-integration ];
     };
   };
   xdg.mimeApps.defaultApplications = {

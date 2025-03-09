@@ -1,4 +1,12 @@
-{ inputs, pkgs, config, lib, osConfig, ... }: {
+{
+  inputs,
+  pkgs,
+  config,
+  lib,
+  osConfig,
+  ...
+}:
+{
   imports = [
     inputs.sops-nix.homeManagerModules.sops
 
@@ -23,12 +31,11 @@
     defaultSopsFile = ./secrets.yaml;
   };
 
-
   home.persistence."/persist/home/stinjul" = {
     directories = [
       "Work"
     ];
-    files = [".config/sops/age/keys.txt"];
+    files = [ ".config/sops/age/keys.txt" ];
   };
 
   home.packages = with pkgs; [
@@ -42,11 +49,39 @@
   services = {
     blueman-applet.enable = true;
   };
-  
+
+  xdg.portal = {
+    # config.common.default = "*";
+    termfilechooser = {
+      enable = true;
+      settings = {
+        filechooser = {
+          cmd = "${config.xdg.portal.termfilechooser.package}/share/xdg-desktop-portal-termfilechooser/yazi-wrapper.sh";
+          env = "TERMCMD=${config.home.sessionVariables.TERMINAL}";
+          default_dir = "$HOME";
+        };
+      };
+    };
+    # configFile."xdg-desktop-portal-termfilechooser/config".source =
+    #   lib.mkIf (osConfig.xdg.portal.termfilechooser.enable)
+    #     (
+    #       (pkgs.formats.ini { }).generate "config.ini" {
+    #         filechooser = {
+    #           cmd = "yazi-wrapper.sh";
+    #           env = "TERMCMD=${config.home.sessionVariables.TERMINAL}";
+    #           default_dir = "$HOME";
+    #         };
+    #       }
+    #     );
+  };
+
   nix = {
     registry = {
       stinjul = {
-        from = { type = "indirect"; id = "stinjul"; };
+        from = {
+          type = "indirect";
+          id = "stinjul";
+        };
         flake = {
           outPath = "/home/stinjul/Git/nixfiles";
         };
@@ -68,10 +103,12 @@
       #   "${dispKVM}, preferred, 5000x0, 1"
       # ];
       map (
-        m: "${m.name}, ${
-            if m.enabled
-            then "${toString m.width}x${toString m.height}@${toString m.refreshRate}, ${toString m.x}x${toString m.y}, 1"
-            else "disable"
+        m:
+        "${m.name}, ${
+          if m.enabled then
+            "${toString m.width}x${toString m.height}@${toString m.refreshRate}, ${toString m.x}x${toString m.y}, 1"
+          else
+            "disable"
         }, transform, ${toString ((builtins.div m.rotate 90) + (if m.flipped then 4 else 0))}"
       ) (osConfig.monitors);
   };

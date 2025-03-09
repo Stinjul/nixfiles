@@ -27,7 +27,11 @@
     ffmpeg-full
   ];
   xdg = {
-    portal.enable = true;
+    portal = {
+      enable = true;
+      extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+      config.common.default = "gtk";
+    };
     mimeApps.enable = true;
   };
 }
