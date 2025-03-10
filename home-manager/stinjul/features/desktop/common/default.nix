@@ -15,6 +15,7 @@
     ./mpv.nix
     ./prismlauncher.nix
     ./r2modman.nix
+    ./dconf.nix
   ];
   home.packages = with pkgs; [
     yubikey-manager-qt
