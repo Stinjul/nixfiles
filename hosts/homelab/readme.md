@@ -1,8 +1,9 @@
 # Install
 
-set the nixos user password
+~~set the nixos user password~~
 
-nix run github:nix-community/nixos-anywhere -- --no-reboot --flake .#mgmt-nuc-x root@172.16.10.x
+Use one of the installer images which prepares the root ssh key
+nix run github:nix-community/nixos-anywhere -- --no-reboot --flake .#(hostname) root@172.16.10.x
 
 # Post-install
 

@@ -7,4 +7,7 @@
 
   users.extraUsers.nixos.openssh.authorizedKeys.keys =
     lib.splitString "\n" (builtins.readFile ../home-manager/stinjul/ssh.pub);
+  
+  users.extraUsers.root.openssh.authorizedKeys.keys =
+    lib.splitString "\n" (builtins.readFile ../home-manager/stinjul/ssh.pub);
 }

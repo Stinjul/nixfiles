@@ -182,6 +182,13 @@
           };
           modules = [ ./hosts/homelab/mgmt-nuc-3.nix ];
         };
+        asrock-big-boy = nixpkgs.lib.nixosSystem {
+          specialArgs = {
+            inherit inputs outputs;
+          };
+          modules = [ ./hosts/homelab/asrock-big-boy ];
+        };
+
       };
 
       # 'home-manager --flake .#stinjul@hostname'
@@ -223,6 +230,10 @@
           nixtop = {
             hostname = "192.168.1.4";
             profiles.system.path = deploy-rs.lib.x86_64-linux.activate.nixos self.nixosConfigurations.nixtop;
+          };
+          asrock-big-boy = {
+            hostname = "172.16.10.20";
+            profiles.system.path = deploy-rs.lib.x86_64-linux.activate.nixos self.nixosConfigurations.asrock-big-boy;
           };
           mgmt-nuc-1 = {
             hostname = "172.16.10.5";

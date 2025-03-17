@@ -12,6 +12,7 @@ keys:
   - &mgmt_nuc_1 age1t0g5rxrh3pr85detsnk65396cda79kdynv36tqjdaceujgu5qatq0whnyz
   - &mgmt_nuc_2 age1jt2pg297jy6jtha5m8q3vqqvsaxl7u6nzvv5wazp0384lnzesv8q9zyf2y
   - &mgmt_nuc_3 age1sg30569fmhhdd08wad98k8ucnwulvu7nms66jdft5y9ppq6ysswq5uath5
+  - &asrock_big_boy age1l6sa234m595tsgav7fl44x9p5urs00m3rmaqchypz9r9ht3y8a5q9lgvk4
 
 keychain:
   - &stinjul_wsl_chain >-
@@ -48,6 +49,7 @@ creation_rules:
         - *mgmt_nuc_1
         - *mgmt_nuc_2
         - *mgmt_nuc_3
+        - *asrock_big_boy
   - path_regex: hosts/homelab/secrets.yaml
     key_groups:
       - age:
@@ -60,6 +62,7 @@ creation_rules:
         - *mgmt_nuc_1
         - *mgmt_nuc_2
         - *mgmt_nuc_3
+        - *asrock_big_boy
   - path_regex: hosts/zennix/secrets.yaml
     key_groups:
       - age:
