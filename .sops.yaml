@@ -63,6 +63,13 @@ creation_rules:
         - *mgmt_nuc_2
         - *mgmt_nuc_3
         - *asrock_big_boy
+  - path_regex: hosts/homelab/asrock-big-boy/cf-token.env
+    key_groups:
+      - age:
+        - *stinjul_zentoo
+        - *stinjul_zennix
+        - *stinjul_nixtop
+        - *asrock_big_boy
   - path_regex: hosts/zennix/secrets.yaml
     key_groups:
       - age:

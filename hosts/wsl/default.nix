@@ -9,6 +9,7 @@
     ../common/users/stinjul
     ../common/features/pipewire.nix
     ../common/features/odbc.nix
+    ../common/features/podman.nix
 
     ./wireguard.nix
   ];

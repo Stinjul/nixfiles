@@ -11,11 +11,13 @@
 
     ./hardware-configuration.nix
     ./disko.nix
+    ./atm10-server.nix
 
     ../../common/global
     ../../common/users/stinjul
     ../../common/users/deploy
     ../../common/features/persist.nix
+    ../../common/features/podman.nix
   ];
 
   home-manager.users.stinjul = import ../../../home-manager/stinjul/headless-generic.nix;
