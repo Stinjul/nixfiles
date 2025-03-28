@@ -3,6 +3,10 @@ let
   op = "58c337ba-c1c5-42a7-bc86-f532fe52c4c4";
   whitelist = lib.concatStringsSep "," [
     op
+    "75775085-1d5b-41be-8087-2f06da166b48"
+    "4eee8782-1c0b-4316-b492-df199e443e05"
+    "31d22a07-9c72-49c5-8078-8719340d2d5e"
+    "1d4b1212-0064-432f-9acb-0c329dbf15e3"
   ];
 in
 {
@@ -29,6 +33,7 @@ in
       WHITELIST = whitelist;
       EXISTING_OPS_FILE = "SYNCHRONIZE";
       OPS = op;
+      ALLOW_FLIGHT = "TRUE";
       # From env file:
       # CF_API_KEY = "";
     };
