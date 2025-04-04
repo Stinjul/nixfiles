@@ -69,6 +69,7 @@
       extraCompatPackages = with pkgs; [ proton-ge-bin ];
     };
     gamemode.enable = true;
+    ydotool.enable = true;
   };
 
   services = {
