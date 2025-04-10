@@ -18,7 +18,7 @@
     ./dconf.nix
   ];
   home.packages = with pkgs; [
-    yubikey-manager-qt
+    yubioath-flutter
     yubikey-personalization-gui
 
     coppwr
