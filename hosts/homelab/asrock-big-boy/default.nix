@@ -26,9 +26,12 @@
 
   networking = {
     useDHCP = false;
-    hostName  = "asrock-big-boy";
+    hostName = "asrock-big-boy";
     firewall = {
       enable = true;
+      # interfaces."podman0".allowedTCPPorts = [
+      #   5000
+      # ];
       # allowedTCPPorts = [
       #   6443
       #   2379
