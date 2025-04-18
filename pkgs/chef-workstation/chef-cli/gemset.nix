@@ -848,6 +848,16 @@
     };
     version = "5.0.4";
   };
+  racc = {
+    groups = ["default"];
+    platforms = [];
+    source = {
+      remotes = ["https://rubygems.org"];
+      sha256 = "0byn0c9nkahsl93y9ln5bysq4j31q8xkf2ws42swighxd4lnjzsa";
+      type = "gem";
+    };
+    version = "1.8.1";
+  };
   rack = {
     groups = ["default"];
     platforms = [];

@@ -231,6 +231,7 @@ GEM
       coderay (~> 1.1)
       method_source (~> 1.0)
     public_suffix (5.0.4)
+    racc (1.8.1)
     rack (2.2.8)
     rest-client (2.1.0)
       http-accept (>= 1.7.0, < 2.0)
@@ -343,6 +344,7 @@ PLATFORMS
 
 DEPENDENCIES
   chef-cli
+  racc
 
 BUNDLED WITH
-   2.3.26
+   2.6.2
