@@ -1,20 +1,21 @@
 { pkgs, ... }:
-let
-  plugins = {
-    yazi = pkgs.fetchFromGitHub {
-      owner = "yazi-rs";
-      repo = "plugins";
-      rev = "5186af7984aa8cb0550358aefe751201d7a6b5a8";
-      hash = "sha256-Cw5iMljJJkxOzAGjWGIlCa7gnItvBln60laFMf6PSPM=";
-    };
-  };
-
-in
+# let
+#   plugins = {
+#     yazi = pkgs.fetchFromGitHub {
+#       owner = "yazi-rs";
+#       repo = "plugins";
+#       rev = "5186af7984aa8cb0550358aefe751201d7a6b5a8";
+#       hash = "sha256-Cw5iMljJJkxOzAGjWGIlCa7gnItvBln60laFMf6PSPM=";
+#     };
+#   };
+# 
+# in
 {
   programs.yazi = {
     enable = true;
     plugins = {
-      git = "${plugins.yazi}/git.yazi";
+      # git = "${plugins.yazi}/git.yazi";
+      git = pkgs.yaziPlugins.git;
     };
     initLua = ''
       require("git"):setup()
