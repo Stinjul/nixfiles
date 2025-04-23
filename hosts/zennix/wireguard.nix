@@ -31,7 +31,7 @@
           {
               publicKey = "84ikge3Spyc4nVgdkGzw74iR5Vfs6ldPqZXgbN5kM2Q=";
               allowedIPs = [ "172.16.200.1/32" "172.16.0.0/16" ]; # IPs this peer should receive the traffic for
-              endpoint = "192.168.1.59:51820";
+              endpoint = "192.168.129.65:51820";
           }
         ];
       };
