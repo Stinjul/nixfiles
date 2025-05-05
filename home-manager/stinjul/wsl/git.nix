@@ -10,6 +10,9 @@
       git_config_2 = {
         path = "${config.xdg.configHome}/git/secret_config_2.gitconfig";
       };
+      git_config_3 = {
+        path = "${config.xdg.configHome}/git/secret_config_3.gitconfig";
+      };
       ssh_git_config = {
         path = "${config.home.homeDirectory}/.ssh/secret_git_config";
       };
@@ -18,6 +21,9 @@
       };
       ssh_key_git_2 = {
         path = "${config.home.homeDirectory}/.ssh/key_git_2";
+      };
+      ssh_key_git_3 = {
+        path = "${config.home.homeDirectory}/.ssh/key_git_3";
       };
     };
   };
