@@ -13,6 +13,9 @@
       git_config_3 = {
         path = "${config.xdg.configHome}/git/secret_config_3.gitconfig";
       };
+      git_config_4 = {
+        path = "${config.xdg.configHome}/git/secret_config_4.gitconfig";
+      };
       ssh_git_config = {
         path = "${config.home.homeDirectory}/.ssh/secret_git_config";
       };
