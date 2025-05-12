@@ -1,9 +1,11 @@
 import { Gtk, hook } from "astal/gtk3"
 import Mpris from "gi://AstalMpris"
 import { AstalIO, bind, timeout, Variable } from "astal"
+import ActiveMprisPlayer from "../../../services/ActiveMprisPlayer"
 
 export default function Media() {
     const mpris = Mpris.get_default()
+    const active = ActiveMprisPlayer.get_default()
 
     const reveal = Variable(false);
 
@@ -68,17 +70,30 @@ export default function Media() {
                 reveal.set(false);
             }
         }
+        onScroll={(_, e) => {
+            if (e.delta_y > 0) {
+                active.prev()
+            } else {
+                active.next()
+            }
+        }}
     >
         <box>
             <icon icon={"audio-x-generic-symbolic"} />
             {
-                bind(mpris, "players").as((players) => {
-                    const player = players.find(p => p.get_bus_name() === "org.mpris.MediaPlayer2.mpd") ?? players[0]
+                bind(active, "player").as((player) => {
                     if (!player) {
                         return <label label={""} />;
                     }
                     return mediaRevealer(player)
                 })
+                // bind(mpris, "players").as((players) => {
+                //     const player = players.find(p => p.get_bus_name() === "org.mpris.MediaPlayer2.mpd") ?? players[0]
+                //     if (!player) {
+                //         return <label label={""} />;
+                //     }
+                //     return mediaRevealer(player)
+                // })
             }
         </box>
     </eventbox>
