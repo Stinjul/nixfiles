@@ -73,7 +73,7 @@ export default function Media() {
             <icon icon={"audio-x-generic-symbolic"} />
             {
                 bind(mpris, "players").as((players) => {
-                    const player = players.find(p => p.identity === "mpd") ?? players[0]
+                    const player = players.find(p => p.get_bus_name() === "org.mpris.MediaPlayer2.mpd") ?? players[0]
                     if (!player) {
                         return <label label={""} />;
                     }

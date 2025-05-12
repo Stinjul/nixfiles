@@ -16,6 +16,7 @@
     ./prismlauncher.nix
     ./r2modman.nix
     ./dconf.nix
+    ./mpd.nix
   ];
   home.packages = with pkgs; [
     yubioath-flutter
