@@ -1,15 +1,34 @@
-{ inputs, config, lib, ... }: {
+{
+  inputs,
+  config,
+  lib,
+  ...
+}:
+{
   nix = {
     settings = {
-    extra-substituters = [ "https://hyprland.cachix.org" ];
-    extra-trusted-public-keys = [ "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc=" ];
-      trusted-users = [ "root" "@wheel" ];
+      extra-substituters = [ "https://hyprland.cachix.org" ];
+      extra-trusted-public-keys = [
+        "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="
+      ];
+      trusted-users = [
+        "root"
+        "@wheel"
+      ];
       auto-optimise-store = lib.mkDefault true;
-      experimental-features = [ "nix-command" "flakes" ];
+      experimental-features = [
+        "nix-command"
+        "flakes"
+      ];
       warn-dirty = false;
-      system-features = [ "kvm" "big-parallel" "nixos-test" ];
+      system-features = [
+        "kvm"
+        "big-parallel"
+        "nixos-test"
+      ];
       flake-registry = ""; # Disable global flake registry
       max-jobs = "auto";
+      download-buffer-size = 1024 * 1024 * 512; # 512 MiB
     };
     gc = {
       automatic = true;
