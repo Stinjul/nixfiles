@@ -7,7 +7,8 @@
           old.postPatch
           + ''
             substituteInPlace starsector.sh \
-              --replace-fail "-Xms1536m -Xmx1536m" "-Xms4096m -Xmx4096m"
+              --replace-fail "-Xms2048m" "-Xms4096m" \
+              --replace-fail "-Xmx2048m" "-Xmx4096m"
           '';
       }))
       pkgs.trios
