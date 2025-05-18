@@ -10,6 +10,7 @@
               --replace-fail "-Xms1536m -Xmx1536m" "-Xms4096m -Xmx4096m"
           '';
       }))
+      pkgs.trios
     ];
     persistence = {
       "/persist${config.home.homeDirectory}" = {

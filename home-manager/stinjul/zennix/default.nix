@@ -18,7 +18,7 @@
     ../features/desktop/hyprland
     ../features/desktop/common/chromium.nix
     ../features/desktop/common/mullvad.nix
-    # ../features/desktop/common/starsector.nix
+    ../features/desktop/common/starsector.nix
     ../features/desktop/common/yubikey-touch-detector.nix
 
     ./ssh.nix

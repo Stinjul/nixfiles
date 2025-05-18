@@ -16,10 +16,10 @@
     withOpenASAR = true;
     withVencord = true;
   };
-  starsector-mod-manager-rust = pkgs.callPackage ./starsector-mod-manager-rust { };
   # xivlauncher-manual = pkgs.callPackage ./xivlauncher { };
   bibata-hyprcursor = pkgs.callPackage ./bibata-hyprcursor { };
   starsectorMods = pkgs.lib.recurseIntoAttrs (pkgs.callPackage ./starsector { });
+  trios = pkgs.callPackage ./trios { };
 
   # I switched to the upstream package only to notice they don't put ksops in the path
   # Like bruh, this is literally mentioned in the readme as a sanity check
