@@ -34,6 +34,7 @@
   home.persistence."/persist/home/stinjul" = {
     directories = [
       "Work"
+      ".local/share/starsector/mods"
     ];
     files = [ ".config/sops/age/keys.txt" ];
   };

@@ -23,6 +23,7 @@
           # ".local/share/starsector"
           ".local/share/starsector/saves"
           ".java/.userPrefs/com/fs/starfarer"
+          ".local/share/org.wisp.trios"
         ];
         # files = [
         #   # Starsector keeps copying/overwriting the symlink :(

@@ -24,6 +24,10 @@ flutter.buildFlutterApplication rec {
     window_size = "sha256-Y113BPSxlNnera/3Dq2BYAX1YiGbCrVgJsfClnLNhjk=";
   };
 
+  postInstall = ''
+    chmod +x $out/app/trios/data/flutter_assets/assets/linux/7zip/x64/7zzs
+  '';
+
   customSourceBuilders = {
     sentry_flutter =
       { version, src, ... }:
@@ -31,7 +35,7 @@ flutter.buildFlutterApplication rec {
         pname = "sentry_flutter";
         inherit version src;
         inherit (src) passthru;
-        
+
         # TODO: The following feels like a hack, but I just can't seem to find a way to pass this to the underlying cmake
         ## If anyone finds this, be warned that this is not passing the exact version needed, but it seems to work fine so far.
         ## I should probably do a proper fetchFromGithub, but w/e.
