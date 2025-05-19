@@ -7,7 +7,7 @@
 {
   imports = [
     ./jsonls.nix
-    ./kcl-language-server.nix
+    # ./kcl-language-server.nix
     ./ts_ls.nix
   ];
   programs.nixvim = {
@@ -74,6 +74,10 @@
         };
         texlab = {
           enable = true;
+        };
+        kcl = {
+          enable = true;
+          package = pkgs.kcl-language-server;
         };
       };
     };
