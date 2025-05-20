@@ -20,6 +20,12 @@ in
     grimblast
   ];
 
+  # Yeah, hyprland has state now
+  # I'll just add the folder in case more stuff shows up
+  home.persistence = {
+    "/persist${config.home.homeDirectory}".directories = [ ".local/share/hyprland" ];
+  };
+
   wayland.windowManager.hyprland = {
     enable = true;
     # package = pkgs.inputs.hyprland.hyprland;
