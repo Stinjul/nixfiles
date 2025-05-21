@@ -20,6 +20,7 @@
   bibata-hyprcursor = pkgs.callPackage ./bibata-hyprcursor { };
   starsectorMods = pkgs.lib.recurseIntoAttrs (pkgs.callPackage ./starsector { });
   trios = pkgs.callPackage ./trios { };
+  tanzu-cli = pkgs.callPackage ./tanzu-cli { };
 
   # I switched to the upstream package only to notice they don't put ksops in the path
   # Like bruh, this is literally mentioned in the readme as a sanity check
