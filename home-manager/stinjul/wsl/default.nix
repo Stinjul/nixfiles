@@ -30,6 +30,7 @@
     inspec-bin
     chef-vault
     terraform
+    tanzu-cli
   ];
 
   sops = {
