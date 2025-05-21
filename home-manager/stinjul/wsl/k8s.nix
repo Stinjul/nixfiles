@@ -19,7 +19,7 @@
       tanzu-cli
     ];
     sessionVariables = {
-      KUBECONFIG = builtins.concatStringsSep "," [
+      KUBECONFIG = builtins.concatStringsSep ":" [
         "${config.home.homeDirectory}/.kube/config"
         # "${config.home.homeDirectory}/.kube/kubeconfig_1"
         config.sops.secrets.kubeconfig_1.path

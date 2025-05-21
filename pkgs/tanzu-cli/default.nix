@@ -30,11 +30,4 @@ buildGoModule rec {
   # ];
 
   subPackages = [ "cmd/tanzu" ];
-
-  meta = with lib; {
-    description = "The Tanzu Core CLI project provides the core functionality of the Tanzu CLI. The CLI is based on a plugin architecture where CLI command functionality can be delivered through independently developed plugin binaries";
-    homepage = "https://github.com/vmware-tanzu/tanzu-cli";
-    license = licenses.asl20;
-    maintainers = with maintainers; [ rkoster ];
-  };
 }
