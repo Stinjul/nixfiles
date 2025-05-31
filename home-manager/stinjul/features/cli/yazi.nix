@@ -8,7 +8,7 @@
 #       hash = "sha256-Cw5iMljJJkxOzAGjWGIlCa7gnItvBln60laFMf6PSPM=";
 #     };
 #   };
-# 
+#
 # in
 {
   programs.yazi = {
@@ -35,7 +35,7 @@
       ];
     };
     keymap = {
-      manager.prepend_keymap = [
+      mgr.prepend_keymap = [
         {
           on = "!";
           run = "shell \"$SHELL\" --block";
