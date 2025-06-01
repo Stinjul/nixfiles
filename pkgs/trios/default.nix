@@ -1,12 +1,12 @@
 {
-  flutter,
+  flutter329,
   sentry-native,
   fetchFromGitHub,
   lib,
   stdenv,
 }:
 
-flutter.buildFlutterApplication rec {
+flutter329.buildFlutterApplication rec {
   pname = "trios";
   version = "1.1.10";
 
