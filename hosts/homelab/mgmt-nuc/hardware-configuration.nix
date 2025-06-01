@@ -24,6 +24,10 @@
     kernel.sysctl = {
       "net.ipv4.ip_forward" = 1;
       "net.ipv6.conf.all.forwarding" = 1;
+      # These need to be increased for k8s
+      # Although the default settings might not cause issues initially, you'll get strange behavior after a while
+      "fs.inotify.max_user_instances" = 1048576;
+      "fs.inotify.max_user_watches" = 1048576;
     };
   };
 
