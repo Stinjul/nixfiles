@@ -65,6 +65,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    quickshell = {
+      url = "git+https://git.outfoxxed.me/quickshell/quickshell";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     # neorg = {
     #   url = "github:nvim-neorg/nixpkgs-neorg-overlay";
     #   # https://github.com/NixOS/nixpkgs/issues/356274
@@ -95,6 +100,7 @@
         system:
         import nixpkgs {
           inherit system;
+          overlays = builtins.attrValues outputs.overlays;
           config.allowUnfree = true;
         }
       );

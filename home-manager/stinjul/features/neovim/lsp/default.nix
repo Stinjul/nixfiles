@@ -79,6 +79,7 @@
           enable = true;
           package = pkgs.kcl-language-server;
         };
+        qmlls.enable = true;
       };
     };
   };

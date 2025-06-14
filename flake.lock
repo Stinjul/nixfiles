@@ -757,6 +757,26 @@
         "type": "github"
       }
     },
+    "quickshell": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1749758376,
+        "narHash": "sha256-aGZ1lyYF5ZmKPkl3mr9+Nnh/65G7zdHHEaYBwpqQh/4=",
+        "ref": "refs/heads/master",
+        "rev": "05b5eccf2eab51eb6c585f177149aacff5f916b1",
+        "revCount": 575,
+        "type": "git",
+        "url": "https://git.outfoxxed.me/quickshell/quickshell"
+      },
+      "original": {
+        "type": "git",
+        "url": "https://git.outfoxxed.me/quickshell/quickshell"
+      }
+    },
     "root": {
       "inputs": {
         "ags": "ags",
@@ -771,6 +791,7 @@
         "nixos-wsl": "nixos-wsl",
         "nixpkgs": "nixpkgs_2",
         "nixvim": "nixvim",
+        "quickshell": "quickshell",
         "sops-nix": "sops-nix"
       }
     },

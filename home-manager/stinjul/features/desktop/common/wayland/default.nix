@@ -3,6 +3,7 @@
     ./kitty
     ./rofi.nix
     ./ags
+    ./quickshell
   ];
   home.packages = with pkgs; [
     wayvnc
