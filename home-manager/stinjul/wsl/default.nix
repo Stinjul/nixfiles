@@ -16,6 +16,7 @@
     ./git.nix
     ./ssh.nix
     ./k8s.nix
+    ./chef.nix
   ];
 
   # TODO: fix this ugly hack when https://github.com/nix-community/impermanence/pull/171 gets fixed
@@ -23,13 +24,6 @@
 
   home.packages = with pkgs; [
     # vagrant-wsl
-    chef-cli
-    cookstyle
-    knife
-    berkshelf
-    test-kitchen
-    inspec-bin
-    chef-vault
     terraform
   ];
 
