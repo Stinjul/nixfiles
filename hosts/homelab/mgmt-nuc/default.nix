@@ -2,6 +2,7 @@
   inputs,
   config,
   pkgs,
+  lib,
   ...
 }:
 {
@@ -117,7 +118,20 @@
     enable = true;
     role = "server";
     tokenFile = config.sops.secrets.k3s-token-mgmt.path;
-    extraFlags = "--disable local-storage --disable metrics-server --disable traefik --disable servicelb --flannel-backend=none --disable-network-policy --disable-helm-controller --disable-kube-proxy --tls-san kube.k3s-mgmt.stinjul.com --node-name ${config.networking.hostName}";
+    # extraFlags = "--disable local-storage --disable metrics-server --disable traefik --disable servicelb --flannel-backend=none --disable-network-policy --disable-helm-controller --disable-kube-proxy --etcd-expose-metrics --tls-san kube.k3s-mgmt.stinjul.com --node-name ${config.networking.hostName}";
+    extraFlags = lib.concatStringsSep " " [
+      "--disable local-storage"
+      "--disable metrics-server"
+      "--disable traefik"
+      "--disable servicelb"
+      "--flannel-backend=none"
+      "--disable-network-policy"
+      "--disable-helm-controller"
+      "--disable-kube-proxy"
+      "--etcd-expose-metrics"
+      "--tls-san kube.k3s-mgmt.stinjul.com"
+      "--node-name ${config.networking.hostName}"
+    ];
     # serverAddr = "https://kube.k3s-mgmt.stinjul.com:6443";
     registries = {
       mirrors = {
