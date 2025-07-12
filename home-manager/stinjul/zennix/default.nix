@@ -51,7 +51,7 @@
   ];
 
   services = {
-    blueman-applet.enable = true;
+    # blueman-applet.enable = true;
   };
 
   xdg.portal = {

@@ -1,0 +1,59 @@
+import QtQuick
+import QtQuick.Controls
+import QtQuick.Layouts
+import Quickshell
+import Quickshell.Hyprland
+
+import "../shared/"
+import "../shared/generics/"
+
+Item {
+    id: root
+    required property ShellScreen screen
+
+    readonly property HyprlandMonitor monitor: Hyprland.monitorFor(screen)
+    property list<HyprlandWorkspace> workspaces: Hyprland.workspaces.values.filter(w => w.monitor == monitor && w.id > 0)
+
+    property int buttonWidth: 30
+
+    implicitWidth: rowLayout.implicitWidth + rowLayout.spacing * 2
+    implicitHeight: Config.visual.size.barHeight
+
+    RowLayout {
+        id: rowLayout
+        // implicitHeight: Config.visual.size.barHeight
+        anchors.fill: parent
+
+        Repeater {
+            model: root.workspaces
+            Button {
+                id: button
+                required property HyprlandWorkspace modelData
+                onPressed: modelData.activate()
+
+                Layout.fillHeight: true
+                Layout.fillWidth: true
+
+                background: Item {
+                    implicitHeight: root.buttonWidth
+                    implicitWidth: root.buttonWidth
+                    Rectangle {
+                        anchors.centerIn: parent
+                        implicitHeight: root.buttonWidth
+                        implicitWidth: root.buttonWidth
+                        radius: 9999
+                        color: Config.visual.color.bar.primary
+                        opacity: modelData.focused ? 1 : 0
+                    }
+                    WrappedText {
+                        anchors.centerIn: parent
+                        // horizontalAlignment: Text.AlignHCenter
+                        // verticalAlignment: Text.AlignVCenter
+                        text: button.modelData.id
+                        font.bold: modelData.focused
+                    }
+                }
+            }
+        }
+    }
+}

@@ -11,7 +11,7 @@
   ];
 
   programs.ags = {
-    enable = true;
+    enable = false;
     #package = pkgs.inputs.ags.agsFull;
     extraPackages = with pkgs.inputs.ags; [
       mpris
