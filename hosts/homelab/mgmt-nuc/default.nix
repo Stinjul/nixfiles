@@ -144,6 +144,8 @@
     };
   };
 
+  systemd.services.k3s.serviceConfig.CPUAffinity = "0-7";
+
   console.keyMap = "azerty";
 
   system.stateVersion = "23.11";
