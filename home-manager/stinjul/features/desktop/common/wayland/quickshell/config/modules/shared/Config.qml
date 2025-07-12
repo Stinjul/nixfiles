@@ -39,6 +39,10 @@ Singleton {
                 property color primary: color.base.primary
                 property color background: color.base.background
                 property color icon: color.base.text
+                property color hoverForeground: color.base.background
+                property color hoverBackground: color.base.primary
+                property color activeForeground: color.base.background
+                property color activeBackground: color.base.primary
             }
         }
     }

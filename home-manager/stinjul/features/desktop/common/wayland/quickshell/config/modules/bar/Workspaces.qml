@@ -42,7 +42,7 @@ Item {
                         implicitHeight: root.buttonWidth
                         implicitWidth: root.buttonWidth
                         radius: 9999
-                        color: Config.visual.color.bar.primary
+                        color: Config.visual.color.bar.activeBackground
                         opacity: modelData.focused ? 1 : 0
                     }
                     WrappedText {
@@ -51,6 +51,7 @@ Item {
                         // verticalAlignment: Text.AlignVCenter
                         text: button.modelData.id
                         font.bold: modelData.focused
+                        color: modelData.focused ? Config.visual.color.bar.activeForeground : Config.visual.color.base.text
                     }
                 }
             }
