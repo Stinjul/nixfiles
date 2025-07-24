@@ -1,4 +1,5 @@
-{ pkgs, ... }: {
+{ pkgs, ... }:
+{
   imports = [
     ./fish.nix
     ./starship.nix
@@ -10,6 +11,8 @@
     ./direnv.nix
   ];
   home.packages = with pkgs; [
+    nh
+
     ncdu
     sshfs
     bind
