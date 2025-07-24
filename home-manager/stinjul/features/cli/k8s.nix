@@ -19,6 +19,64 @@
   };
   programs.k9s = {
     enable = true;
+    plugins = {
+      raw-logs-follow = {
+        shortCut = "Ctrl-L";
+        description = "logs -f";
+        scopes = [ "po" ];
+        command = "kubectl";
+        background = false;
+        args = [
+          "logs"
+          "-f"
+          "$NAME"
+          "-n"
+          "$NAMESPACE"
+          "--context"
+          "$CONTEXT"
+        ];
+      };
+      log-less = {
+        shortCut = "Shift-L";
+        description = "logs|less";
+        scopes = [ "po" ];
+        command = "bash";
+        background = false;
+        args = [
+          "-c"
+          "\"$@\" | less"
+          "dummy-arg"
+          "kubectl"
+          "logs"
+          "$NAME"
+          "-n"
+          "$NAMESPACE"
+          "--context"
+          "$CONTEXT"
+        ];
+      };
+      log-less-container = {
+        shortCut = "Shift-L";
+        description = "logs|less";
+        scopes = [ "containers" ];
+        command = "bash";
+        background = false;
+        args = [
+          "-c"
+          "\"$@\" | less"
+          "dummy-arg"
+          "kubectl"
+          "logs"
+          "-c"
+          "$NAME"
+          "$POD"
+          "-n"
+          "$NAMESPACE"
+          "--context"
+          "$CONTEXT"
+        ];
+      };
+    };
     settings = {
       k9s = {
         liveViewAutoRefresh = false;
@@ -50,8 +108,8 @@
         imageScans = {
           enable = false;
           exclusions = {
-            namespaces =  [];
-            labels =  {};
+            namespaces = [ ];
+            labels = { };
           };
         };
         logger = {
