@@ -15,7 +15,7 @@
 
     # Home manager
     home-manager = {
-      url = "github:nix-community/home-manager?rev=e4bf85da687027cfc4a8853ca11b6b86ce41d732";
+      url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
