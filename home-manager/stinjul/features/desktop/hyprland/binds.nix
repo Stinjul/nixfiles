@@ -1,4 +1,5 @@
-{ config, ... }: {
+{ config, ... }:
+{
   wayland.windowManager.hyprland.settings = {
     bind =
       let
@@ -96,10 +97,8 @@
         "${mainMod} + SHIFT, ccedilla, movetoworkspace, 9"
         "${mainMod} + SHIFT, agrave, movetoworkspace, 10"
 
-
         "${mainMod}, f, fullscreen, 0"
         "${mainMod} + SHIFT, space, togglefloating, active"
       ];
-
   };
 }
