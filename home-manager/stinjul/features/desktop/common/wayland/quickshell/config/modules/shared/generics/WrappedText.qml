@@ -1,6 +1,6 @@
 import QtQuick
-import QtQuick.Layouts
-import "../"
+
+import qs.modules.shared
 
 Text {
     verticalAlignment: Text.AlignVCenter

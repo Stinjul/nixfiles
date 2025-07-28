@@ -4,7 +4,7 @@ import Quickshell
 import QtQuick
 import QtQuick.Layouts
 
-import "../shared/"
+import qs.modules.shared
 
 Scope {
     id: barScope

@@ -1,7 +1,7 @@
 import QtQuick
 import QtQuick.Layouts
 
-import "../shared/"
+import qs.modules.shared
 
 Item {
     id: root

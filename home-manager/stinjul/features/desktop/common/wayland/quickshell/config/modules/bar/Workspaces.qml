@@ -4,8 +4,9 @@ import QtQuick.Layouts
 import Quickshell
 import Quickshell.Hyprland
 
-import "../shared/"
-import "../shared/generics/"
+
+import qs.modules.shared
+import qs.modules.shared.generics
 
 Item {
     id: root

@@ -5,7 +5,7 @@ import Quickshell
 import Quickshell.Widgets
 import Quickshell.Services.SystemTray
 
-import "../shared/"
+import qs.modules.shared
 
 Item {
     id: root

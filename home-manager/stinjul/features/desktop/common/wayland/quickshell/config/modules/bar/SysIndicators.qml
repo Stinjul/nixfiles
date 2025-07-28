@@ -2,12 +2,10 @@ import QtQuick
 import QtQuick.Layouts
 import QtQuick.Effects
 
-import Quickshell
 import Quickshell.Widgets
-// import Quickshell.Services.Pipewire
 
-import "../shared/"
-import "../../services"
+import qs.modules.shared
+import qs.services
 
 Item {
     id: root

@@ -1,8 +1,8 @@
 import QtQuick
 import QtQuick.Layouts
 
-import "../../services/"
-import "../shared/generics/"
+import qs.modules.shared.generics
+import qs.services
 
 Item {
     id: root

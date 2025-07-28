@@ -2,8 +2,8 @@
 
 import Quickshell
 import QtQuick
-import "./modules/bar"
-import "./modules/shared/generics/"
+
+import qs.modules.bar
 
 ShellRoot {
     Bar {}
