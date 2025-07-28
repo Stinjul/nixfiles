@@ -16,7 +16,7 @@
     ./keybinds.nix
     ./neorg.nix
     ./autocmd.nix
-    ./quarto.nix
+    # ./quarto.nix
   ];
 
   home.sessionVariables.EDITOR = "nvim";
