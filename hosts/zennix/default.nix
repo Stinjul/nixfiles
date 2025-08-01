@@ -26,7 +26,6 @@
   home-manager = {
     backupFileExtension = "backup";
     users.stinjul = import ../../home-manager/stinjul/zennix;
-    enableLegacyProfileManagement = true;
   };
 
   networking = {
