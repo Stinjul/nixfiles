@@ -70,9 +70,9 @@ Scope {
                         Clock {}
                     }
 
-                    BarGroup {
-                        id: centerRight
-                    }
+                    // BarGroup {
+                    //     id: centerRight
+                    // }
                 }
                 // BarGroup {
                 //     id: center
