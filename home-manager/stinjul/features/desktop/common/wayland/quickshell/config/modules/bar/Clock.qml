@@ -24,7 +24,6 @@ Item {
         
         WrappedText {
             text: Clock.date
-            font.pointSize: 10
         }
     }
 }
