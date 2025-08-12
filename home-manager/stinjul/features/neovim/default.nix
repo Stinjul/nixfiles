@@ -5,7 +5,7 @@
 }:
 {
   imports = [
-    inputs.nixvim.homeManagerModules.nixvim
+    inputs.nixvim.homeModules.nixvim
 
     ./lsp
     ./efmls.nix
