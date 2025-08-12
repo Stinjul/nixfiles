@@ -4,7 +4,6 @@ import QtQuick.Layouts
 import Quickshell
 import Quickshell.Hyprland
 
-
 import qs.modules.shared
 import qs.modules.shared.generics
 
@@ -55,6 +54,15 @@ Item {
                         color: modelData.focused ? Config.visual.color.bar.activeForeground : Config.visual.color.base.text
                     }
                 }
+            }
+        }
+    }
+    Connections {
+        target: Hyprland
+        function onRawEvent(event) {
+            if (event.name === "moveworkspacev2") {
+                Hyprland.refreshWorkspaces();
+                Hyprland.refreshMonitors();
             }
         }
     }
