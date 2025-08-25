@@ -6,9 +6,9 @@ keys:
   - &wsl age1lmmg0wlql6u48gzdul7qa2nadszaml8tefm5mp5r74yx0c0n7vts8drzcz
   - &stinjul_nixtop age1syqdhere86l4d87jujju05e0sqqh6nqe5spjtthtnd2z7wvj7vjqv99hfm
   - &nixtop age1tq2qlwxj8fvc5hsjardwzga536t942mwnx4r8hr9r6k2fa08ra0st8ckvm
-  - &mgmt_pi_1 age1h996uvpeu3cl92sg20ygenurrf5z75yacym8qr2fa5eyv2cp6pqqkl9xnk
-  - &mgmt_pi_2 age12ul5cq82uk78d7cjv89k64vakd4kkh3ejjy3ln4mvvmusklrjydqascekz
-  - &mgmt_pi_3 age1gmfgpdv6wl7upvmcm549wl9795aungu8d53yz729ye4krpgsz9tsqrmqn3
+  - &prd_pi_1 age1lnakvaypmsj0fvtcad2hrum34uf5xsk79e8jwredzrg0lud6uukqgg9xv0
+  - &prd_pi_2 age1hk4y2twrzyqh873qc2ezrh64mcy280h2aaj6qtgvfrcryyx4zf8qwws30n
+  - &prd_pi_3 age1l3w3sdwzavmrsrv2getmt5vndgh4930nqjh3d7cl8l9cxr7nqfjs3uyudz
   - &mgmt_nuc_1 age1t0g5rxrh3pr85detsnk65396cda79kdynv36tqjdaceujgu5qatq0whnyz
   - &mgmt_nuc_2 age1jt2pg297jy6jtha5m8q3vqqvsaxl7u6nzvv5wazp0384lnzesv8q9zyf2y
   - &mgmt_nuc_3 age1sg30569fmhhdd08wad98k8ucnwulvu7nms66jdft5y9ppq6ysswq5uath5
@@ -43,9 +43,9 @@ creation_rules:
         - *zennix
         - *nixtop
         - *wsl
-        - *mgmt_pi_1
-        - *mgmt_pi_2
-        - *mgmt_pi_3
+        - *prd_pi_1
+        - *prd_pi_2
+        - *prd_pi_3
         - *mgmt_nuc_1
         - *mgmt_nuc_2
         - *mgmt_nuc_3
@@ -56,9 +56,9 @@ creation_rules:
         - *stinjul_zentoo
         - *stinjul_zennix
         - *stinjul_nixtop
-        - *mgmt_pi_1
-        - *mgmt_pi_2
-        - *mgmt_pi_3
+        - *prd_pi_1
+        - *prd_pi_2
+        - *prd_pi_3
         - *mgmt_nuc_1
         - *mgmt_nuc_2
         - *mgmt_nuc_3

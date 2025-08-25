@@ -118,9 +118,9 @@
       homeManagerModules = import ./modules/home-manager;
 
       # installers
-      mgmt-pi-installer = nixos-generators.nixosGenerate {
+      prd-pi-installer = nixos-generators.nixosGenerate {
         system = "aarch64-linux";
-        modules = [ ./installers/mgmt-pi.nix ];
+        modules = [ ./installers/prd-pi.nix ];
 
         format = "sd-aarch64-installer";
       };
@@ -152,23 +152,23 @@
           };
           modules = [ ./hosts/nixtop ];
         };
-        mgmt-pi-1 = nixpkgs.lib.nixosSystem {
+        prd-pi-1 = nixpkgs.lib.nixosSystem {
           specialArgs = {
             inherit inputs outputs;
           };
-          modules = [ ./hosts/homelab/mgmt-pi-1.nix ];
+          modules = [ ./hosts/homelab/prd-pi-1.nix ];
         };
-        mgmt-pi-2 = nixpkgs.lib.nixosSystem {
+        prd-pi-2 = nixpkgs.lib.nixosSystem {
           specialArgs = {
             inherit inputs outputs;
           };
-          modules = [ ./hosts/homelab/mgmt-pi-2.nix ];
+          modules = [ ./hosts/homelab/prd-pi-2.nix ];
         };
-        mgmt-pi-3 = nixpkgs.lib.nixosSystem {
+        prd-pi-3 = nixpkgs.lib.nixosSystem {
           specialArgs = {
             inherit inputs outputs;
           };
-          modules = [ ./hosts/homelab/mgmt-pi-3.nix ];
+          modules = [ ./hosts/homelab/prd-pi-3.nix ];
         };
         mgmt-nuc-1 = nixpkgs.lib.nixosSystem {
           specialArgs = {
@@ -253,17 +253,17 @@
             hostname = "172.16.10.7";
             profiles.system.path = deploy-rs.lib.x86_64-linux.activate.nixos self.nixosConfigurations.mgmt-nuc-3;
           };
-          mgmt-pi-1 = {
-            hostname = "172.16.0.10";
-            profiles.system.path = deploy-rs.lib.aarch64-linux.activate.nixos self.nixosConfigurations.mgmt-pi-1;
+          prd-pi-1 = {
+            hostname = "172.16.0.15";
+            profiles.system.path = deploy-rs.lib.aarch64-linux.activate.nixos self.nixosConfigurations.prd-pi-1;
           };
-          mgmt-pi-2 = {
-            hostname = "172.16.0.11";
-            profiles.system.path = deploy-rs.lib.aarch64-linux.activate.nixos self.nixosConfigurations.mgmt-pi-2;
+          prd-pi-2 = {
+            hostname = "172.16.0.16";
+            profiles.system.path = deploy-rs.lib.aarch64-linux.activate.nixos self.nixosConfigurations.prd-pi-2;
           };
-          mgmt-pi-3 = {
-            hostname = "172.16.0.12";
-            profiles.system.path = deploy-rs.lib.aarch64-linux.activate.nixos self.nixosConfigurations.mgmt-pi-3;
+          prd-pi-3 = {
+            hostname = "172.16.0.17";
+            profiles.system.path = deploy-rs.lib.aarch64-linux.activate.nixos self.nixosConfigurations.prd-pi-3;
           };
         };
       };

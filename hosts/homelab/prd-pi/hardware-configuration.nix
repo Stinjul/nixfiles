@@ -13,7 +13,7 @@
         };
       in
       pkgs.linuxPackagesFor (
-        # The default kernel config for nixos is thicc AF, so let's turn it off since we need to build it ourselves for cilium 
+        # The default kernel config for nixos is thicc AF, so let's turn it off since we need to build it ourselves for cilium
         ## (and ceph/rook technically, but don't run that on a pi for the love of god)
         # We're talking about multiple hours vs 7 minutes on my AMD 3900X
         crossPkgs.linuxKernel.packages.linux_rpi4.kernel.override {
@@ -37,16 +37,24 @@
         # extraConfig = ''
         #   PGTABLE_LEVELS 4
         # '';
-        extraStructuredConfig = with lib.kernel; {
+        structuredExtraConfig = with lib.kernel; {
           ARM64_VA_BITS_48 = yes; # Enable PGTABLE_LEVELS 4, makes envoy work :), see https://github.com/torvalds/linux/blob/master/arch/arm64/Kconfig#L369
         };
       }
     ];
   };
 
-  fileSystems."/" = {
-    device = "/dev/disk/by-label/NIXOS_SD";
-    fsType = "ext4";
+  # fileSystems."/" = {
+  #   device = "/dev/disk/by-label/NIXOS_SD";
+  #   fsType = "ext4";
+  # };
+
+  fileSystems."/persist" = {
+    neededForBoot = true;
+  };
+
+  fileSystems."/k3s" = {
+    neededForBoot = true;
   };
 
   nixpkgs.hostPlatform = "aarch64-linux";
