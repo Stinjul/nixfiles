@@ -13,6 +13,9 @@
     # Nixpkgs
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
 
+    # Nixpkgs 25.05
+    nixpkgs-stable.url = "github:NixOS/nixpkgs/nixos-25.05";
+
     # Home manager
     home-manager = {
       url = "github:nix-community/home-manager";

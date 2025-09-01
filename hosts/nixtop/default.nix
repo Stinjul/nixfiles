@@ -1,4 +1,10 @@
-{ pkgs, inputs, lib, ... }: {
+{
+  pkgs,
+  inputs,
+  lib,
+  ...
+}:
+{
   imports = [
     inputs.hardware.nixosModules.common-cpu-intel
     inputs.hardware.nixosModules.common-gpu-nvidia
@@ -45,6 +51,7 @@
 
   hardware = {
     nvidia = {
+      open = false;
       prime = {
         nvidiaBusId = "PCI:1:0:0";
         intelBusId = "PCI:0:2:0";

@@ -16,9 +16,8 @@
     withOpenASAR = true;
     withVencord = true;
   };
-  # xivlauncher-manual = pkgs.callPackage ./xivlauncher { };
   bibata-hyprcursor = pkgs.callPackage ./bibata-hyprcursor { };
-  starsectorMods = pkgs.lib.recurseIntoAttrs (pkgs.callPackage ./starsector { });
+  # starsectorMods = pkgs.lib.recurseIntoAttrs (pkgs.callPackage ./starsector { });
   trios = pkgs.callPackage ./trios { };
   tanzu-cli = pkgs.callPackage ./tanzu-cli { };
 
@@ -31,25 +30,6 @@
     '';
   });
 
-  # Both seem to have the same result, but they also both build kclvm for some reason
-  # Keeping the second one around just in case
-  # kcl-language-server = pkgs.callPackage ./kcl-language-server { };
-  kcl-language-server = pkgs.kclvm.override (prev: {
-    rustPlatform = prev.rustPlatform // {
-      buildRustPackage =
-        args:
-        prev.rustPlatform.buildRustPackage (
-          args
-          // {
-            pname = "kcl-language-server";
-            cargoBuildFlags = [
-              "--manifest-path"
-              "tools/src/LSP/Cargo.toml"
-            ];
-          }
-        );
-    };
-  });
   kustomize-kcl = pkgs.callPackage ./kustomize-kcl { };
 
   # See the comment block in the thunderbolt-network-frr.nix module

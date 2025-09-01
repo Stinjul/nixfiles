@@ -9,6 +9,8 @@ in
 {
   programs.ssh = {
     enable = lib.mkDefault true;
+    enableDefaultConfig = false;
+    matchBlocks."*" = { };
   };
 
   home.persistence."/persist/home/stinjul".files = [
