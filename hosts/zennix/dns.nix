@@ -8,7 +8,7 @@
       # ];
       server = [
         "/mgmt.stinjul.com/172.16.200.1"
-        "/kube.k3s-mgmt.stinjul.com/172.16.200.1"
+        "/k3s.stinjul.com/172.16.200.1"
       ];
     };
   };

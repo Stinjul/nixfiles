@@ -129,7 +129,7 @@
       "--disable-helm-controller"
       "--disable-kube-proxy"
       "--etcd-expose-metrics"
-      "--tls-san kube.k3s-mgmt.stinjul.com"
+      "--tls-san mgmt.k3s.stinjul.com"
       "--node-name ${config.networking.hostName}"
     ];
     # serverAddr = "https://kube.k3s-mgmt.stinjul.com:6443";
