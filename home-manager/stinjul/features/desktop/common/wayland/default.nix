@@ -2,7 +2,7 @@
   imports = [
     ./kitty
     ./rofi.nix
-    ./ags
+    # ./ags
     ./quickshell
   ];
   home.packages = with pkgs; [
