@@ -61,7 +61,10 @@
     dconf.enable = true;
     partition-manager.enable = true;
     nix-ld.enable = true;
-    wireshark.enable = true;
+    wireshark = {
+      enable = true;
+      package = pkgs.wireshark;
+    };
     steam = {
       enable = true;
       remotePlay.openFirewall = true;
