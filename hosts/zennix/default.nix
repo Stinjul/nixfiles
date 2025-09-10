@@ -45,6 +45,9 @@
           to = 1764;
         }
       ];
+      allowedUDPPorts = [
+        37008 # Wireshark TZSP
+      ];
     };
   };
 
