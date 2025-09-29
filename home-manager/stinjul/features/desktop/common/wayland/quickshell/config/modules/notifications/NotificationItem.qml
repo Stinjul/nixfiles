@@ -72,6 +72,8 @@ Item {
                         text: root.modelData.appName//  + "++++++++++++++++++++++++++++++++++++++++++++"
                         anchors.left: parent.left
                         anchors.right: expandButton.left
+                        font.pointSize: Config.visual.font.size * 0.8
+                        color: Qt.darker(Config.visual.color.base.text, 1.5)
                         elide: Text.ElideRight
                     }
                     MouseArea {
@@ -99,17 +101,28 @@ Item {
 
                 WrappedText {
                     id: summaryShort
-                    visible: !root.expanded
-                    color: Qt.darker(Config.visual.color.base.text, 1.25)
+                    // visible: !root.expanded
                     text: root.modelData.summary
                     elide: Text.ElideRight
                     Layout.fillWidth: true
                     Layout.fillHeight: true
                     verticalAlignment: Text.AlignTop
+                    font.bold: true
                     // Rectangle {
                     //     color: "#50008F"
                     //     anchors.fill: parent
                     // }
+                }
+
+                WrappedText {
+                    text: root.modelData.body
+                    visible: !root.expanded
+                    color: Qt.darker(Config.visual.color.base.text, 1.25)
+                    wrapMode: Text.WordWrap
+                    elide: Text.ElideRight
+                    verticalAlignment: Text.AlignTop
+                    Layout.fillWidth: true
+                    Layout.maximumHeight: 50
                 }
 
                 ColumnLayout {
@@ -117,13 +130,13 @@ Item {
                     visible: root.expanded
                     Layout.bottomMargin: 14
                     WrappedText {
-                        text: root.modelData.summary
+                        text: root.modelData.body
                         color: Qt.darker(Config.visual.color.base.text, 1.25)
                         wrapMode: Text.WordWrap
                         elide: Text.ElideRight
                         verticalAlignment: Text.AlignTop
                         Layout.fillWidth: true
-                        Layout.preferredHeight: 100
+                        Layout.maximumHeight: 200
                     }
                     GridLayout {
                         id: actionGrid
