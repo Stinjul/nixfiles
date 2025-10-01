@@ -9,9 +9,6 @@ import Quickshell.Services.Notifications
 import qs.modules.shared
 import qs.modules.shared.generics
 
-// import Quickshell
-// import Quickshell.Widgets
-
 Item {
     id: root
 
@@ -20,6 +17,18 @@ Item {
     property bool expanded: false
 
     implicitHeight: background.implicitHeight
+
+    MouseArea {
+        anchors.fill: parent
+        acceptedButtons: Qt.MiddleButton | Qt.RightButton
+        onClicked: m => {
+            if (m.button === Qt.MiddleButton) {
+                root.modelData.dismiss();
+            } else if (m.button === Qt.RightButton) {
+                root.expanded = !root.expanded;
+            }
+        }
+    }
 
     Rectangle {
         id: background
@@ -32,23 +41,20 @@ Item {
 
         width: parent.width
         anchors.left: parent.left
-        implicitHeight: contentRow.implicitHeight
+        implicitHeight: contentRow.implicitHeight + contentRow.anchors.topMargin * 2
 
         RowLayout {
             id: contentRow
             anchors.top: parent.top
             anchors.left: parent.left
             anchors.right: parent.right
+            anchors.margins: 7
 
             NotificationIcon {
                 appIcon: root.modelData.appIcon
                 image: root.modelData.image
                 Layout.alignment: Qt.AlignTop
-                Layout.margins: 7
                 Layout.fillWidth: false
-
-                // width: 50
-                // height: 50
             }
 
             ColumnLayout {
@@ -56,8 +62,6 @@ Item {
                 Layout.fillWidth: true
                 Layout.fillHeight: true
                 Layout.alignment: Qt.AlignTop
-                Layout.topMargin: 14
-                Layout.rightMargin: 7
                 spacing: 0
                 Item {
                     id: headerRow
@@ -122,13 +126,12 @@ Item {
                     elide: Text.ElideRight
                     verticalAlignment: Text.AlignTop
                     Layout.fillWidth: true
-                    Layout.maximumHeight: 50
+                    maximumLineCount: 2
                 }
 
                 ColumnLayout {
                     id: summaryFull
                     visible: root.expanded
-                    Layout.bottomMargin: 14
                     WrappedText {
                         text: root.modelData.body
                         color: Qt.darker(Config.visual.color.base.text, 1.25)
@@ -136,7 +139,7 @@ Item {
                         elide: Text.ElideRight
                         verticalAlignment: Text.AlignTop
                         Layout.fillWidth: true
-                        Layout.maximumHeight: 200
+                        maximumLineCount: 20
                     }
                     GridLayout {
                         id: actionGrid
