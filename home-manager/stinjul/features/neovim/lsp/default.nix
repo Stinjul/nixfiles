@@ -7,8 +7,6 @@
 {
   imports = [
     ./jsonls.nix
-    # ./kcl-language-server.nix
-    ./ts_ls.nix
   ];
   programs.nixvim = {
     extraPackages = with pkgs; [ nixfmt-rfc-style ];
@@ -80,6 +78,7 @@
           package = pkgs.inputs.nixpkgs-stable.kcl-language-server;
         };
         qmlls.enable = true;
+        ts_ls.enable = true;
       };
     };
   };
