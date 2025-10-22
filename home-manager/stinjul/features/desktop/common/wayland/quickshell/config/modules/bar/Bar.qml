@@ -43,12 +43,14 @@ Scope {
                     anchors {
                         fill: parent
                     }
-                    color: Config.visual.color.bar.background
+                    // color: Config.visual.color.bar.background
+                    color: "transparent"
                 }
 
                 BarGroup {
                     id: left
                     anchors.left: parent.left
+                    anchors.leftMargin: 10
                     Workspaces {
                         screen: modelData
                     }
@@ -84,6 +86,7 @@ Scope {
                     id: right
                     // items: barScope.rightItems
                     anchors.right: parent.right
+                    anchors.rightMargin: 10
                     SysIndicators {}
                 }
             }
