@@ -15,7 +15,7 @@ sudo mkdir -p /mnt/persist/etc/ssh/
 
 sudo ssh-keygen -q -f /mnt/persist/etc/ssh/ssh_host_ed25519_key -N "" -t ed25519
 
-# Install
+# Install on machine
 
 NIX_CONFIG="experimental-features = flakes" nix-shell -p git
 sudo nixos-install --flake .#\<hostname\>

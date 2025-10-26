@@ -174,6 +174,24 @@
           };
           modules = [ ./hosts/homelab/prd-pi-3.nix ];
         };
+        prd-ms01-1 = nixpkgs.lib.nixosSystem {
+          specialArgs = {
+            inherit inputs outputs;
+          };
+          modules = [ ./hosts/homelab/prd-ms01-1.nix ];
+        };
+        prd-ms01-2 = nixpkgs.lib.nixosSystem {
+          specialArgs = {
+            inherit inputs outputs;
+          };
+          modules = [ ./hosts/homelab/prd-ms01-2.nix ];
+        };
+        prd-ms01-3 = nixpkgs.lib.nixosSystem {
+          specialArgs = {
+            inherit inputs outputs;
+          };
+          modules = [ ./hosts/homelab/prd-ms01-3.nix ];
+        };
         mgmt-nuc-1 = nixpkgs.lib.nixosSystem {
           specialArgs = {
             inherit inputs outputs;

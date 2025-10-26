@@ -9,6 +9,9 @@ keys:
   - &prd_pi_1 age1lnakvaypmsj0fvtcad2hrum34uf5xsk79e8jwredzrg0lud6uukqgg9xv0
   - &prd_pi_2 age1hk4y2twrzyqh873qc2ezrh64mcy280h2aaj6qtgvfrcryyx4zf8qwws30n
   - &prd_pi_3 age1l3w3sdwzavmrsrv2getmt5vndgh4930nqjh3d7cl8l9cxr7nqfjs3uyudz
+  - &prd_ms01_1 age12gdh49zhjxqsp7unx3v8tktl5xnufcw2sz8hkx5a0pmterd023tsn9xqu6
+  - &prd_ms01_2 age1kuv7v93gtmuy7utv56gtxe282l3lch8x3f93myyewrq5qn3cn9pszwsvkr
+  - &prd_ms01_3 age1cnt0eqqs8mdvmtr65su5eqp966wrl4ga0t95tzy890kpswf07g8s6vr8st
   - &mgmt_nuc_1 age1t0g5rxrh3pr85detsnk65396cda79kdynv36tqjdaceujgu5qatq0whnyz
   - &mgmt_nuc_2 age1jt2pg297jy6jtha5m8q3vqqvsaxl7u6nzvv5wazp0384lnzesv8q9zyf2y
   - &mgmt_nuc_3 age1sg30569fmhhdd08wad98k8ucnwulvu7nms66jdft5y9ppq6ysswq5uath5
@@ -46,6 +49,9 @@ creation_rules:
         - *prd_pi_1
         - *prd_pi_2
         - *prd_pi_3
+        - *prd_ms01_1
+        - *prd_ms01_2
+        - *prd_ms01_3
         - *mgmt_nuc_1
         - *mgmt_nuc_2
         - *mgmt_nuc_3
@@ -59,6 +65,9 @@ creation_rules:
         - *prd_pi_1
         - *prd_pi_2
         - *prd_pi_3
+        - *prd_ms01_1
+        - *prd_ms01_2
+        - *prd_ms01_3
         - *mgmt_nuc_1
         - *mgmt_nuc_2
         - *mgmt_nuc_3
