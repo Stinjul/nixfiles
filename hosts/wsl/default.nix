@@ -1,4 +1,9 @@
-{ inputs, lib, pkgs, ... }:
+{
+  inputs,
+  lib,
+  pkgs,
+  ...
+}:
 {
   imports = [
     inputs.nixos-wsl.nixosModules.wsl
@@ -23,7 +28,10 @@
     enable = true;
     #automountPath = "/mnt";
     wslConf = {
-      automount.root = "/mnt";
+      automount = {
+        root = "/mnt";
+        options = "metadata,uid=1000,gid=100,umask=22,fmask=11";
+      };
       interop.appendWindowsPath = false;
     };
     defaultUser = "stinjul";
@@ -46,8 +54,8 @@
     };
     udev.packages = [ pkgs.yubikey-personalization ];
     udev.extraRules = ''
-        SUBSYSTEM=="usb", ENV{ID_SECURITY_TOKEN}=="1", MODE="0660", GROUP="wheel"
-        SUBSYSTEM=="hidraw", ENV{ID_SECURITY_TOKEN}=="1", MODE="0660", GROUP="wheel"
+      SUBSYSTEM=="usb", ENV{ID_SECURITY_TOKEN}=="1", MODE="0660", GROUP="wheel"
+      SUBSYSTEM=="hidraw", ENV{ID_SECURITY_TOKEN}=="1", MODE="0660", GROUP="wheel"
     '';
   };
 
