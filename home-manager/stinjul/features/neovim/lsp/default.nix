@@ -48,9 +48,6 @@
         solargraph.enable = true;
         sqls.enable = true;
         terraformls.enable = true;
-        # https://github.com/neovim/nvim-lspconfig/pull/3232 :((
-        # see ts_ls.nix, until nixvim fixes this
-        # tsserver.enable = true;
         lemminx.enable = true;
         yamlls.enable = true;
         efm = {

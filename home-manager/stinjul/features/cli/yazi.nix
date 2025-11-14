@@ -17,9 +17,10 @@
       # git = "${plugins.yazi}/git.yazi";
       git = pkgs.yaziPlugins.git;
     };
-    initLua = ''
-      require("git"):setup()
-    '';
+    # initLua = ''
+    #   require("git"):setup()
+    # '';
+    initLua = ./yazi.lua;
     settings = {
       plugin.prepend_fetchers = [
         {
