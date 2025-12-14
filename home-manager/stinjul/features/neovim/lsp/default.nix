@@ -7,6 +7,7 @@
 {
   imports = [
     ./jsonls.nix
+    ./nickel.nix
   ];
   programs.nixvim = {
     extraPackages = with pkgs; [ nixfmt-rfc-style ];
