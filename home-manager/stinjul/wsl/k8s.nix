@@ -11,6 +11,9 @@
     secrets = {
       kubeconfig_1 = {
         path = "${config.home.homeDirectory}/.kube/kubeconfig_1";
+        kubeconfig_2 = {
+          path = "${config.home.homeDirectory}/.kube/kubeconfig_2";
+        };
       };
     };
   };
@@ -23,6 +26,7 @@
         "${config.home.homeDirectory}/.kube/config"
         # "${config.home.homeDirectory}/.kube/kubeconfig_1"
         config.sops.secrets.kubeconfig_1.path
+        config.sops.secrets.kubeconfig_2.path
       ];
     };
   };
