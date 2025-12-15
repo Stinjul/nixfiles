@@ -1,7 +1,7 @@
 {
   programs.nixvim.plugins.efmls-configs = {
     enable = true;
-    setup = {
+    languages = {
       python = {
         formatter = [ "black" ];
       };
