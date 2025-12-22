@@ -1,20 +1,20 @@
 {
-  flutter329,
-  sentry-native,
+  flutter332,
+  # sentry-native,
   fetchFromGitHub,
   lib,
   stdenv,
 }:
 
-flutter329.buildFlutterApplication rec {
+flutter332.buildFlutterApplication rec {
   pname = "trios";
-  version = "1.1.10";
+  version = "1.2.3";
 
   src = fetchFromGitHub {
     owner = "wispborne";
     repo = "TriOS";
     rev = version;
-    hash = "sha256-+GSVokkKYItGwYctKB8B/bcxFeZFdXXLx4z96q7mKpQ=";
+    hash = "sha256-7ljCn6NMi1jifbCYUhiieNt/cMzl31U528o8aJLZR7c=";
     fetchSubmodules = true;
   };
 
@@ -27,29 +27,4 @@ flutter329.buildFlutterApplication rec {
   postInstall = ''
     chmod +x $out/app/trios/data/flutter_assets/assets/linux/7zip/x64/7zzs
   '';
-
-  customSourceBuilders = {
-    sentry_flutter =
-      { version, src, ... }:
-      stdenv.mkDerivation rec {
-        pname = "sentry_flutter";
-        inherit version src;
-        inherit (src) passthru;
-
-        # TODO: The following feels like a hack, but I just can't seem to find a way to pass this to the underlying cmake
-        ## If anyone finds this, be warned that this is not passing the exact version needed, but it seems to work fine so far.
-        ## I should probably do a proper fetchFromGithub, but w/e.
-        postPatch = ''
-          sed -i '/include(FetchContent)/a SET(FETCHCONTENT_SOURCE_DIR_SENTRY-NATIVE "${sentry-native.src}")' ./sentry-native/sentry-native.cmake
-        '';
-
-        installPhase = ''
-          runHook preInstall
-
-          cp -r . $out
-
-          runHook postInstall
-        '';
-      };
-  };
 }
