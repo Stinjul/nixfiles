@@ -1,18 +1,18 @@
 { config, ... }:
 {
   wayland.windowManager.hyprland.settings = {
-    windowrulev2 = [
-      # "bordersize 0, floating:0, onworkspace:w[tv1] s[false]"
-      # "rounding 0, floating:0, onworkspace:w[tv1] s[false]"
-      "bordersize 0, floating:0, onworkspace:f[1] s[false]"
-      "rounding 0, floating:0, onworkspace:f[1] s[false]"
-      "workspace 4,class:firefox"
-      "workspace 5,class:(i?)libreoffice.*"
-      "workspace 7,class:^steam_app_.*"
-      "workspace 7,title:.*(i?)wine.*"
-      "workspace 8 silent,class:^[Ss]team$"
-      "workspace 9,class:^[Vv]esktop$"
-      "workspace 9,class:^[Dd]iscord$"
+    windowrule = [
+      # "border_size 0, match:float 0, match:workspace w[tv1]s[false]"
+      # "rounding 0, match:float 0, match:workspace w[tv1]s[false]"
+      "border_size 0, match:float 0, match:workspace f[1]s[false]"
+      "rounding 0, match:float 0, match:workspace f[1]s[false]"
+      "workspace 4,match:class firefox"
+      "workspace 5,match:class (i?)libreoffice.*"
+      "workspace 7,match:class ^steam_app_.*"
+      "workspace 7,match:title .*(i?)wine.*"
+      "workspace 8 silent,match:class ^[Ss]team$"
+      "workspace 9 silent,match:class ^[Vv]esktop$"
+      "workspace 9 silent,match:class ^[Dd]iscord$"
     ];
     workspace =
       let
