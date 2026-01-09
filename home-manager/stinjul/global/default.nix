@@ -18,7 +18,7 @@ let
 
 in {
   imports = [
-    inputs.impermanence.nixosModules.home-manager.impermanence
+    # inputs.impermanence.nixosModules.home-manager.impermanence
 
     ../features/cli
   ] ++ (builtins.attrValues outputs.homeManagerModules);

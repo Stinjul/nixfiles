@@ -4,7 +4,7 @@
           pkgs.chromium
       ];
       persistence = {
-        "/persist${config.home.homeDirectory}".directories = [ ".config/chromium" ];
+        "/persist".directories = [ ".config/chromium" ];
       };
     };
 }

@@ -37,6 +37,6 @@
     };
   };
   home.persistence = {
-    "/persist${config.home.homeDirectory}".directories = [ ".local/share/mpd" ];
+    "/persist".directories = [ ".local/share/mpd" ];
   };
 }

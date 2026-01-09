@@ -15,7 +15,6 @@
     ../common/features/polkit.nix
     ../common/features/mullvad.nix
     ../common/features/podman.nix
-    ../common/features/adb.nix
 
     ./hardware-configuration.nix
     ./wireguard.nix

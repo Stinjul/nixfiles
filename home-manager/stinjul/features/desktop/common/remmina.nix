@@ -4,7 +4,7 @@
         pkgs.remmina
     ];
     persistence = {
-      "/persist${config.home.homeDirectory}".directories = [ 
+      "/persist".directories = [ 
         ".config/remmina"
         ".local/share/remmina"
       ];

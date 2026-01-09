@@ -3,13 +3,9 @@
   home = {
     packages = [ pkgs.yafc-ce ];
     persistence = {
-      "/persist${config.home.homeDirectory}" = {
-        allowOther = true;
+      "/persist" = {
         directories = [
-          {
-            directory = ".local/share/Steam";
-            method = "symlink";
-          }
+          ".local/share/Steam"
           ".factorio"
           ".local/share/YAFC"
           ".config/unity3d/IronGate/Valheim"

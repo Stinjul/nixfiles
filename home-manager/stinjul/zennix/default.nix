@@ -32,13 +32,10 @@
     defaultSopsFile = ./secrets.yaml;
   };
 
-  home.persistence."/persist/home/stinjul" = {
+  home.persistence."/persist" = {
     directories = [
       "Work"
-      {
-        directory = ".local/share/starsector/mods";
-        method = "symlink";
-      }
+      ".local/share/starsector/mods"
     ];
     files = [ ".config/sops/age/keys.txt" ];
   };
@@ -49,6 +46,7 @@
     krita
 
     terraform
+    android-tools
   ];
 
   services = {

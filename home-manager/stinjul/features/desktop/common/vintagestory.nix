@@ -4,7 +4,7 @@
         pkgs.vintagestory
     ];
     persistence = {
-      "/persist${config.home.homeDirectory}".directories = [ 
+      "/persist".directories = [ 
         ".config/VintagestoryData"
       ];
     };

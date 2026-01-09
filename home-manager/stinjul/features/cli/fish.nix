@@ -11,7 +11,7 @@
   };
   home = {
     persistence = {
-      "/persist${config.home.homeDirectory}" = {
+      "/persist" = {
         files = [
           ## Fish freaks out because of "Invalid cross-device link",
           # ".local/share/fish/fish_history"

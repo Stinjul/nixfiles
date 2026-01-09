@@ -13,7 +13,7 @@ in
     matchBlocks."*" = { };
   };
 
-  home.persistence."/persist/home/stinjul".files = [
+  home.persistence."/persist".files = [
     ".ssh/known_hosts"
   ];
 

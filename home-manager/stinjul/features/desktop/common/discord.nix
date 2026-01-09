@@ -5,7 +5,7 @@
         pkgs.vesktop
     ];
     persistence = {
-      "/persist${config.home.homeDirectory}".directories = [ 
+      "/persist".directories = [ 
         ".config/discord"
         ".config/vesktop"
         ".config/Vencord"

@@ -14,7 +14,7 @@ in
       source = "${theme.package}/share/themes/${theme.name}";
     };
     persistence = {
-      "/persist${config.home.homeDirectory}".directories = [ ".config/dconf" ];
+      "/persist".directories = [ ".config/dconf" ];
     };
     pointerCursor = {
       package = pkgs.bibata-cursors;

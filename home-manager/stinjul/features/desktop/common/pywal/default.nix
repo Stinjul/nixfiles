@@ -11,7 +11,7 @@ in
   home = {
     packages = [ pkgs.pywal ];
     persistence = {
-      "/persist${config.home.homeDirectory}" = {
+      "/persist" = {
         directories = [ ".cache/wal" ];
       };
     };

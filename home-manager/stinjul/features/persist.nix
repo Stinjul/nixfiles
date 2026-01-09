@@ -1,5 +1,5 @@
 { inputs, ... }: {
-  home.persistence."/persist/home/stinjul" = {
+  home.persistence."/persist" = {
     directories = [
       "Music"
       "Pictures"
@@ -11,6 +11,5 @@
       "Mount"
       ".local/state/wireplumber"
     ];
-    allowOther = true;
   };
 }

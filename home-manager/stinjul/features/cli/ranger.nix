@@ -4,7 +4,7 @@
         ranger
     ];
     persistence = {
-      "/persist${config.home.homeDirectory}".directories = [ ".local/share/ranger" ];
+      "/persist".directories = [ ".local/share/ranger" ];
     };
   };
 

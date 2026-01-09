@@ -64,7 +64,7 @@ in
   home = {
     # packages = with pkgs; [ papirus-icon-theme ];
     # persistence = {
-    #   "/persist${config.home.homeDirectory}".directories = [
+    #   "/persist".directories = [
     #     ".config/qt5ct"
     #     ".config/qt6ct"
     #   ];

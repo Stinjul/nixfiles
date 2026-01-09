@@ -10,7 +10,7 @@
   ];
   home = {
     persistence = {
-      "/persist${config.home.homeDirectory}" = {
+      "/persist" = {
         files = [
           ".kube/config"
         ];

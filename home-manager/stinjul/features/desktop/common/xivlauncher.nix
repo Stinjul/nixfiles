@@ -3,13 +3,9 @@
   home = {
     packages = [ pkgs.xivlauncher-gamemode ];
     persistence = {
-      "/persist${config.home.homeDirectory}" = {
-        allowOther = true;
+      "/persist" = {
         directories = [
-          {
-            directory = ".xlcore";
-            method = "symlink";
-          }
+          ".xlcore"
         ];
       };
     };

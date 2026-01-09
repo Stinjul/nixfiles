@@ -14,7 +14,7 @@
       pkgs.trios
     ];
     persistence = {
-      "/persist${config.home.homeDirectory}" = {
+      "/persist" = {
         directories = [
           # {
           #   directory = ".local/share/starsector";
