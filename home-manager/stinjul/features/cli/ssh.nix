@@ -1,21 +1,27 @@
 {
   config,
+  options,
   lib,
   ...
 }:
 let
+  hasPersistence = options.home ? "persistence" && config.home.persistence ? "/persist";
 in
-# hasPersistence = options.home ? "persistence" && config.home.persistence ? "/persist/home/stinjul";
 {
   programs.ssh = {
     enable = lib.mkDefault true;
     enableDefaultConfig = false;
-    matchBlocks."*" = { };
+    matchBlocks."*" = {
+      userKnownHostsFile = "${lib.optionalString hasPersistence "/persist"}${config.home.homeDirectory}/.ssh/known_hosts";
+    };
   };
 
-  home.persistence."/persist".files = [
-    ".ssh/known_hosts"
-  ];
+  # home.persistence."/persist".files = [
+  #   {
+  #     file = ".ssh/known_hosts";
+  #     method = "symlink";
+  #   }
+  # ];
 
   # home = { }
   #   // lib.optionalAttrs hasPersistence {
