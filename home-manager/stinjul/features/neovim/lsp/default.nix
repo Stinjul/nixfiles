@@ -10,7 +10,7 @@
     ./nickel.nix
   ];
   programs.nixvim = {
-    extraPackages = with pkgs; [ nixfmt-rfc-style ];
+    extraPackages = with pkgs; [ nixfmt ];
     plugins.lsp = {
 
       enable = true;
