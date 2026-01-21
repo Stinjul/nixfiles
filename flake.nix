@@ -22,7 +22,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    impermanence.url = "github:nix-community/impermanence";
+    impermanence = {
+      url = "github:nix-community/impermanence";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     nixos-wsl = {
       url = "github:nix-community/nixos-wsl";
@@ -31,8 +34,7 @@
 
     nixvim = {
       url = "github:nix-community/nixvim";
-      # FIXME https://github.com/nix-community/nixvim/issues/2547
-      # inputs.nixpkgs.follows = "nixpkgs";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     hardware.url = "github:nixos/nixos-hardware";
