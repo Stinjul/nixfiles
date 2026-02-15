@@ -1,7 +1,8 @@
 { pkgs, config, ... }:
 {
   home.packages = with pkgs; [
-    argocd
+    # https://github.com/NixOS/nixpkgs/issues/490442
+    # argocd
     kustomize
     ksops
     k3s

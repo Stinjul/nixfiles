@@ -13,6 +13,7 @@
 {
   programs.yazi = {
     enable = true;
+    shellWrapperName = "y";
     plugins = {
       # git = "${plugins.yazi}/git.yazi";
       git = pkgs.yaziPlugins.git;

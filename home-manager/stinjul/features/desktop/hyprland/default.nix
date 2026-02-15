@@ -16,7 +16,7 @@ in
 
   # Yeah, I know, but I need to set the primary monitor for XWayland somehow
   home.packages = with pkgs; [
-    xorg.xrandr
+    xrandr
     grimblast
   ];
 
