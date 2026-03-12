@@ -75,6 +75,12 @@
       trouble.enable = true;
 
       image.enable = true;
+      markview = {
+        enable = true;
+        settings.preview = {
+          icon_provider = "mini";
+        };
+      };
 
       mini = {
         enable = true;
