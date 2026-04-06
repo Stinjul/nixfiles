@@ -35,7 +35,7 @@
   console.keyMap = "azerty";
 
   boot = {
-    kernelPackages = pkgs.linuxKernel.packages.linux_testing;
+    # kernelPackages = pkgs.linuxKernel.packages.linux_testing;
     binfmt.emulatedSystems = [ "aarch64-linux" ];
   };
 
