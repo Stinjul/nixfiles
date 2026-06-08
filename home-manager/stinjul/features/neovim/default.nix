@@ -23,6 +23,7 @@
 
   programs.nixvim = {
     enable = true;
+    nixpkgs.useGlobalPackages = true;
 
     colorschemes.base16 = {
       enable = true;
